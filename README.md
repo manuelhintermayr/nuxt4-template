@@ -2,7 +2,7 @@
 
 A modern, production-ready Nuxt 4 starter template with comprehensive configurations and internationalization support. Perfect for building modern web applications with cutting-edge technologies.
 
-![Preview](public/images/preview.jpg)
+![Preview](public/media/preview.jpg)
 
 **🌐 Live Demo:** [http://projects.manuelhintermayr.com/nuxt4-template](http://projects.manuelhintermayr.com/nuxt4-template)
 
@@ -21,6 +21,8 @@ A modern, production-ready Nuxt 4 starter template with comprehensive configurat
 - 🎭 **Heroicons** - Beautiful SVG icons from the Heroicons library
 - 🐭 **Mouse Follower** - Smooth mouse cursor effects with GSAP animations
 - 🏗️ **Developer Experience** - Hot module replacement and fast refresh
+
+![Preview](public/media/preview.gif)
 
 ## 🛠️ Technology Stack
 
