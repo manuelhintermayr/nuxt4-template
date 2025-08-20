@@ -2,6 +2,10 @@
 
 A modern, production-ready Nuxt 4 starter template with comprehensive configurations and internationalization support. Perfect for building modern web applications with cutting-edge technologies.
 
+![Preview](public/images/preview.jpg)
+
+**🌐 Live Demo:** [http://projects.manuelhintermayr.com/nuxt4-template](http://projects.manuelhintermayr.com/nuxt4-template)
+
 **Developed by:** [Manuel Hintermayr](https://github.com/manuelhintermayr)  
 **Repository:** https://github.com/manuelhintermayr/nuxt4-template
 
