@@ -315,8 +315,18 @@
             "specialStates": "Special Cursor States",
             "states": {
                 "inverse": "Inverse Cursor",
+                "inverseDesc": "Light cursor on dark background",
+                "inverseDarkMode": "This demo is not available in dark mode",
                 "hidden": "Hidden Cursor",
-                "theme": "Theme Element"
+                "hiddenDesc": "Cursor becomes invisible",
+                "theme": "Theme Element",
+                "themeDesc": "Custom gradient styling",
+                "opaque": "Opaque State",
+                "opaqueDesc": "Semi-transparent cursor",
+                "pointer": "Pointer State",
+                "pointerDesc": "Custom pointer styling",
+                "custom": "Custom State",
+                "customDesc": "Dynamic custom styling"
             },
             "mediaEffects": "Media Effects (Images & Videos)",
             "media": {
@@ -348,6 +358,13 @@
                 "strongDesc": "Medium distortion effect",
                 "extreme": "Extreme Skew",
                 "extremeDesc": "Maximum distortion effect"
+            },
+            "configuration": {
+                "title": "Configuration Options",
+                "speed": "Cursor Speed",
+                "slow": "Slow",
+                "fast": "Fast",
+                "currentSpeed": "Current Speed"
             }
         },
         "inputShowcase": {

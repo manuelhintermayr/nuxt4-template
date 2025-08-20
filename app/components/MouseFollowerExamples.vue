@@ -37,7 +37,7 @@
         <!-- Text Effects Section -->
         <div ref="textSection" class="space-y-4">
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{ $t('examples.mouseFollower.textEffects')
-                }}</h5>
+            }}</h5>
             <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <p class="text-gray-700 dark:text-gray-300 mb-2">
                     {{ $t('examples.mouseFollower.textDemo.intro') }}
@@ -57,29 +57,105 @@
             </div>
         </div>
 
+        <!-- Configuration Options Section -->
+        <div ref="configSection" class="space-y-4">
+            <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{
+                $t('examples.mouseFollower.configuration.title') }}
+            </h5>
+            <div>
+                <UCard class="w-full">
+                    <template #header>
+                        <h6 class="font-semibold">{{ $t('examples.mouseFollower.configuration.speed') }}</h6>
+                    </template>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-sm text-gray-600 dark:text-gray-400 w-12">{{
+                                $t('examples.mouseFollower.configuration.slow') }}</span>
+                                <USlider
+                                    v-model="cursorSpeed"
+                                    :min="0.1"
+                                    :max="2"
+                                    :step="0.1"
+                                    class="flex-1"
+                                    @update:modelValue="updateCursorSpeed"
+                                />
+                            <span class="text-sm text-gray-600 dark:text-gray-400 w-12">{{
+                                $t('examples.mouseFollower.configuration.fast') }}</span>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 text-center">
+                            {{ $t('examples.mouseFollower.configuration.currentSpeed') }}: {{ cursorSpeed }}
+                        </p>
+                    </div>
+                </UCard>
+            </div>
+        </div>
+
         <!-- Special States Section -->
         <div ref="statesSection" class="space-y-4">
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{
                 $t('examples.mouseFollower.specialStates') }}
             </h5>
-            <div class="grid grid-cols-1 md:grid-cols-3 dark:md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div data-cursor="-inverse"
-                    class="card-tilt p-4 bg-gray-900 text-white rounded-lg text-center cursor-pointer dark:hidden">
+                    class="card-tilt p-4 bg-gray-900 text-white rounded-lg text-center cursor-pointer relative overflow-hidden">
                     <UIcon name="i-heroicons-moon" class="w-6 h-6 mx-auto mb-2" />
-                    <p class="text-sm">{{ $t('examples.mouseFollower.states.inverse') }}</p>
+                    <p class="text-sm font-medium">{{ $t('examples.mouseFollower.states.inverse') }}</p>
+                    <p class="text-xs text-gray-300 mt-1">{{ $t('examples.mouseFollower.states.inverseDesc') }}</p>
+
+                    <!-- Dark mode overlay -->
+                    <div
+                        class="hidden dark:flex absolute inset-0 bg-gray-800/60 backdrop-blur-[2px] items-center justify-center rounded-lg">
+                        <div class="text-center px-2 bg-gray-900/80 rounded-md py-2 px-3">
+                            <UIcon name="i-heroicons-no-symbol" class="w-6 h-6 mx-auto mb-1 text-gray-300" />
+                            <p class="text-xs font-medium text-gray-200 leading-tight">{{
+                                $t('examples.mouseFollower.states.inverseDarkMode') }}</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div data-cursor="-hidden"
                     class="card-tilt p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-center cursor-pointer">
                     <UIcon name="i-heroicons-eye-slash" class="w-6 h-6 mx-auto mb-2 text-red-500" />
-                    <p class="text-sm text-red-700 dark:text-red-400">{{ $t('examples.mouseFollower.states.hidden') }}
+                    <p class="text-sm font-medium text-red-700 dark:text-red-400">{{
+                        $t('examples.mouseFollower.states.hidden')
+                        }}</p>
+                    <p class="text-xs text-red-600 dark:text-red-300 mt-1">{{
+                        $t('examples.mouseFollower.states.hiddenDesc') }}
                     </p>
                 </div>
 
                 <div class="card-tilt theme theme-element p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-center cursor-pointer"
                     data-cursor="-theme" data-cursor-text="Theme Element">
                     <UIcon name="i-heroicons-paint-brush" class="w-6 h-6 mx-auto mb-2 theme-icon" />
-                    <p class="text-sm">{{ $t('examples.mouseFollower.states.theme') }}</p>
+                    <p class="text-sm font-medium">{{ $t('examples.mouseFollower.states.theme') }}</p>
+                    <p class="text-xs text-purple-100 mt-1">{{ $t('examples.mouseFollower.states.themeDesc') }}</p>
+                </div>
+
+                <div class="card-tilt p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg text-center cursor-pointer"
+                    data-cursor="-opaque">
+                    <UIcon name="i-heroicons-adjustments-horizontal" class="w-6 h-6 mx-auto mb-2 text-blue-500" />
+                    <p class="text-sm font-medium text-blue-700 dark:text-blue-400">{{
+                        $t('examples.mouseFollower.states.opaque') }}</p>
+                    <p class="text-xs text-blue-600 dark:text-blue-300 mt-1">{{
+                        $t('examples.mouseFollower.states.opaqueDesc') }}</p>
+                </div>
+
+                <div class="card-tilt p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg text-center cursor-pointer"
+                    data-cursor="-pointer">
+                    <UIcon name="i-heroicons-cursor-arrow-rays" class="w-6 h-6 mx-auto mb-2 text-yellow-500" />
+                    <p class="text-sm font-medium text-yellow-700 dark:text-yellow-400">{{
+                        $t('examples.mouseFollower.states.pointer') }}</p>
+                    <p class="text-xs text-yellow-600 dark:text-yellow-300 mt-1">{{
+                        $t('examples.mouseFollower.states.pointerDesc') }}</p>
+                </div>
+
+                <div class="card-tilt p-4 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-lg text-center cursor-pointer"
+                    @mouseenter="addCustomState" @mouseleave="removeCustomState">
+                    <UIcon name="i-heroicons-cog-6-tooth" class="w-6 h-6 mx-auto mb-2 text-indigo-500" />
+                    <p class="text-sm font-medium text-indigo-700 dark:text-indigo-400">{{
+                        $t('examples.mouseFollower.states.custom') }}</p>
+                    <p class="text-xs text-indigo-600 dark:text-indigo-300 mt-1">{{
+                        $t('examples.mouseFollower.states.customDesc') }}</p>
                 </div>
             </div>
         </div>
@@ -98,7 +174,7 @@
                         $t('examples.mouseFollower.media.image1.title') }}</h6>
                     <p class="text-sm text-gray-600 dark:text-gray-400">{{
                         $t('examples.mouseFollower.media.image1.description')
-                        }}</p>
+                    }}</p>
                 </div>
 
                 <div class="card-tilt p-6 bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg text-center cursor-pointer border border-green-200 dark:border-green-800"
@@ -108,7 +184,7 @@
                         $t('examples.mouseFollower.media.image2.title') }}</h6>
                     <p class="text-sm text-gray-600 dark:text-gray-400">{{
                         $t('examples.mouseFollower.media.image2.description')
-                        }}</p>
+                    }}</p>
                 </div>
 
                 <!-- Sample Video -->
@@ -119,7 +195,7 @@
                         $t('examples.mouseFollower.media.video.title') }}</h6>
                     <p class="text-sm text-gray-600 dark:text-gray-400">{{
                         $t('examples.mouseFollower.media.video.description')
-                        }}</p>
+                    }}</p>
                 </div>
             </div>
         </div>
@@ -159,10 +235,8 @@
                 $t('examples.mouseFollower.skewingEffects') }}
             </h5>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <UCard class="card-tilt cursor-pointer text-center" 
-                    @mouseenter="setSkewing(5)" 
-                    @mouseleave="removeSkewing()"
-                    data-cursor-text="Light Skewing">
+                <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(5)"
+                    @mouseleave="removeSkewing()" data-cursor-text="Light Skewing">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-right-left" class="w-8 h-8 mx-auto mb-3 text-orange-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.light') }}</h6>
@@ -172,33 +246,30 @@
                     </div>
                 </UCard>
 
-                <UCard class="card-tilt cursor-pointer text-center" 
-                    @mouseenter="setSkewing(50)" 
-                    @mouseleave="removeSkewing()"
-                    data-cursor-text="Strong Skewing">
+                <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(50)"
+                    @mouseleave="removeSkewing()" data-cursor-text="Strong Skewing">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-up-down" class="w-8 h-8 mx-auto mb-3 text-purple-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.strong') }}</h6>
                         <p class="text-sm text-gray-600 dark:text-gray-400">{{
                             $t('examples.mouseFollower.skewing.strongDesc')
-                            }}</p>
+                        }}</p>
                     </div>
                 </UCard>
 
-                <UCard class="card-tilt cursor-pointer text-center" 
-                    @mouseenter="setSkewing(100)" 
-                    @mouseleave="removeSkewing()"
-                    data-cursor-text="Extreme Skewing">
+                <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(100)"
+                    @mouseleave="removeSkewing()" data-cursor-text="Extreme Skewing">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-pointing-out" class="w-8 h-8 mx-auto mb-3 text-red-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.extreme') }}</h6>
                         <p class="text-sm text-gray-600 dark:text-gray-400">{{
                             $t('examples.mouseFollower.skewing.extremeDesc')
-                            }}</p>
+                        }}</p>
                     </div>
                 </UCard>
             </div>
         </div>
+
     </div>
 </template>
 
@@ -217,6 +288,43 @@
     color: #fbbf24 !important;
     font-weight: 600 !important;
 }
+
+/* Additional Mouse Follower States */
+:global(.mf-cursor.-opaque) {
+    opacity: 0.7 !important;
+}
+
+:global(.mf-cursor.-custom:before) {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57) !important;
+    animation: rainbow 2s ease-in-out infinite alternate !important;
+}
+
+:global(.mf-cursor.-demo:before) {
+    background: #10b981 !important;
+    transform: rotate(45deg) !important;
+}
+
+/* Rainbow animation for custom state */
+@keyframes rainbow {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Enhanced sticky demo styles */
+.sticky-demo {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sticky-demo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
 </style>
 
 <script setup lang="ts">
@@ -229,32 +337,63 @@ const cardsSection = ref<HTMLElement>()
 const textSection = ref<HTMLElement>()
 const statesSection = ref<HTMLElement>()
 const skewingSection = ref<HTMLElement>()
+const configSection = ref<HTMLElement>()
 
-// Access MouseFollower instance from the global window object (set by the plugin)
-const setSkewing = (factor: number) => {
+// Reactive data for configuration
+const cursorSpeed = ref(0.8)
+
+// Get current MouseFollower instance
+const getCursor = () => {
     if (typeof window !== 'undefined') {
-        const cursor = (window as any).mouseFollower || (window as any).$cursor
-        if (cursor) {
-            cursor.skewing = factor
-            // Make skewing much more visible
-            cursor.options.skewingDelta = 0.01  // Increase sensitivity (default: 0.001)
-            cursor.options.skewingDeltaMax = 1.0  // Increase max effect (default: 0.15)
-            // Force a render to apply changes
-            cursor.render(true)
-        }
+        return (window as any).mouseFollower || (window as any).$cursor
+    }
+    return null
+}
+
+// Existing skewing functions
+const setSkewing = (factor: number) => {
+    const cursor = getCursor()
+    if (cursor) {
+        cursor.skewing = factor
+        cursor.options.skewingDelta = 0.01
+        cursor.options.skewingDeltaMax = 1.0
+        cursor.render(true)
     }
 }
 
 const removeSkewing = () => {
-    if (typeof window !== 'undefined') {
-        const cursor = (window as any).mouseFollower || (window as any).$cursor
-        if (cursor) {
-            cursor.skewing = 0
-            // Reset to normal values
-            cursor.options.skewingDelta = 0.001
-            cursor.options.skewingDeltaMax = 0.15
-            cursor.render(true)
-        }
+    const cursor = getCursor()
+    if (cursor) {
+        cursor.skewing = 0
+        cursor.options.skewingDelta = 0.001
+        cursor.options.skewingDeltaMax = 0.15
+        cursor.render(true)
+    }
+}
+
+// New functions for additional features
+
+// Advanced states functions
+const addCustomState = () => {
+    const cursor = getCursor()
+    if (cursor) {
+        cursor.addState('-custom')
+    }
+}
+
+const removeCustomState = () => {
+    const cursor = getCursor()
+    if (cursor) {
+        cursor.removeState('-custom')
+    }
+}
+
+// Configuration functions
+const updateCursorSpeed = () => {
+    const cursor = getCursor()
+    if (cursor) {
+        // Invert speed: higher value = faster cursor
+        cursor.options.speed = 2.1 - cursorSpeed.value
     }
 }
 
@@ -275,7 +414,8 @@ onMounted(() => {
         cardsSection.value,
         textSection.value,
         statesSection.value,
-        skewingSection.value
+        skewingSection.value,
+        configSection.value
     ].filter(Boolean)
 
     sections.forEach((section, index) => {

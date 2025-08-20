@@ -315,8 +315,18 @@
             "specialStates": "Spezielle Cursor-Zustände",
             "states": {
                 "inverse": "Inverser Cursor",
+                "inverseDesc": "Heller Cursor auf dunklem Hintergrund",
+                "inverseDarkMode": "Diese Demo ist im Dark Mode nicht verfügbar",
                 "hidden": "Versteckter Cursor",
-                "theme": "Theme-Element"
+                "hiddenDesc": "Cursor wird unsichtbar",
+                "theme": "Theme-Element",
+                "themeDesc": "Individueller Gradienten-Stil",
+                "opaque": "Transparenz-Zustand",
+                "opaqueDesc": "Halbtransparenter Cursor",
+                "pointer": "Zeiger-Zustand",
+                "pointerDesc": "Benutzerdefinierte Zeiger-Gestaltung",
+                "custom": "Individueller Zustand",
+                "customDesc": "Dynamische individuelle Gestaltung"
             },
             "mediaEffects": "Medien-Effekte (Bilder & Videos)",
             "media": {
@@ -348,6 +358,13 @@
                 "strongDesc": "Mittlerer Verzerrungseffekt",
                 "extreme": "Extreme Verzerrung",
                 "extremeDesc": "Maximaler Verzerrungseffekt"
+            },
+            "configuration": {
+                "title": "Konfigurationsoptionen",
+                "speed": "Cursor-Geschwindigkeit",
+                "slow": "Langsam",
+                "fast": "Schnell",
+                "currentSpeed": "Aktuelle Geschwindigkeit"
             }
         },
         "inputShowcase": {
