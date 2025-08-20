@@ -11,7 +11,12 @@
                 <div class="flex items-center space-x-4">
                     <LanguageSwitcher />
                     <div data-cursor-pointer>
-                        <UColorModeToggle />
+                        <UButton
+                            :icon="colorMode.preference === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
+                            variant="ghost"
+                            @click="toggleColorMode"
+                            :aria-label="colorMode.preference === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+                        />
                     </div>
                 </div>
             </div>
@@ -21,4 +26,10 @@
 
 <script setup lang="ts">
 // Header component for the Nuxt 4 + UI template
+
+const colorMode = useColorMode()
+
+const toggleColorMode = () => {
+    colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'
+}
 </script>
