@@ -505,5 +505,22 @@
         "darkModeToggle": {
             "label": "Dark Mode umschalten"
         }
+    },
+    "loadingScreen": {
+        "title": "Nuxt 4 Template",
+        "subtitle": "Lade deine Erfahrung...",
+        "builtWith": "Erstellt mit",
+        "texts": {
+            "loading": "Lade Komponenten...",
+            "preparing": "Bereite Animationen vor...",
+            "initializing": "Initialisiere Interface...",
+            "almostReady": "Fast fertig!"
+        },
+        "steps": {
+            "components": "Lade UI-Komponenten",
+            "animations": "Richte Animationen ein", 
+            "translations": "Lade Übersetzungen",
+            "ready": "Bereit zum Start"
+        }
     }
 }
