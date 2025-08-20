@@ -1,10 +1,6 @@
 <template>
-        <div id="content" class="container">
-            <slot />
-        </div>
-    
+  <slot />
 </template>
 
 <script setup lang="ts" />
-
 <style />

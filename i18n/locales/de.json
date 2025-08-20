@@ -37,7 +37,6 @@
     "forms": {
       "title": "Formulare",
       "namePlaceholder": "Ihr Name",
-      "emailPlaceholder": "ihre[at]email.de",
       "messagePlaceholder": "Ihre Nachricht...",
       "selectPlaceholder": "Wählen Sie eine Option",
       "option1": "Option 1",
