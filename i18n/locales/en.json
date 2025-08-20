@@ -52,6 +52,69 @@
             "option2": "Option 2",
             "option3": "Option 3"
         },
+        "accordion": {
+            "title": "Accordion Components",
+            "description": "Collapsible panels for organizing content with smooth animations",
+            "basic": "Basic Accordion",
+            "multiple": "Multiple Open",
+            "items": {
+                "setup": {
+                    "title": "Quick Setup",
+                    "content": "Install dependencies and configure your project with our easy setup guide."
+                },
+                "customization": {
+                    "title": "Customization",
+                    "content": "Customize components with classes, themes, and configuration options."
+                },
+                "deployment": {
+                    "title": "Deployment",
+                    "content": "Deploy your application to production with optimized build configurations."
+                },
+                "features": {
+                    "title": "Key Features",
+                    "content": "Discover all the powerful features included in this template."
+                },
+                "support": {
+                    "title": "Community Support",
+                    "content": "Join our community for help, discussions, and feature requests."
+                }
+            }
+        },
+        "avatar": {
+            "title": "Avatar Components",
+            "description": "User profile images with fallbacks and group displays",
+            "basic": "Different Sizes",
+            "group": "Avatar Group",
+            "fallback": "Fallback Options"
+        },
+        "navigation": {
+            "title": "Navigation Elements",
+            "description": "Badges, breadcrumbs, and button groups for interface navigation",
+            "badges": {
+                "title": "Badges",
+                "primary": "New",
+                "success": "Success",
+                "warning": "Beta",
+                "error": "Error",
+                "featured": "Featured",
+                "next": "Next",
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "breadcrumb": {
+                "title": "Breadcrumb",
+                "home": "Home",
+                "components": "Components",
+                "navigation": "Navigation"
+            },
+            "buttonGroups": {
+                "title": "Button Groups",
+                "horizontal": "Horizontal Group:",
+                "vertical": "Vertical Group:",
+                "input": "Input with Button:"
+            }
+        },
         "alert": {
             "title": "Info",
             "description": "This is an example notification with Nuxt UI!"

@@ -56,6 +56,69 @@
             "title": "Info",
             "description": "Dies ist eine Beispiel-Benachrichtigung mit Nuxt UI!"
         },
+        "accordion": {
+            "title": "Accordion-Komponenten",
+            "description": "Ausklappbare Panels zur Inhaltsorganisation mit flüssigen Animationen",
+            "basic": "Basis Accordion",
+            "multiple": "Mehrere Öffnen",
+            "items": {
+                "setup": {
+                    "title": "Schnelle Installation",
+                    "content": "Installieren Sie Abhängigkeiten und konfigurieren Sie Ihr Projekt mit unserem einfachen Setup-Guide."
+                },
+                "customization": {
+                    "title": "Anpassung",
+                    "content": "Passen Sie Komponenten mit Klassen, Themes und Konfigurationsoptionen an."
+                },
+                "deployment": {
+                    "title": "Deployment",
+                    "content": "Stellen Sie Ihre Anwendung mit optimierten Build-Konfigurationen bereit."
+                },
+                "features": {
+                    "title": "Hauptfunktionen",
+                    "content": "Entdecken Sie alle leistungsstarken Features dieses Templates."
+                },
+                "support": {
+                    "title": "Community-Support",
+                    "content": "Treten Sie unserer Community für Hilfe, Diskussionen und Feature-Anfragen bei."
+                }
+            }
+        },
+        "avatar": {
+            "title": "Avatar-Komponenten",
+            "description": "Benutzerprofilbilder mit Fallbacks und Gruppenanzeigen",
+            "basic": "Verschiedene Größen",
+            "group": "Avatar-Gruppe",
+            "fallback": "Fallback-Optionen"
+        },
+        "navigation": {
+            "title": "Navigations-Elemente",
+            "description": "Badges, Breadcrumbs und Button-Gruppen für Interface-Navigation",
+            "badges": {
+                "title": "Badges",
+                "primary": "Neu",
+                "success": "Erfolg",
+                "warning": "Beta",
+                "error": "Fehler",
+                "featured": "Featured",
+                "next": "Weiter",
+                "small": "Klein",
+                "medium": "Mittel",
+                "large": "Groß"
+            },
+            "breadcrumb": {
+                "title": "Breadcrumb",
+                "home": "Startseite",
+                "components": "Komponenten",
+                "navigation": "Navigation"
+            },
+            "buttonGroups": {
+                "title": "Button-Gruppen",
+                "horizontal": "Horizontale Gruppe:",
+                "vertical": "Vertikale Gruppe:",
+                "input": "Input mit Button:"
+            }
+        },
         "mouseFollower": {
             "title": "Mouse Follower",
             "interactive": "Interaktive Elemente",

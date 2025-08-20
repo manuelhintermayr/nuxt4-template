@@ -4,9 +4,12 @@
             {{ $t('examples.title') }}
         </h3>
 
-        <div ref="exampleComponents" class="space-y-8">
+        <div ref="exampleComponents" class="space-y-4">
             <ButtonExamples />
             <FormExamples />
+            <AccordionExample />
+            <AvatarExample />
+            <NavigationExample />
             <MouseFollowerExamples />
             <DemoAlert />
         </div>
