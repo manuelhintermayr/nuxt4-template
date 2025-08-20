@@ -23,12 +23,10 @@ A modern, production-ready Nuxt 4 starter template with comprehensive configurat
 ### Core Frameworks
 - **[Nuxt 4](https://nuxt.com/)** - The Intuitive Vue Framework
 - **[Vue 3](https://vuejs.org/)** - Progressive JavaScript Framework
-- **[TypeScript](https://www.typescriptlang.org/)** - Typed JavaScript
 
 ### UI & Styling
 - **[Nuxt UI](https://ui.nuxt.com/)** - Fully styled and customizable components
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[Headless UI](https://headlessui.dev/)** - Unstyled, accessible UI components
 
 ### Animation & Effects
 - **[GSAP](https://greensock.com/gsap/)** - Professional-grade animation library
@@ -79,17 +77,13 @@ bun run dev
 ```
 nuxt4-template/
 ├── app/
+│   ├── app.config.ts           # App configuration
 │   ├── app.vue                 # Root application component
-│   ├── components/             # Reusable Vue components
-│   │   ├── AppHeader.vue       # Header with navigation and language switcher
-│   │   ├── WelcomeSection.vue  # Welcome hero section
-│   │   ├── FeatureCard.vue     # Reusable feature card component
-│   │   ├── FeaturesGrid.vue    # Grid showcase of main features
-│   │   ├── ButtonExamples.vue  # Button variants demonstration
-│   │   ├── FormExamples.vue    # Form components showcase
-│   │   ├── DemoAlert.vue       # Alert component example
-│   │   ├── ExamplesSection.vue # Container for all examples
-│   │   └── LanguageSwitcher.vue # Language selection dropdown
+│   ├── assets/
+│   │   └── css/               # Global styles and CSS files
+│   ├── components/             # Reusable Vue components for showcase (including a language switcher)
+│   ├── layouts/
+│   │   └── default.vue         # Default layout template
 │   ├── pages/
 │   │   └── index.vue           # Main landing page
 │   └── plugins/
@@ -101,7 +95,9 @@ nuxt4-template/
 │       └── de.json            # German translations
 ├── public/                    # Static assets
 ├── nuxt.config.ts            # Nuxt configuration
-└── package.json              # Dependencies and scripts
+├── package.json              # Dependencies and scripts
+├── package-lock.json         # Lock file for dependencies
+└── tsconfig.json             # TypeScript configuration
 ```
 
 ## 🎨 Component Architecture
@@ -119,17 +115,6 @@ All UI elements are extracted into reusable components following Vue.js best pra
 #### Layout Components
 - `AppHeader` - Navigation header with logo, title, language switcher, and dark mode toggle
 - `WelcomeSection` - Hero section with internationalized welcome message
-
-#### Content Components
-- `FeatureCard` - Reusable card component for showcasing features
-- `FeaturesGrid` - Grid layout showcasing Nuxt 4, Nuxt UI, and Dark Mode features
-- `ExamplesSection` - Container for component demonstrations
-
-#### Interactive Components
-- `ButtonExamples` - Showcase of different button variants (solid, soft, outline, ghost, link)
-- `FormExamples` - Form components including inputs, textarea, and select
-- `DemoAlert` - Alert component with icon and message
-- `LanguageSwitcher` - Dropdown for language selection
 
 ## 🐭 Mouse Follower Integration
 
@@ -168,6 +153,15 @@ The cursor automatically detects:
 ### Supported Languages
 - **English (en)** - Default language
 - **German (de)** - Secondary language
+
+### Language Persistence
+The `LanguageSwitcher` component includes advanced locale management:
+
+- **Default Behavior**: Always defaults to English on first visit
+- **Persistence**: User's language choice is saved to localStorage
+- **Restoration**: Automatically restores saved language preference on page reload
+- **Type Safety**: Only accepts valid locale codes ('en', 'de')
+- **Props Support**: Accepts `isBlack` prop for styling variations
 
 ### Translation Structure
 ```json
@@ -233,6 +227,7 @@ bun run preview
 - **[Tailwind CSS Documentation](https://tailwindcss.com/docs)** - Utility-first CSS
 - **[Nuxt i18n Documentation](https://i18n.nuxtjs.org/)** - Internationalization guide
 - **[TypeScript Documentation](https://www.typescriptlang.org/docs/)** - TypeScript handbook
+- **[Mouse Follower Documentation](https://github.com/Cuberto/mouse-follower/blob/dev/README.MD)** - Smooth cursor effects library
 
 ## 🤝 Contributing
 
@@ -254,6 +249,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - **Tailwind Labs** for Tailwind CSS and Headless UI
 - **Heroicons** for the beautiful icon set
 - **Vue.js Team** for the progressive framework
+- **Cuberto** for the incredible [Mouse Follower](https://github.com/Cuberto/mouse-follower) library
 
 ---
 
