@@ -6,8 +6,13 @@
         "placeholder": "Sprache"
     },
     "welcome": {
-        "title": "Willkommen zu Ihrem Nuxt 4 Projekt",
-        "subtitle": "Mit Nuxt UI für moderne und responsive Benutzeroberflächen"
+        "title": "Nuxt 4 Template",
+        "subtitle": "Ein modernes, produktionsbereites Starter-Template mit Nuxt UI",
+        "developedBy": "Entwickelt von",
+        "repository": "Repository ansehen",
+        "productionReady": "Production Ready",
+        "builtWith": "Erstellt mit",
+        "by": "von"
     },
     "features": {
         "nuxt4": {
