@@ -7,7 +7,7 @@
             icon="i-heroicons-paint-brush" icon-color="text-blue-500" />
 
         <FeatureCard :title="$t('features.darkMode.title')" :description="$t('features.darkMode.description')"
-            icon="i-heroicons-moon" icon-color="text-indigo-500" />
+            icon="i-heroicons-moon" icon-color="text-indigo-500" :has-toggle="true" />
     </div>
 </template>
 

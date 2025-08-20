@@ -47,5 +47,10 @@
       "title": "Info",
       "description": "This is an example notification with Nuxt UI!"
     }
+  },
+  "components": {
+    "darkModeToggle": {
+      "label": "Toggle Dark Mode"
+    }
   }
 }
