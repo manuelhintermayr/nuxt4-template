@@ -7,9 +7,15 @@
         <div ref="exampleComponents" class="space-y-4">
             <ButtonExamples />
             <FormExamples />
+            <FormsAdvancedExample />
+            <InputShowcase />
+            <LayoutExample />
             <AccordionExample />
             <AvatarExample />
             <NavigationExample />
+            <NavigationAdvanced />
+            <DataDisplayExample />
+            <UtilityExample />
             <MouseFollowerExamples />
             <DemoAlert />
         </div>

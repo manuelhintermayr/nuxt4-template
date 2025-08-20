@@ -91,6 +91,155 @@
             "group": "Avatar-Gruppe",
             "fallback": "Fallback-Optionen"
         },
+        "formsAdvanced": {
+            "title": "Erweiterte Formulare",
+            "description": "Komplexe Formularkomponenten mit umfangreicher Funktionalität",
+            "calendar": {
+                "title": "Kalender"
+            },
+            "checkboxGroup": {
+                "title": "Checkbox-Gruppe",
+                "darkMode": "Dark Mode",
+                "animations": "Animationen",
+                "notifications": "Benachrichtigungen"
+            },
+            "colorPicker": {
+                "title": "Farbwähler"
+            },
+            "fileUpload": {
+                "title": "Datei-Upload",
+                "label": "Dateien hier ablegen",
+                "description": "SVG, PNG, JPG oder GIF (max. 2MB)"
+            },
+            "formField": {
+                "title": "Formularfelder",
+                "emailLabel": "E-Mail-Adresse",
+                "emailDescription": "Wir teilen Ihre E-Mail niemals mit Dritten.",
+                "passwordLabel": "Passwort",
+                "passwordHelp": "Muss mindestens 8 Zeichen lang sein."
+            },
+            "checkbox": {
+                "title": "Checkboxen",
+                "terms": "Ich stimme den Nutzungsbedingungen zu",
+                "newsletter": "Newsletter abonnieren",
+                "newsletterDescription": "Erhalten Sie die neuesten Nachrichten und Updates.",
+                "indeterminate": "Unbestimmter Zustand"
+            },
+            "radioGroup": {
+                "title": "Radio Gruppe",
+                "themeLabel": "Theme wählen",
+                "light": "Hell",
+                "dark": "Dunkel",
+                "auto": "Auto"
+            },
+            "switch": {
+                "title": "Schalter",
+                "notifications": "Benachrichtigungen aktivieren",
+                "notificationsDescription": "Benachrichtigungen über wichtige Updates erhalten.",
+                "marketing": "Marketing-E-Mails",
+                "marketingDescription": "Werbeinhalte und Angebote erhalten."
+            },
+            "slider": {
+                "title": "Schieberegler",
+                "volume": "Lautstärke-Kontrolle",
+                "range": "Preisbereich"
+            },
+            "progress": {
+                "title": "Fortschritt",
+                "description": "Interaktive Fortschrittsbalken",
+                "upload": "Upload-Fortschritt",
+                "download": "Download-Fortschritt",
+                "processing": "Verarbeitung..."
+            }
+        },
+        "layout": {
+            "title": "Layout-Komponenten",
+            "description": "Struktur- und Container-Komponenten für bessere Organisation",
+            "card": {
+                "title": "Karten-Varianten",
+                "default": "Standard-Karte",
+                "defaultDescription": "Dies ist eine Standard-Karte mit Header-, Inhalt- und Footer-Bereichen.",
+                "subtle": "Dezente Karte",
+                "subtleDescription": "Eine Karte mit dezentem Styling für weniger Betonung.",
+                "footer": "Karten-Footer",
+                "action": "Aktion",
+                "cancel": "Abbrechen",
+                "confirm": "Bestätigen"
+            },
+            "container": {
+                "title": "Container",
+                "responsive": "Responsiver Container",
+                "content": "Dieser Inhalt ist zentriert und innerhalb der Container-Grenzen begrenzt."
+            },
+            "chip": {
+                "title": "Chip-Indikatoren",
+                "withButton": "Mit Button",
+                "withAvatar": "Mit Avatar"
+            }
+        },
+        "dataDisplay": {
+            "title": "Datenanzeige",
+            "description": "Komponenten zur Anzeige und Organisation von Inhalten",
+            "carousel": {
+                "title": "Karussell"
+            },
+            "collapsible": {
+                "title": "Einklappbare Bereiche",
+                "firstToggle": "Ersten Bereich umschalten",
+                "firstContent": "Dies ist der Inhalt des ersten einklappbaren Bereichs. Sie können hier beliebigen Inhalt einfügen.",
+                "secondToggle": "Zweiten Bereich umschalten",
+                "secondContent": "Dies ist der Inhalt des zweiten einklappbaren Bereichs mit einem Aktionsbutton.",
+                "action": "Aktion"
+            },
+            "contextMenu": {
+                "title": "Kontextmenü",
+                "rightClick": "Hier rechtsklicken",
+                "copy": "Kopieren",
+                "cut": "Ausschneiden",
+                "paste": "Einfügen",
+                "delete": "Löschen"
+            },
+            "dropdownMenu": {
+                "title": "Dropdown-Menü",
+                "trigger": "Menü öffnen",
+                "profile": "Profil",
+                "settings": "Einstellungen",
+                "billing": "Abrechnung",
+                "logout": "Abmelden"
+            },
+            "drawer": {
+                "title": "Schublade",
+                "bottom": "Untere Schublade",
+                "right": "Rechte Schublade",
+                "contentTitle": "Schubladen-Inhalt",
+                "contentText": "Dies ist der Inhalt innerhalb der Schublade. Sie können hier beliebige Komponenten einfügen.",
+                "sidebarTitle": "Navigation"
+            }
+        },
+        "utility": {
+            "title": "Utility-Komponenten",
+            "description": "Hilfreiche Werkzeuge und interaktive Elemente",
+            "commandPalette": {
+                "title": "Befehlspalette",
+                "openButton": "Befehlspalette öffnen",
+                "placeholder": "Befehl eingeben oder suchen...",
+                "groups": {
+                    "navigation": "Navigation",
+                    "actions": "Aktionen",
+                    "settings": "Einstellungen"
+                },
+                "commands": {
+                    "home": "Zur Startseite",
+                    "about": "Über-Seite",
+                    "contact": "Kontakt",
+                    "toggleTheme": "Theme wechseln",
+                    "copy": "Aktuelle URL kopieren",
+                    "refresh": "Seite aktualisieren",
+                    "language": "Sprache ändern",
+                    "preferences": "Einstellungen"
+                }
+            }
+        },
         "navigation": {
             "title": "Navigations-Elemente",
             "description": "Badges, Breadcrumbs und Button-Gruppen für Interface-Navigation",
@@ -178,6 +327,102 @@
                 "strongDesc": "Mittlerer Verzerrungseffekt",
                 "extreme": "Extreme Verzerrung",
                 "extremeDesc": "Maximaler Verzerrungseffekt"
+            }
+        },
+        "inputShowcase": {
+            "title": "Spezialisierte Eingabe-Komponenten",
+            "description": "Erweiterte Eingabesteuerungen und Dateneingabe-Komponenten",
+            "inputNumber": {
+                "title": "Zahleneingabe",
+                "basic": "Basis Zahleneingabe",
+                "stepped": "Gestufte Eingabe (0-100, Schritt 5)"
+            },
+            "inputTags": {
+                "title": "Eingabe Tags",
+                "skillsLabel": "Fügen Sie Ihre Fähigkeiten hinzu",
+                "placeholder": "Tippen und Enter drücken..."
+            },
+            "pinInput": {
+                "title": "PIN-Eingabe",
+                "otpLabel": "OTP-Code eingeben",
+                "maskedLabel": "Maskierte PIN"
+            },
+            "select": {
+                "title": "Auswahl-Komponenten",
+                "basic": "Basis Auswahl",
+                "multiple": "Mehrfachauswahl"
+            },
+            "advancedInput": {
+                "title": "Erweiterte Eingabe",
+                "search": "Suchen...",
+                "email": "E-Mail eingeben",
+                "password": "Passwort eingeben"
+            },
+            "kbd": {
+                "title": "Tastaturkürzel",
+                "save": "Speichern",
+                "copy": "Kopieren",
+                "paste": "Einfügen",
+                "undo": "Rückgängig"
+            }
+        },
+        "navigationAdvanced": {
+            "title": "Erweiterte Navigation",
+            "description": "Komplexe Navigationsmuster und Overlay-Komponenten",
+            "navigationMenu": {
+                "title": "Navigationsmenü",
+                "home": "Startseite",
+                "products": "Produkte",
+                "web": "Web-Entwicklung",
+                "webDesc": "Moderne Web-Lösungen",
+                "mobile": "Mobile Apps",
+                "mobileDesc": "Plattformübergreifende Entwicklung",
+                "about": "Über uns",
+                "contact": "Kontakt"
+            },
+            "pagination": {
+                "title": "Paginierung",
+                "showing": "Zeige {start}-{end} von {total} Einträgen"
+            },
+            "stepper": {
+                "title": "Fortschritts-Schritte",
+                "previous": "Zurück",
+                "next": "Weiter",
+                "step1": "Persönliche Daten",
+                "step1Desc": "Geben Sie Ihre Details ein",
+                "step2": "Einstellungen",
+                "step2Desc": "Setzen Sie Ihre Präferenzen",
+                "step3": "Abschließen",
+                "step3Desc": "Überprüfen und fertigstellen"
+            },
+            "link": {
+                "title": "Link-Navigation",
+                "home": "Startseite",
+                "about": "Über uns",
+                "contact": "Kontakt",
+                "active": "Aktiv",
+                "external": "GitHub Repository"
+            },
+            "overlays": {
+                "title": "Overlay-Komponenten",
+                "openModal": "Modal öffnen",
+                "openSlideover": "Slideover öffnen",
+                "openPopover": "Popover anzeigen"
+            },
+            "modal": {
+                "title": "Modal Dialog",
+                "content": "Dies ist ein Modal Dialog mit benutzerdefiniertem Inhalt und Aktionen.",
+                "cancel": "Abbrechen",
+                "confirm": "Bestätigen"
+            },
+            "slideover": {
+                "title": "Slideover Panel",
+                "content": "Dies ist ein Slideover-Panel, das von der Seite hineinschiebt."
+            },
+            "popover": {
+                "title": "Popover Inhalt",
+                "content": "Dies ist ein einfaches Popover mit zusätzlichen Informationen.",
+                "close": "Schließen"
             }
         }
     },

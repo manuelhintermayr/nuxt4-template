@@ -87,6 +87,155 @@
             "group": "Avatar Group",
             "fallback": "Fallback Options"
         },
+        "formsAdvanced": {
+            "title": "Advanced Forms",
+            "description": "Complex form components with rich functionality",
+            "calendar": {
+                "title": "Calendar"
+            },
+            "checkboxGroup": {
+                "title": "Checkbox Group",
+                "darkMode": "Dark Mode",
+                "animations": "Animations",
+                "notifications": "Notifications"
+            },
+            "colorPicker": {
+                "title": "Color Picker"
+            },
+            "fileUpload": {
+                "title": "File Upload",
+                "label": "Drop your files here",
+                "description": "SVG, PNG, JPG or GIF (max. 2MB)"
+            },
+            "formField": {
+                "title": "Form Fields",
+                "emailLabel": "Email Address",
+                "emailDescription": "We'll never share your email with anyone else.",
+                "passwordLabel": "Password",
+                "passwordHelp": "Must be at least 8 characters long."
+            },
+            "checkbox": {
+                "title": "Checkboxes",
+                "terms": "I agree to the terms and conditions",
+                "newsletter": "Subscribe to newsletter",
+                "newsletterDescription": "Get the latest news and updates.",
+                "indeterminate": "Indeterminate state"
+            },
+            "radioGroup": {
+                "title": "Radio Group",
+                "themeLabel": "Choose Theme",
+                "light": "Light",
+                "dark": "Dark",
+                "auto": "Auto"
+            },
+            "switch": {
+                "title": "Switches",
+                "notifications": "Enable notifications",
+                "notificationsDescription": "Get notified about important updates.",
+                "marketing": "Marketing emails",
+                "marketingDescription": "Receive promotional content and offers."
+            },
+            "slider": {
+                "title": "Sliders",
+                "volume": "Volume Control",
+                "range": "Price Range"
+            },
+            "progress": {
+                "title": "Progress",
+                "description": "Interactive progress bars",
+                "upload": "Upload Progress",
+                "download": "Download Progress",
+                "processing": "Processing..."
+            }
+        },
+        "layout": {
+            "title": "Layout Components",
+            "description": "Structure and container components for better organization",
+            "card": {
+                "title": "Card Variants",
+                "default": "Default Card",
+                "defaultDescription": "This is a standard card with header, content and footer sections.",
+                "subtle": "Subtle Card",
+                "subtleDescription": "A card with subtle styling for less emphasis.",
+                "footer": "Card Footer",
+                "action": "Action",
+                "cancel": "Cancel",
+                "confirm": "Confirm"
+            },
+            "container": {
+                "title": "Container",
+                "responsive": "Responsive Container",
+                "content": "This content is centered and constrained within the container bounds."
+            },
+            "chip": {
+                "title": "Chip Indicators",
+                "withButton": "With Button",
+                "withAvatar": "With Avatar"
+            }
+        },
+        "dataDisplay": {
+            "title": "Data Display",
+            "description": "Components for displaying and organizing content",
+            "carousel": {
+                "title": "Carousel"
+            },
+            "collapsible": {
+                "title": "Collapsible Sections",
+                "firstToggle": "Toggle First Section",
+                "firstContent": "This is the content of the first collapsible section. You can put any content here.",
+                "secondToggle": "Toggle Second Section",
+                "secondContent": "This is the content of the second collapsible section with an action button.",
+                "action": "Action"
+            },
+            "contextMenu": {
+                "title": "Context Menu",
+                "rightClick": "Right click here",
+                "copy": "Copy",
+                "cut": "Cut",
+                "paste": "Paste",
+                "delete": "Delete"
+            },
+            "dropdownMenu": {
+                "title": "Dropdown Menu",
+                "trigger": "Open Menu",
+                "profile": "Profile",
+                "settings": "Settings",
+                "billing": "Billing",
+                "logout": "Logout"
+            },
+            "drawer": {
+                "title": "Drawer",
+                "bottom": "Bottom Drawer",
+                "right": "Right Drawer",
+                "contentTitle": "Drawer Content",
+                "contentText": "This is the content inside the drawer. You can put any components here.",
+                "sidebarTitle": "Navigation"
+            }
+        },
+        "utility": {
+            "title": "Utility Components",
+            "description": "Helpful tools and interactive elements",
+            "commandPalette": {
+                "title": "Command Palette",
+                "openButton": "Open Command Palette",
+                "placeholder": "Type a command or search...",
+                "groups": {
+                    "navigation": "Navigation",
+                    "actions": "Actions",
+                    "settings": "Settings"
+                },
+                "commands": {
+                    "home": "Go to Home",
+                    "about": "About Page",
+                    "contact": "Contact Us",
+                    "toggleTheme": "Toggle Theme",
+                    "copy": "Copy Current URL",
+                    "refresh": "Refresh Page",
+                    "language": "Change Language",
+                    "preferences": "Preferences"
+                }
+            }
+        },
         "navigation": {
             "title": "Navigation Elements",
             "description": "Badges, breadcrumbs, and button groups for interface navigation",
@@ -178,6 +327,102 @@
                 "strongDesc": "Medium distortion effect",
                 "extreme": "Extreme Skew",
                 "extremeDesc": "Maximum distortion effect"
+            }
+        },
+        "inputShowcase": {
+            "title": "Specialized Input Components",
+            "description": "Advanced input controls and data entry components",
+            "inputNumber": {
+                "title": "Number Input",
+                "basic": "Basic Number Input",
+                "stepped": "Stepped Input (0-100, step 5)"
+            },
+            "inputTags": {
+                "title": "Input Tags",
+                "skillsLabel": "Add your skills",
+                "placeholder": "Type and press Enter..."
+            },
+            "pinInput": {
+                "title": "PIN Input",
+                "otpLabel": "Enter OTP Code",
+                "maskedLabel": "Masked PIN"
+            },
+            "select": {
+                "title": "Select Components",
+                "basic": "Basic Select",
+                "multiple": "Multiple Selection"
+            },
+            "advancedInput": {
+                "title": "Advanced Input",
+                "search": "Search...",
+                "email": "Enter your email",
+                "password": "Enter password"
+            },
+            "kbd": {
+                "title": "Keyboard Shortcuts",
+                "save": "Save",
+                "copy": "Copy",
+                "paste": "Paste",
+                "undo": "Undo"
+            }
+        },
+        "navigationAdvanced": {
+            "title": "Advanced Navigation",
+            "description": "Complex navigation patterns and overlay components",
+            "navigationMenu": {
+                "title": "Navigation Menu",
+                "home": "Home",
+                "products": "Products",
+                "web": "Web Development",
+                "webDesc": "Modern web solutions",
+                "mobile": "Mobile Apps",
+                "mobileDesc": "Cross-platform development",
+                "about": "About",
+                "contact": "Contact"
+            },
+            "pagination": {
+                "title": "Pagination",
+                "showing": "Showing {start}-{end} of {total} entries"
+            },
+            "stepper": {
+                "title": "Progress Stepper",
+                "previous": "Previous",
+                "next": "Next",
+                "step1": "Personal Info",
+                "step1Desc": "Enter your details",
+                "step2": "Preferences",
+                "step2Desc": "Set your preferences",
+                "step3": "Complete",
+                "step3Desc": "Review and finish"
+            },
+            "link": {
+                "title": "Link Navigation",
+                "home": "Home Page",
+                "about": "About Us",
+                "contact": "Contact",
+                "active": "Active",
+                "external": "GitHub Repository"
+            },
+            "overlays": {
+                "title": "Overlay Components",
+                "openModal": "Open Modal",
+                "openSlideover": "Open Slideover",
+                "openPopover": "Show Popover"
+            },
+            "modal": {
+                "title": "Modal Dialog",
+                "content": "This is a modal dialog with custom content and actions.",
+                "cancel": "Cancel",
+                "confirm": "Confirm"
+            },
+            "slideover": {
+                "title": "Slideover Panel",
+                "content": "This is a slideover panel that slides in from the side."
+            },
+            "popover": {
+                "title": "Popover Content",
+                "content": "This is a simple popover with additional information.",
+                "close": "Close"
             }
         }
     },
