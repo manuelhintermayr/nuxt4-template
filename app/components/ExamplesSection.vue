@@ -6,6 +6,7 @@
 
         <ButtonExamples />
         <FormExamples />
+        <MouseFollowerExamples />
         <DemoAlert />
     </div>
 </template>

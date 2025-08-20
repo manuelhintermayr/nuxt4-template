@@ -5,6 +5,7 @@ import { gsap } from 'gsap'
 declare global {
     interface Window {
         $cursor?: MouseFollower
+        mouseFollower?: MouseFollower
     }
 }
 
@@ -28,6 +29,7 @@ export default defineNuxtPlugin(() => {
 
                 // Store globally
                 window.$cursor = cursor
+                window.mouseFollower = cursor
 
                 return cursor
             } catch (error) {

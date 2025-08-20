@@ -1,56 +1,121 @@
 {
-  "header": {
-    "title": "Nuxt 4 + UI Template"
-  },
-  "languageSwitcher": {
-    "placeholder": "Sprache"
-  },
-  "welcome": {
-    "title": "Willkommen zu Ihrem Nuxt 4 Projekt",
-    "subtitle": "Mit Nuxt UI für moderne und responsive Benutzeroberflächen"
-  },
-  "features": {
-    "nuxt4": {
-      "title": "Nuxt 4",
-      "description": "Die neueste Version von Nuxt mit verbesserter Performance und neuen Features."
+    "header": {
+        "title": "Nuxt 4 + UI Template"
     },
-    "nuxtUI": {
-      "title": "Nuxt UI",
-      "description": "Moderne UI-Komponenten basierend auf Tailwind CSS und Headless UI."
+    "languageSwitcher": {
+        "placeholder": "Sprache"
     },
-    "darkMode": {
-      "title": "Dark Mode",
-      "description": "Automatischer Dark Mode Support mit einfacher Umschaltung."
+    "welcome": {
+        "title": "Willkommen zu Ihrem Nuxt 4 Projekt",
+        "subtitle": "Mit Nuxt UI für moderne und responsive Benutzeroberflächen"
+    },
+    "features": {
+        "nuxt4": {
+            "title": "Nuxt 4",
+            "description": "Die neueste Version von Nuxt mit verbesserter Performance und neuen Features."
+        },
+        "nuxtUI": {
+            "title": "Nuxt UI",
+            "description": "Moderne UI-Komponenten basierend auf Tailwind CSS und Headless UI."
+        },
+        "mouseFollower": {
+            "title": "Mouse Follower",
+            "description": "Flüssige und professionelle Cursor-Effekte mit GSAP-Animationen."
+        },
+        "darkMode": {
+            "title": "Dark Mode",
+            "description": "Automatischer Dark Mode Support mit einfacher Umschaltung."
+        }
+    },
+    "examples": {
+        "title": "Beispiel-Komponenten",
+        "buttons": {
+            "title": "Buttons",
+            "default": "Standard",
+            "primary": "Primär",
+            "softNeutral": "Soft Neutral",
+            "outlineError": "Outline Fehler",
+            "ghost": "Ghost",
+            "link": "Link"
+        },
+        "forms": {
+            "title": "Formulare",
+            "namePlaceholder": "Ihr Name",
+            "messagePlaceholder": "Ihre Nachricht...",
+            "selectPlaceholder": "Wählen Sie eine Option",
+            "option1": "Option 1",
+            "option2": "Option 2",
+            "option3": "Option 3"
+        },
+        "alert": {
+            "title": "Info",
+            "description": "Dies ist eine Beispiel-Benachrichtigung mit Nuxt UI!"
+        },
+        "mouseFollower": {
+            "title": "Mouse Follower",
+            "interactive": "Interaktive Elemente",
+            "button": "Haupt-Button",
+            "softButton": "Soft Button",
+            "outlineButton": "Outline Button",
+            "projectCards": "Projekt-Karten",
+            "project1": {
+                "title": "Web-Anwendung",
+                "description": "Eine moderne Web-App mit flüssigen Animationen und Interaktionen."
+            },
+            "project2": {
+                "title": "UI-Komponenten",
+                "description": "Schöne UI-Komponenten mit benutzerdefinierten Cursor-Effekten."
+            },
+            "textEffects": "Text-Effekte",
+            "textDemo": {
+                "intro": "Dies ist normaler Text mit einem",
+                "hoverText": "speziellen Hover-Effekt",
+                "middle": "und dieser Text hat einen",
+                "stickyText": "klebrigen Cursor-Effekt",
+                "outro": "der Ihrer Maus folgt."
+            },
+            "specialStates": "Spezielle Cursor-Zustände",
+            "states": {
+                "inverse": "Inverser Cursor",
+                "hidden": "Versteckter Cursor",
+                "theme": "Theme-Element"
+            },
+            "mediaEffects": "Medien-Effekte (Bilder & Videos)",
+            "media": {
+                "image1": {
+                    "title": "Landschaftsfoto",
+                    "description": "Bewegen Sie die Maus, um ein schönes Landschaftsbild anzuzeigen"
+                },
+                "image2": {
+                    "title": "Portraitfoto",
+                    "description": "Bewegen Sie die Maus, um ein beeindruckendes Portraitfoto zu sehen"
+                },
+                "video": {
+                    "title": "Beispiel-Video",
+                    "description": "Bewegen Sie die Maus, um Big Buck Bunny Video anzuzeigen"
+                }
+            },
+            "stickyEffects": "Klebende Cursor-Effekte",
+            "sticky": {
+                "element1": "KLEBEN",
+                "element2": "ZIEL",
+                "hover": "Bewegen Sie die Maus hierher, um den Cursor am Ziel zu befestigen:",
+                "description": "Der Cursor wird magnetisch an Elementen mit Klebeffekt haften"
+            },
+            "skewingEffects": "Verzerrungs-Effekte",
+            "skewing": {
+                "light": "Leichte Verzerrung",
+                "lightDesc": "Subtiler Verzerrungseffekt",
+                "strong": "Starke Verzerrung",
+                "strongDesc": "Mittlerer Verzerrungseffekt",
+                "extreme": "Extreme Verzerrung",
+                "extremeDesc": "Maximaler Verzerrungseffekt"
+            }
+        }
+    },
+    "components": {
+        "darkModeToggle": {
+            "label": "Dark Mode umschalten"
+        }
     }
-  },
-  "examples": {
-    "title": "Beispiel-Komponenten",
-    "buttons": {
-      "title": "Buttons",
-      "default": "Standard",
-      "primary": "Primär",
-      "softNeutral": "Soft Neutral",
-      "outlineError": "Outline Fehler",
-      "ghost": "Ghost",
-      "link": "Link"
-    },
-    "forms": {
-      "title": "Formulare",
-      "namePlaceholder": "Ihr Name",
-      "messagePlaceholder": "Ihre Nachricht...",
-      "selectPlaceholder": "Wählen Sie eine Option",
-      "option1": "Option 1",
-      "option2": "Option 2",
-      "option3": "Option 3"
-    },
-    "alert": {
-      "title": "Info",
-      "description": "Dies ist eine Beispiel-Benachrichtigung mit Nuxt UI!"
-    }
-  },
-  "components": {
-    "darkModeToggle": {
-      "label": "Dark Mode umschalten"
-    }
-  }
 }

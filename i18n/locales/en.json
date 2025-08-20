@@ -1,56 +1,121 @@
 {
-  "header": {
-    "title": "Nuxt 4 + UI Template"
-  },
-  "languageSwitcher": {
-    "placeholder": "Language"
-  },
-  "welcome": {
-    "title": "Welcome to your Nuxt 4 Project",
-    "subtitle": "With Nuxt UI for modern and responsive user interfaces"
-  },
-  "features": {
-    "nuxt4": {
-      "title": "Nuxt 4",
-      "description": "The latest version of Nuxt with improved performance and new features."
+    "header": {
+        "title": "Nuxt 4 + UI Template"
     },
-    "nuxtUI": {
-      "title": "Nuxt UI",
-      "description": "Modern UI components based on Tailwind CSS and Headless UI."
+    "languageSwitcher": {
+        "placeholder": "Language"
     },
-    "darkMode": {
-      "title": "Dark Mode",
-      "description": "Automatic Dark Mode support with easy switching."
+    "welcome": {
+        "title": "Welcome to your Nuxt 4 Project",
+        "subtitle": "With Nuxt UI for modern and responsive user interfaces"
+    },
+    "features": {
+        "nuxt4": {
+            "title": "Nuxt 4",
+            "description": "The latest version of Nuxt with improved performance and new features."
+        },
+        "nuxtUI": {
+            "title": "Nuxt UI",
+            "description": "Modern UI components based on Tailwind CSS and Headless UI."
+        },
+        "mouseFollower": {
+            "title": "Mouse Follower",
+            "description": "Smooth and professional cursor effects with GSAP animations."
+        },
+        "darkMode": {
+            "title": "Dark Mode",
+            "description": "Automatic Dark Mode support with easy switching."
+        }
+    },
+    "examples": {
+        "title": "Example Components",
+        "buttons": {
+            "title": "Buttons",
+            "default": "Default",
+            "primary": "Primary",
+            "softNeutral": "Soft Neutral",
+            "outlineError": "Outline Error",
+            "ghost": "Ghost",
+            "link": "Link"
+        },
+        "forms": {
+            "title": "Forms",
+            "namePlaceholder": "Your Name",
+            "messagePlaceholder": "Your message...",
+            "selectPlaceholder": "Choose an option",
+            "option1": "Option 1",
+            "option2": "Option 2",
+            "option3": "Option 3"
+        },
+        "alert": {
+            "title": "Info",
+            "description": "This is an example notification with Nuxt UI!"
+        },
+        "mouseFollower": {
+            "title": "Mouse Follower",
+            "interactive": "Interactive Elements",
+            "button": "Primary Button",
+            "softButton": "Soft Button",
+            "outlineButton": "Outline Button",
+            "projectCards": "Project Cards",
+            "project1": {
+                "title": "Web Application",
+                "description": "A modern web app with smooth animations and interactions."
+            },
+            "project2": {
+                "title": "UI Components",
+                "description": "Beautiful UI components with custom cursor effects."
+            },
+            "textEffects": "Text Effects",
+            "textDemo": {
+                "intro": "This is regular text with a",
+                "hoverText": "special hover effect",
+                "middle": "and this text has a",
+                "stickyText": "sticky cursor effect",
+                "outro": "that follows your mouse."
+            },
+            "specialStates": "Special Cursor States",
+            "states": {
+                "inverse": "Inverse Cursor",
+                "hidden": "Hidden Cursor",
+                "theme": "Theme Element"
+            },
+            "mediaEffects": "Media Effects (Images & Videos)",
+            "media": {
+                "image1": {
+                    "title": "Landscape Photo",
+                    "description": "Hover to preview a beautiful landscape image"
+                },
+                "image2": {
+                    "title": "Portrait Photo",
+                    "description": "Hover to see a stunning portrait photo"
+                },
+                "video": {
+                    "title": "Sample Video",
+                    "description": "Hover to preview Big Buck Bunny video"
+                }
+            },
+            "stickyEffects": "Sticky Cursor Effects",
+            "sticky": {
+                "element1": "STICK",
+                "element2": "TARGET",
+                "hover": "Hover here to stick cursor to target:",
+                "description": "The cursor will magnetically stick to elements with sticky effect"
+            },
+            "skewingEffects": "Skewing Effects",
+            "skewing": {
+                "light": "Light Skew",
+                "lightDesc": "Subtle distortion effect",
+                "strong": "Strong Skew",
+                "strongDesc": "Medium distortion effect",
+                "extreme": "Extreme Skew",
+                "extremeDesc": "Maximum distortion effect"
+            }
+        }
+    },
+    "components": {
+        "darkModeToggle": {
+            "label": "Toggle Dark Mode"
+        }
     }
-  },
-  "examples": {
-    "title": "Example Components",
-    "buttons": {
-      "title": "Buttons",
-      "default": "Default",
-      "primary": "Primary",
-      "softNeutral": "Soft Neutral",
-      "outlineError": "Outline Error",
-      "ghost": "Ghost",
-      "link": "Link"
-    },
-    "forms": {
-      "title": "Forms",
-      "namePlaceholder": "Your Name",
-      "messagePlaceholder": "Your message...",
-      "selectPlaceholder": "Choose an option",
-      "option1": "Option 1",
-      "option2": "Option 2",
-      "option3": "Option 3"
-    },
-    "alert": {
-      "title": "Info",
-      "description": "This is an example notification with Nuxt UI!"
-    }
-  },
-  "components": {
-    "darkModeToggle": {
-      "label": "Toggle Dark Mode"
-    }
-  }
 }
