@@ -109,7 +109,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Sample Images -->
                 <div class="card-tilt p-6 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg text-center cursor-pointer border border-blue-200 dark:border-blue-800"
-                    data-cursor-img="https://picsum.photos/400/300?random=1">
+                    data-cursor-img="/media/sample.jpg">
                     <UIcon name="i-heroicons-photo" class="w-8 h-8 mx-auto mb-3 text-blue-500" />
                     <h6 class="font-semibold mb-2 text-gray-800 dark:text-gray-200">{{
                         $t('examples.mouseFollower.media.image1.title') }}</h6>
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="card-tilt p-6 bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg text-center cursor-pointer border border-green-200 dark:border-green-800"
-                    data-cursor-img="https://picsum.photos/400/300?random=2">
+                    data-cursor-img="/media/avatar_2.jpg">
                     <UIcon name="i-heroicons-camera" class="w-8 h-8 mx-auto mb-3 text-green-500" />
                     <h6 class="font-semibold mb-2 text-gray-800 dark:text-gray-200">{{
                         $t('examples.mouseFollower.media.image2.title') }}</h6>
@@ -130,7 +130,7 @@
 
                 <!-- Sample Video -->
                 <div class="card-tilt p-6 bg-gradient-to-br from-red-50 to-pink-100 dark:from-red-900/20 dark:to-pink-900/20 rounded-lg text-center cursor-pointer border border-red-200 dark:border-red-800"
-                    data-cursor-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+                    data-cursor-video="/media/sample.mp4">
                     <UIcon name="i-heroicons-play" class="w-8 h-8 mx-auto mb-3 text-red-500" />
                     <h6 class="font-semibold mb-2 text-gray-800 dark:text-gray-200">{{
                         $t('examples.mouseFollower.media.video.title') }}</h6>

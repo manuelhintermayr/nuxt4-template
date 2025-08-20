@@ -516,7 +516,7 @@
     },
     "loadingScreen": {
         "title": "Nuxt 4 Template",
-        "subtitle": "Lade deine Erfahrung...",
+        "subtitle": "Lade das Template...",
         "builtWith": "Erstellt mit",
         "texts": {
             "loading": "Lade Komponenten...",

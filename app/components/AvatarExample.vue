@@ -14,10 +14,10 @@
                     <h5 class="font-semibold">{{ t('examples.avatar.basic') }}</h5>
                 </template>
                 <div class="flex items-center space-x-4 p-4">
-                    <UAvatar src="https://github.com/benjamincanac.png" alt="Benjamin Canac" size="sm" />
-                    <UAvatar src="https://github.com/romhml.png" alt="Romain Hamel" size="md" />
-                    <UAvatar src="https://github.com/noook.png" alt="Neil Richter" size="lg" />
-                    <UAvatar src="https://github.com/nuxt.png" alt="Nuxt" size="xl" />
+                    <UAvatar src="/media/avatar_1.jpg" alt="AI Generated Sample Person 1" size="sm" />
+                    <UAvatar src="/media/avatar_2.jpg" alt="AI Generated Sample Person 2" size="md" />
+                    <UAvatar src="/media/avatar_3.jpg" alt="AI Generated Sample Person 3" size="lg" />
+                    <UAvatar src="/media/avatar_1.jpg" alt="AI Generated Sample Person" size="xl" />
                 </div>
             </UCard>
 
@@ -28,11 +28,11 @@
                 </template>
                 <div class="p-4">
                     <UAvatarGroup size="md" :max="3">
-                        <UAvatar src="https://github.com/benjamincanac.png" alt="Benjamin Canac" />
-                        <UAvatar src="https://github.com/romhml.png" alt="Romain Hamel" />
-                        <UAvatar src="https://github.com/noook.png" alt="Neil Richter" />
-                        <UAvatar src="https://github.com/nuxt.png" alt="Nuxt" />
-                        <UAvatar src="https://github.com/manuelhintermayr.png" alt="Manuel Hintermayr" />
+                        <UAvatar src="/media/avatar_1.jpg" alt="AI Generated Sample Person 1" />
+                        <UAvatar src="/media/avatar_2.jpg" alt="AI Generated Sample Person 2" />
+                        <UAvatar src="/media/avatar_3.jpg" alt="AI Generated Sample Person 3" />
+                        <UAvatar src="/media/avatar_1.jpg" alt="AI Generated Sample Person" />
+                        <UAvatar src="/media/avatar_2.jpg" alt="AI Generated Sample Person" />
                     </UAvatarGroup>
                 </div>
             </UCard>
