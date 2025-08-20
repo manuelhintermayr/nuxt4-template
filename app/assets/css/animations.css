@@ -1,0 +1,114 @@
+/* GSAP Animation Enhancements */
+
+/* Prevent flash of unstyled content during animations */
+.gsap-loading {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Smooth transform-origin for better animations */
+* {
+  transform-origin: center center;
+}
+
+/* Improved will-change for animated elements */
+[data-gsap] {
+  will-change: transform, opacity;
+}
+
+/* Section reveal animations */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Card hover state improvements */
+.feature-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Smooth hover transitions for interactive elements */
+.magnetic-element {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* Enhanced scroll reveal for sections */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  will-change: transform, opacity;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Stagger animation support */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .gsap-loading {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Enhanced focus states for animations */
+[data-magnetic]:focus-visible {
+  outline: 2px solid rgb(var(--color-primary-500));
+  outline-offset: 4px;
+}
+
+/* Subtle glow effects for interactive elements */
+.glow-on-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 
+    0 0 20px rgba(var(--color-primary-500), 0.15),
+    0 0 40px rgba(var(--color-primary-500), 0.1);
+}
+
+/* Button magnetic animations */
+button[data-cursor-pointer] {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+/* Section spacing for scroll animations */
+.animated-section {
+  padding: 2rem 0;
+}
+
+.animated-section + .animated-section {
+  margin-top: 2rem;
+}
+
+/* Smooth color transitions for theme changes */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

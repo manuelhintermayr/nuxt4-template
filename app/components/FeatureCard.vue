@@ -1,5 +1,5 @@
 <template>
-    <UCard>
+    <UCard class="feature-card glow-on-hover">
         <template #header>
             <div class="flex items-center">
                 <UIcon :name="icon" :class="`w-5 h-5 ${iconColor} mr-2`" />
@@ -18,7 +18,7 @@
           <button
             @click="toggleColorMode"
             data-cursor-pointer
-            class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900"
+            class="magnetic-element relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900"
             :class="colorMode.preference === 'dark' ? 'bg-primary-600' : 'bg-gray-200'"
             role="switch"
             :aria-checked="colorMode.preference === 'dark'"

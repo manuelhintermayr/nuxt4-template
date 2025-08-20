@@ -4,13 +4,16 @@
             <div class="flex justify-between items-center py-6">
                 <div class="flex items-center">
                     <UIcon name="i-heroicons-rocket-launch" class="w-8 h-8 text-primary-500 mr-3" />
-                    <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
+                    <h1 ref="brandTitle" class="text-3xl font-bold text-gray-900 dark:text-white cursor-pointer">
                         {{ $t('header.title') }}
                     </h1>
                 </div>
                 <div class="flex items-center space-x-4">
                     <LanguageSwitcher />
-                    <div data-cursor-pointer>
+                    <div 
+                        ref="darkModeButton"
+                        data-cursor-pointer
+                    >
                         <UButton
                             :icon="colorMode.preference === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
                             variant="ghost"
@@ -25,11 +28,33 @@
 </template>
 
 <script setup lang="ts">
-// Header component for the Nuxt 4 + UI template
+// Header component for the Nuxt 4 + UI template with GSAP magnetic effects
 
 const colorMode = useColorMode()
+const brandTitle = ref<HTMLElement>()
+const darkModeButton = ref<HTMLElement>()
 
 const toggleColorMode = () => {
     colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'
 }
+
+onMounted(() => {
+  const { $animationUtils } = useNuxtApp()
+  
+  if ($animationUtils && typeof $animationUtils === 'object') {
+    const utils = $animationUtils as any
+    
+    // Add magnetic effect to interactive elements
+    if ('addMagneticEffect' in utils) {
+      nextTick(() => {
+        if (brandTitle.value) {
+          utils.addMagneticEffect(brandTitle.value)
+        }
+        if (darkModeButton.value) {
+          utils.addMagneticEffect(darkModeButton.value)
+        }
+      })
+    }
+  }
+})
 </script>
