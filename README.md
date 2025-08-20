@@ -30,6 +30,7 @@ A modern, production-ready Nuxt 4 starter template with comprehensive configurat
 
 ### Animation & Effects
 - **[GSAP](https://greensock.com/gsap/)** - Professional-grade animation library
+- **[ScrollTrigger](https://greensock.com/scrolltrigger/)** - Scroll-based animation trigger
 - **[Mouse Follower](https://github.com/Cuberto/mouse-follower)** - Smooth mouse cursor effects
 
 ### Internationalization
@@ -87,7 +88,8 @@ nuxt4-template/
 │   ├── pages/
 │   │   └── index.vue           # Main landing page
 │   └── plugins/
-│       └── mouse-follower.client.ts # Mouse cursor effects initialization
+│       ├── mouse-follower.client.ts # Mouse cursor effects initialization
+│       └── gsap-animations.client.ts # GSAP animations and scroll effects
 ├── i18n/
 │   ├── i18n.config.ts         # i18n configuration
 │   └── locales/               # Translation files
@@ -147,6 +149,10 @@ The cursor automatically detects:
 - `a, button` elements → pointer cursor
 - Form inputs → text cursor
 - Custom data attributes → specific states
+
+## 🎭 GSAP Animations
+
+This template includes a comprehensive **GSAP (GreenSock Animation Platform)** integration with advanced scroll-based animations and interactive effects.
 
 ## 🌍 Internationalization
 
@@ -225,6 +231,8 @@ bun run preview
 - **[Nuxt UI Documentation](https://ui.nuxt.com/)** - UI component library
 - **[Vue 3 Documentation](https://vuejs.org/guide/)** - Vue.js framework guide
 - **[Tailwind CSS Documentation](https://tailwindcss.com/docs)** - Utility-first CSS
+- **[GSAP Documentation](https://greensock.com/docs/)** - Animation library guide
+- **[ScrollTrigger Documentation](https://greensock.com/docs/v3/Plugins/ScrollTrigger)** - Scroll animations
 - **[Nuxt i18n Documentation](https://i18n.nuxtjs.org/)** - Internationalization guide
 - **[TypeScript Documentation](https://www.typescriptlang.org/docs/)** - TypeScript handbook
 - **[Mouse Follower Documentation](https://github.com/Cuberto/mouse-follower/blob/dev/README.MD)** - Smooth cursor effects library
@@ -249,6 +257,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - **Tailwind Labs** for Tailwind CSS and Headless UI
 - **Heroicons** for the beautiful icon set
 - **Vue.js Team** for the progressive framework
+- **GreenSock** for the incredible [GSAP](https://greensock.com/) animation library
 - **Cuberto** for the incredible [Mouse Follower](https://github.com/Cuberto/mouse-follower) library
 
 ---

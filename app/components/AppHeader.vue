@@ -39,22 +39,16 @@ const toggleColorMode = () => {
 }
 
 onMounted(() => {
-  const { $animationUtils } = useNuxtApp()
+  const { utils } = useAnimations()
   
-  if ($animationUtils && typeof $animationUtils === 'object') {
-    const utils = $animationUtils as any
-    
-    // Add magnetic effect to interactive elements
-    if ('addMagneticEffect' in utils) {
-      nextTick(() => {
-        if (brandTitle.value) {
-          utils.addMagneticEffect(brandTitle.value)
-        }
-        if (darkModeButton.value) {
-          utils.addMagneticEffect(darkModeButton.value)
-        }
-      })
-    }
+  // Add magnetic effect to interactive elements
+  if (utils?.addMagneticEffect) {
+    nextTick(() => {
+      const elements = [brandTitle.value, darkModeButton.value].filter(Boolean)
+      if (elements.length > 0) {
+        utils.addMagneticEffect(elements)
+      }
+    })
   }
 })
 </script>

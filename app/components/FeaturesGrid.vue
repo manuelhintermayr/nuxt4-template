@@ -43,30 +43,11 @@ const gridContainer = ref<HTMLElement>()
 const featureCards = ref<HTMLElement[]>([])
 
 onMounted(() => {
-  if (gridContainer.value) {
-    const { $animationUtils } = useNuxtApp()
-    
-    if ($animationUtils && typeof $animationUtils === 'object') {
-      const utils = $animationUtils as any
-      
-      // Animate cards with stagger
-      if ('fadeInUp' in utils) {
-        utils.fadeInUp(featureCards.value, {
-          scrollTrigger: {
-            trigger: gridContainer.value,
-            start: 'top 80%'
-          },
-          stagger: 0.15
-        })
-      }
-
-      // Add interactive effects to cards
-      if ('addCardEffects' in utils) {
-        nextTick(() => {
-          utils.addCardEffects(featureCards.value)
-        })
-      }
-    }
-  }
+  if (!gridContainer.value) return
+  
+  const { animateCards } = useAnimations()
+  
+  // Animate feature cards with stagger and interactive effects
+  animateCards(featureCards, gridContainer)
 })
 </script>

@@ -22,46 +22,17 @@ const buttonTitle = ref<HTMLElement>()
 const buttonGrid = ref<HTMLElement>()
 
 onMounted(() => {
-  if (buttonSection.value && buttonTitle.value && buttonGrid.value) {
-    const { $animationUtils } = useNuxtApp()
-    
-    if ($animationUtils && typeof $animationUtils === 'object') {
-      const utils = $animationUtils as any
-      
-      // Remove loading class
-      buttonSection.value.classList.remove('gsap-loading')
-      
-      // Animate title
-      if ('fadeInUp' in utils) {
-        utils.fadeInUp(buttonTitle.value, {
-          scrollTrigger: {
-            trigger: buttonSection.value,
-            start: 'top 85%'
-          }
-        })
-      }
-
-      // Animate buttons with stagger
-      if ('scaleIn' in utils) {
-        const buttons = buttonGrid.value.querySelectorAll('button')
-        utils.scaleIn(Array.from(buttons), {
-          scrollTrigger: {
-            trigger: buttonGrid.value,
-            start: 'top 80%'
-          },
-          stagger: 0.1,
-          scale: 0.9
-        })
-      }
-
-      // Add magnetic effect to buttons
-      if ('addMagneticEffect' in utils) {
-        nextTick(() => {
-          const buttons = buttonGrid.value.querySelectorAll('button')
-          utils.addMagneticEffect(Array.from(buttons))
-        })
-      }
-    }
-  }
+  if (!buttonSection.value) return
+  
+  const { setupSection, animateTitle, animateButtons } = useAnimations()
+  
+  // Setup section with common patterns
+  setupSection(buttonSection)
+  
+  // Animate title
+  animateTitle(buttonTitle, buttonSection)
+  
+  // Animate buttons with magnetic effects
+  animateButtons('button', buttonGrid)
 })
 </script>

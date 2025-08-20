@@ -26,38 +26,22 @@ const selectOptions = computed(() => [
 ])
 
 onMounted(() => {
-  if (formSection.value && formTitle.value && formGrid.value) {
-    const { $animationUtils } = useNuxtApp()
-    
-    if ($animationUtils && typeof $animationUtils === 'object') {
-      const utils = $animationUtils as any
-      
-      // Remove loading class
-      formSection.value.classList.remove('gsap-loading')
-      
-      // Animate title
-      if ('fadeInUp' in utils) {
-        utils.fadeInUp(formTitle.value, {
-          scrollTrigger: {
-            trigger: formSection.value,
-            start: 'top 85%'
-          }
-        })
-      }
-
-      // Animate form fields with stagger
-      if ('fadeInUp' in utils) {
-        const formFields = formGrid.value.children
-        utils.fadeInUp(Array.from(formFields), {
-          scrollTrigger: {
-            trigger: formGrid.value,
-            start: 'top 80%'
-          },
-          stagger: 0.15,
-          y: 20
-        })
-      }
-    }
+  if (!formSection.value) return
+  
+  const { setupSection, animateTitle, animateStaggered } = useAnimations()
+  
+  // Setup section
+  setupSection(formSection)
+  
+  // Animate title
+  animateTitle(formTitle, formSection)
+  
+  // Animate form fields with stagger
+  if (formGrid.value?.children) {
+    animateStaggered(Array.from(formGrid.value.children), formGrid, {
+      y: 20,
+      stagger: 0.15
+    })
   }
 })
 </script>

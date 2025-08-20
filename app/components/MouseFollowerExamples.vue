@@ -261,64 +261,51 @@ const removeSkewing = () => {
 }
 
 onMounted(() => {
-  if (mouseSection.value && mouseTitle.value) {
-    const { $animationUtils } = useNuxtApp()
+  if (!mouseSection.value) return
+  
+  const { setupSection, animateTitle, utils } = useAnimations()
+  
+  // Setup section
+  setupSection(mouseSection)
+  
+  // Animate main title
+  animateTitle(mouseTitle, mouseSection)
+  
+  // Animate sections with cascading effect
+  const sections = [
+    interactiveSection.value,
+    cardsSection.value, 
+    textSection.value,
+    statesSection.value,
+    skewingSection.value
+  ].filter(Boolean)
+
+  sections.forEach((section, index) => {
+    if (!section || !utils) return
     
-    if ($animationUtils && typeof $animationUtils === 'object') {
-      const utils = $animationUtils as any
-      
-      // Remove loading class
-      mouseSection.value.classList.remove('gsap-loading')
-      
-      // Animate main title
-      if ('fadeInUp' in utils) {
-        utils.fadeInUp(mouseTitle.value, {
-          scrollTrigger: {
-            trigger: mouseSection.value,
-            start: 'top 85%'
-          }
-        })
-      }
-
-      // Animate sections with cascading effect
-      const sections = [
-        interactiveSection.value,
-        cardsSection.value, 
-        textSection.value,
-        statesSection.value,
-        skewingSection.value
-      ].filter(Boolean)
-
-      sections.forEach((section, index) => {
-        if (!section) return
-        
-        if ('scaleIn' in utils) {
-          utils.scaleIn(section, {
-            scrollTrigger: {
-              trigger: section,
-              start: 'top 80%'
-            },
-            delay: index * 0.1,
-            scale: 0.95
-          })
-        }
-
-        // Animate children with stagger
-        if ('fadeInUp' in utils) {
-          const children = section.children
-          if (children.length > 0) {
-            utils.fadeInUp(Array.from(children), {
-              scrollTrigger: {
-                trigger: section,
-                start: 'top 75%'
-              },
-              stagger: 0.1,
-              delay: index * 0.05
-            })
-          }
-        }
+    // Scale in animation for sections
+    if (utils.scaleIn) {
+      utils.scaleIn(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%'
+        },
+        delay: index * 0.1,
+        scale: 0.95
       })
     }
-  }
+
+    // Animate children with stagger
+    if (utils.fadeInUp && section.children.length > 0) {
+      utils.fadeInUp(Array.from(section.children), {
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 75%'
+        },
+        stagger: 0.1,
+        delay: index * 0.05
+      })
+    }
+  })
 })
 </script>

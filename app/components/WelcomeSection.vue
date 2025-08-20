@@ -15,12 +15,13 @@
 const heroContainer = ref<HTMLElement>()
 
 onMounted(() => {
-  if (heroContainer.value) {
-    const { $animationUtils } = useNuxtApp()
-    // Hero entrance animation
-    if ($animationUtils && typeof $animationUtils === 'object' && 'heroEntrance' in $animationUtils) {
-      ($animationUtils as any).heroEntrance(heroContainer.value)
-    }
+  if (!heroContainer.value) return
+  
+  const { utils } = useAnimations()
+  
+  // Hero entrance animation
+  if (utils?.heroEntrance) {
+    utils.heroEntrance(heroContainer.value)
   }
 })
 </script>

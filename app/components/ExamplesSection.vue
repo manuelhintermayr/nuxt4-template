@@ -21,25 +21,14 @@ const examplesTitle = ref<HTMLElement>()
 const exampleComponents = ref<HTMLElement>()
 
 onMounted(() => {
-  if (examplesContainer.value && examplesTitle.value && exampleComponents.value) {
-    const { $animationUtils } = useNuxtApp()
-    
-    if ($animationUtils && typeof $animationUtils === 'object') {
-      const utils = $animationUtils as any
-      
-      // Animate title
-      if ('fadeInUp' in utils) {
-        utils.fadeInUp(examplesTitle.value, {
-          scrollTrigger: {
-            trigger: examplesContainer.value,
-            start: 'top 85%'
-          }
-        })
-      }
-
-      // Each component will handle its own animations through ScrollTrigger
-      // This ensures they only animate when they come into view
-    }
-  }
+  if (!examplesContainer.value) return
+  
+  const { animateTitle } = useAnimations()
+  
+  // Animate title
+  animateTitle(examplesTitle, examplesContainer)
+  
+  // Each component will handle its own animations through ScrollTrigger
+  // This ensures they only animate when they come into view
 })
 </script>

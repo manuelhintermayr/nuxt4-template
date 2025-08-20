@@ -1,9 +1,27 @@
-/* GSAP Animation Enhancements */
+/* ============================================================================
+   GSAP Animation Enhancements
+   ============================================================================ */
+
+/* Animation CSS Custom Properties */
+:root {
+  --animation-duration-fast: 0.2s;
+  --animation-duration-normal: 0.3s;
+  --animation-duration-slow: 0.8s;
+  --animation-easing-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --animation-easing-bounce: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-translate-small: 20px;
+  --animation-translate-medium: 30px;
+  --animation-translate-large: 40px;
+}
+
+/* ============================================================================
+   Base Animation Setup
+   ============================================================================ */
 
 /* Prevent flash of unstyled content during animations */
 .gsap-loading {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(var(--animation-translate-small));
 }
 
 /* Smooth transform-origin for better animations */
@@ -16,60 +34,42 @@
   will-change: transform, opacity;
 }
 
-/* Section reveal animations */
-.section-reveal {
-  opacity: 0;
-  transform: translateY(30px);
-}
+/* ============================================================================
+   Interactive Element Styles
+   ============================================================================ */
 
-/* Card hover state improvements */
-.feature-card,
-.card,
-.card-tilt,
-[class*="card"],
-[class*="Card"],
-article {
+/* Unified card styles - applied dynamically by JavaScript */
+.tilt-enabled {
   transform-style: preserve-3d;
   will-change: transform;
-  transition: all 0.2s ease;
-}
-
-/* Enhanced card tilt support */
-.card,
-.card-tilt,
-[class*="card"],
-[class*="Card"] {
+  transition: all var(--animation-duration-fast) ease;
   backface-visibility: hidden;
   transform-origin: center center;
 }
 
 /* Smooth hover transitions for interactive elements */
 .magnetic-element {
-  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform var(--animation-duration-fast) var(--animation-easing-smooth);
   will-change: transform;
 }
 
 /* Enhanced scroll reveal for sections */
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(40px) scale(0.95);
+  transform: translateY(var(--animation-translate-large)) scale(0.95);
   will-change: transform, opacity;
 }
 
 .scroll-reveal.revealed {
   opacity: 1;
   transform: translateY(0) scale(1);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all var(--animation-duration-slow) var(--animation-easing-smooth);
 }
 
-/* Stagger animation support */
-.stagger-item {
-  opacity: 0;
-  transform: translateY(20px);
-  will-change: transform, opacity;
-}
+/* ============================================================================
+   Accessibility - Reduced Motion Support
+   ============================================================================ */
 
-/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -97,19 +97,13 @@ article {
 
 /* Subtle glow effects for interactive elements */
 .glow-on-hover {
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow var(--animation-duration-normal) ease;
 }
 
 .glow-on-hover:hover {
   box-shadow: 
     0 0 20px rgba(var(--color-primary-500), 0.15),
     0 0 40px rgba(var(--color-primary-500), 0.1);
-}
-
-/* Button magnetic animations */
-button[data-cursor-pointer] {
-  transition: transform 0.2s ease;
-  will-change: transform;
 }
 
 /* Section spacing for scroll animations */
@@ -124,6 +118,6 @@ button[data-cursor-pointer] {
 /* Smooth color transitions for theme changes */
 * {
   transition-property: background-color, border-color, color, fill, stroke;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--animation-duration-fast);
+  transition-timing-function: var(--animation-easing-bounce);
 }
