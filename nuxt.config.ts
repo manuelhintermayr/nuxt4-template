@@ -8,9 +8,16 @@ export default defineNuxtConfig({
   ],
   
   css: [
-    'mouse-follower/dist/mouse-follower.min.css'
+    'mouse-follower/dist/mouse-follower.min.css',
+    '~/assets/css/main.css'
   ],
   
+  components: [
+    {
+      path: '~/components'
+    }
+  ],
+
   i18n: {
     defaultLocale: 'en',
     strategy: 'no_prefix',
@@ -18,7 +25,6 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'de', name: 'Deutsch', file: 'de.json' }
     ],
-    langDir: 'i18n/locales/',
     debug: false
   },
 })
