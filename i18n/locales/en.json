@@ -126,14 +126,17 @@
                 "themeLabel": "Choose Theme",
                 "light": "Light",
                 "dark": "Dark",
-                "auto": "Auto"
+                "auto": "Auto",
+                "system": "System"
             },
             "switch": {
                 "title": "Switches",
                 "notifications": "Enable notifications",
                 "notificationsDescription": "Get notified about important updates.",
                 "marketing": "Marketing emails",
-                "marketingDescription": "Receive promotional content and offers."
+                "marketingDescription": "Receive promotional content and offers.",
+                "autoSave": "Auto-save changes",
+                "autoSaveDesc": "Automatically save your changes as you work."
             },
             "slider": {
                 "title": "Sliders",
@@ -145,7 +148,8 @@
                 "description": "Interactive progress bars",
                 "upload": "Upload Progress",
                 "download": "Download Progress",
-                "processing": "Processing..."
+                "processing": "Processing...",
+                "indeterminate": "Indeterminate Progress"
             }
         },
         "layout": {
@@ -356,7 +360,8 @@
             "inputNumber": {
                 "title": "Number Input",
                 "basic": "Basic Number Input",
-                "stepped": "Stepped Input (0-100, step 5)"
+                "stepped": "Stepped Input (0-100, step 5)",
+                "step": "Step Input (step 10)"
             },
             "inputTags": {
                 "title": "Input Tags",
@@ -366,12 +371,15 @@
             "pinInput": {
                 "title": "PIN Input",
                 "otpLabel": "Enter OTP Code",
-                "maskedLabel": "Masked PIN"
+                "maskedLabel": "Masked PIN",
+                "otp": "OTP Code",
+                "password": "PIN Password"
             },
             "select": {
                 "title": "Select Components",
                 "basic": "Basic Select",
-                "multiple": "Multiple Selection"
+                "multiple": "Multiple Selection",
+                "multiplePlaceholder": "Choose multiple options..."
             },
             "advancedInput": {
                 "title": "Advanced Input",

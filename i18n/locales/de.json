@@ -130,14 +130,17 @@
                 "themeLabel": "Theme wählen",
                 "light": "Hell",
                 "dark": "Dunkel",
-                "auto": "Auto"
+                "auto": "Auto",
+                "system": "System"
             },
             "switch": {
                 "title": "Schalter",
                 "notifications": "Benachrichtigungen aktivieren",
                 "notificationsDescription": "Benachrichtigungen über wichtige Updates erhalten.",
                 "marketing": "Marketing-E-Mails",
-                "marketingDescription": "Werbeinhalte und Angebote erhalten."
+                "marketingDescription": "Werbeinhalte und Angebote erhalten.",
+                "autoSave": "Änderungen automatisch speichern",
+                "autoSaveDesc": "Speichert Ihre Änderungen automatisch während der Arbeit."
             },
             "slider": {
                 "title": "Schieberegler",
@@ -149,7 +152,8 @@
                 "description": "Interaktive Fortschrittsbalken",
                 "upload": "Upload-Fortschritt",
                 "download": "Download-Fortschritt",
-                "processing": "Verarbeitung..."
+                "processing": "Verarbeitung...",
+                "indeterminate": "Unbestimmter Fortschritt"
             }
         },
         "layout": {
@@ -356,7 +360,8 @@
             "inputNumber": {
                 "title": "Zahleneingabe",
                 "basic": "Basis Zahleneingabe",
-                "stepped": "Gestufte Eingabe (0-100, Schritt 5)"
+                "stepped": "Gestufte Eingabe (0-100, Schritt 5)",
+                "step": "Schritt-Eingabe (Schritt 10)"
             },
             "inputTags": {
                 "title": "Eingabe Tags",
@@ -366,12 +371,15 @@
             "pinInput": {
                 "title": "PIN-Eingabe",
                 "otpLabel": "OTP-Code eingeben",
-                "maskedLabel": "Maskierte PIN"
+                "maskedLabel": "Maskierte PIN",
+                "otp": "OTP-Code",
+                "password": "PIN-Passwort"
             },
             "select": {
                 "title": "Auswahl-Komponenten",
                 "basic": "Basis Auswahl",
-                "multiple": "Mehrfachauswahl"
+                "multiple": "Mehrfachauswahl",
+                "multiplePlaceholder": "Wählen Sie mehrere Optionen..."
             },
             "advancedInput": {
                 "title": "Erweiterte Eingabe",
