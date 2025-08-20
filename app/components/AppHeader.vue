@@ -10,7 +10,9 @@
         </div>
         <div class="flex items-center space-x-4">
           <LanguageSwitcher />
-          <UColorModeToggle />
+          <div data-cursor-pointer>
+            <UColorModeToggle />
+          </div>
         </div>
       </div>
     </div>

@@ -15,6 +15,7 @@ A modern, production-ready Nuxt 4 starter template with comprehensive configurat
 - 🔧 **TypeScript** - Full TypeScript support with type safety
 - 🎯 **Component Architecture** - Modular, reusable Vue components
 - 🎭 **Heroicons** - Beautiful SVG icons from the Heroicons library
+- 🐭 **Mouse Follower** - Smooth mouse cursor effects with GSAP animations
 - 🏗️ **Developer Experience** - Hot module replacement and fast refresh
 
 ## 🛠️ Technology Stack
@@ -28,6 +29,10 @@ A modern, production-ready Nuxt 4 starter template with comprehensive configurat
 - **[Nuxt UI](https://ui.nuxt.com/)** - Fully styled and customizable components
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[Headless UI](https://headlessui.dev/)** - Unstyled, accessible UI components
+
+### Animation & Effects
+- **[GSAP](https://greensock.com/gsap/)** - Professional-grade animation library
+- **[Mouse Follower](https://github.com/Cuberto/mouse-follower)** - Smooth mouse cursor effects
 
 ### Internationalization
 - **[@nuxtjs/i18n](https://i18n.nuxtjs.org/)** - Internationalization module
@@ -85,8 +90,10 @@ nuxt4-template/
 │   │   ├── DemoAlert.vue       # Alert component example
 │   │   ├── ExamplesSection.vue # Container for all examples
 │   │   └── LanguageSwitcher.vue # Language selection dropdown
-│   └── pages/
-│       └── index.vue           # Main landing page
+│   ├── pages/
+│   │   └── index.vue           # Main landing page
+│   └── plugins/
+│       └── mouse-follower.client.ts # Mouse cursor effects initialization
 ├── i18n/
 │   ├── i18n.config.ts         # i18n configuration
 │   └── locales/               # Translation files
@@ -123,6 +130,38 @@ All UI elements are extracted into reusable components following Vue.js best pra
 - `FormExamples` - Form components including inputs, textarea, and select
 - `DemoAlert` - Alert component with icon and message
 - `LanguageSwitcher` - Dropdown for language selection
+
+## 🐭 Mouse Follower Integration
+
+This template includes **Mouse Follower** by Cuberto, providing smooth and professional cursor effects.
+
+### Features:
+- **Pointer Detection** - Automatic cursor changes on interactive elements (buttons, links)
+- **State Detection** - Custom cursor states for different element types
+- **GSAP Integration** - Smooth animations powered by GreenSock
+- **Performance Optimized** - Efficient animation loops and event handling
+
+### Usage:
+Add data attributes to elements for custom cursor behavior:
+
+```html
+<!-- Pointer cursor -->
+<button data-cursor-pointer>Click me</button>
+
+<!-- Text cursor -->
+<p data-cursor-text>Selectable text</p>
+
+<!-- Hidden cursor -->
+<div data-cursor="-hidden">No cursor here</div>
+
+<!-- Inverse cursor -->
+<div data-cursor="-inverse">Inverted cursor</div>
+```
+
+The cursor automatically detects:
+- `a, button` elements → pointer cursor
+- Form inputs → text cursor
+- Custom data attributes → specific states
 
 ## 🌍 Internationalization
 
