@@ -37,7 +37,7 @@
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{ $t('examples.mouseFollower.projectCards') }}</h5>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <UCard 
-                    class="cursor-pointer transition-transform hover:scale-105"
+                    class="card-tilt cursor-pointer"
                     data-cursor-text="View Details"
                 >
                     <template #header>
@@ -52,7 +52,7 @@
                 </UCard>
 
                 <UCard 
-                    class="cursor-pointer transition-transform hover:scale-105"
+                    class="card-tilt cursor-pointer"
                     data-cursor-text="Explore Project"
                 >
                     <template #header>
@@ -101,7 +101,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div 
                     data-cursor="-inverse" 
-                    class="p-4 bg-gray-900 text-white rounded-lg text-center cursor-pointer"
+                    class="card-tilt p-4 bg-gray-900 text-white rounded-lg text-center cursor-pointer"
                 >
                     <UIcon name="i-heroicons-moon" class="w-6 h-6 mx-auto mb-2" />
                     <p class="text-sm">{{ $t('examples.mouseFollower.states.inverse') }}</p>
@@ -109,14 +109,14 @@
                 
                 <div 
                     data-cursor="-hidden" 
-                    class="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-center cursor-pointer"
+                    class="card-tilt p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-center cursor-pointer"
                 >
                     <UIcon name="i-heroicons-eye-slash" class="w-6 h-6 mx-auto mb-2 text-red-500" />
                     <p class="text-sm text-red-700 dark:text-red-400">{{ $t('examples.mouseFollower.states.hidden') }}</p>
                 </div>
 
                 <div 
-                    class="theme p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-center cursor-pointer"
+                    class="card-tilt theme p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-center cursor-pointer"
                     data-cursor-text="Theme Element"
                 >
                     <UIcon name="i-heroicons-paint-brush" class="w-6 h-6 mx-auto mb-2" />
@@ -131,7 +131,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Sample Images -->
                 <div 
-                    class="p-6 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg text-center cursor-pointer border border-blue-200 dark:border-blue-800 transition-transform hover:scale-105"
+                    class="card-tilt p-6 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg text-center cursor-pointer border border-blue-200 dark:border-blue-800"
                     data-cursor-img="https://picsum.photos/400/300?random=1"
                 >
                     <UIcon name="i-heroicons-photo" class="w-8 h-8 mx-auto mb-3 text-blue-500" />
@@ -140,7 +140,7 @@
                 </div>
 
                 <div 
-                    class="p-6 bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg text-center cursor-pointer border border-green-200 dark:border-green-800 transition-transform hover:scale-105"
+                    class="card-tilt p-6 bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg text-center cursor-pointer border border-green-200 dark:border-green-800"
                     data-cursor-img="https://picsum.photos/400/300?random=2"
                 >
                     <UIcon name="i-heroicons-camera" class="w-8 h-8 mx-auto mb-3 text-green-500" />
@@ -150,7 +150,7 @@
 
                 <!-- Sample Video -->
                 <div 
-                    class="p-6 bg-gradient-to-br from-red-50 to-pink-100 dark:from-red-900/20 dark:to-pink-900/20 rounded-lg text-center cursor-pointer border border-red-200 dark:border-red-800 transition-transform hover:scale-105"
+                    class="card-tilt p-6 bg-gradient-to-br from-red-50 to-pink-100 dark:from-red-900/20 dark:to-pink-900/20 rounded-lg text-center cursor-pointer border border-red-200 dark:border-red-800"
                     data-cursor-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 >
                     <UIcon name="i-heroicons-play" class="w-8 h-8 mx-auto mb-3 text-red-500" />
@@ -167,14 +167,14 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div 
                         data-cursor-stick 
-                        class="sticky-demo bg-primary-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold cursor-pointer shadow-lg transition-transform hover:scale-110 mx-auto"
+                        class="card-tilt sticky-demo bg-primary-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold cursor-pointer shadow-lg mx-auto"
                     >
                         <span class="text-sm">{{ $t('examples.mouseFollower.sticky.element1') }}</span>
                     </div>
                     
                     <div 
                         data-cursor-stick="#stick-target" 
-                        class="text-center cursor-pointer p-4 rounded-lg bg-white dark:bg-gray-700 shadow-md transition-transform hover:scale-105"
+                        class="card-tilt text-center cursor-pointer p-4 rounded-lg bg-white dark:bg-gray-700 shadow-md"
                     >
                         <p class="text-gray-700 dark:text-gray-300 mb-3">{{ $t('examples.mouseFollower.sticky.hover') }}</p>
                         <div 
@@ -197,7 +197,7 @@
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{ $t('examples.mouseFollower.skewingEffects') }}</h5>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <UCard 
-                    class="cursor-pointer text-center transition-transform hover:scale-105"
+                    class="card-tilt cursor-pointer text-center"
                     @mouseenter="setSkewing(2)"
                     @mouseleave="removeSkewing()"
                 >
@@ -209,7 +209,7 @@
                 </UCard>
 
                 <UCard 
-                    class="cursor-pointer text-center transition-transform hover:scale-105"
+                    class="card-tilt cursor-pointer text-center"
                     @mouseenter="setSkewing(5)"
                     @mouseleave="removeSkewing()"
                 >
@@ -221,7 +221,7 @@
                 </UCard>
 
                 <UCard 
-                    class="cursor-pointer text-center transition-transform hover:scale-105"
+                    class="card-tilt cursor-pointer text-center"
                     @mouseenter="setSkewing(10)"
                     @mouseleave="removeSkewing()"
                 >

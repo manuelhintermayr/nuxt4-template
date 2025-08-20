@@ -23,9 +23,24 @@
 }
 
 /* Card hover state improvements */
-.feature-card {
+.feature-card,
+.card,
+.card-tilt,
+[class*="card"],
+[class*="Card"],
+article {
   transform-style: preserve-3d;
   will-change: transform;
+  transition: all 0.2s ease;
+}
+
+/* Enhanced card tilt support */
+.card,
+.card-tilt,
+[class*="card"],
+[class*="Card"] {
+  backface-visibility: hidden;
+  transform-origin: center center;
 }
 
 /* Smooth hover transitions for interactive elements */

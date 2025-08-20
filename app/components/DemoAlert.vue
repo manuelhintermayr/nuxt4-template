@@ -2,6 +2,7 @@
     <div ref="alertContainer" class="gsap-loading">
         <UAlert 
             ref="alertElement"
+            class="card-tilt"
             icon="i-heroicons-information-circle" 
             :description="$t('examples.alert.description')"
             :title="$t('examples.alert.title')" 

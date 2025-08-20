@@ -88,7 +88,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         cardElements.forEach((card: Element) => {
           const cardEl = card as HTMLElement
           
-          // Tilt effect
+          // Tilt effect - exactly like Alba Emoting
           cardEl.addEventListener('mousemove', (e: MouseEvent) => {
             const rect = cardEl.getBoundingClientRect()
             const rotateX = ((e.clientY - rect.top) / rect.height - 0.5) * -6
@@ -99,8 +99,7 @@ export default defineNuxtPlugin((nuxtApp) => {
               rotateY,
               transformPerspective: 600,
               transformOrigin: 'center',
-              duration: 0.15,
-              ease: 'power2.out'
+              duration: 0.15
             })
           })
 
@@ -113,11 +112,10 @@ export default defineNuxtPlugin((nuxtApp) => {
             })
           })
 
-          // Hover lift
+          // Subtle hover lift
           cardEl.addEventListener('mouseenter', () => {
             gsap.to(cardEl, {
-              y: -5,
-              scale: 1.02,
+              y: -3,
               duration: 0.3,
               ease: 'power2.out'
             })
@@ -126,12 +124,80 @@ export default defineNuxtPlugin((nuxtApp) => {
           cardEl.addEventListener('mouseleave', () => {
             gsap.to(cardEl, {
               y: 0,
-              scale: 1,
               duration: 0.4,
               ease: 'power2.out'
             })
           })
         })
+      },
+
+      // Auto-detect and add tilt effects to all cards on the page
+      addTiltToAllCards: () => {
+        if (prefersReducedMotion) return
+
+        // Wait for DOM to be ready
+        const addTiltEffects = () => {
+          // Find all card-like elements
+          const selectors = [
+            '.card-tilt',
+            '.card',
+            '[class*="card"]',
+            '[class*="Card"]',
+            'article',
+            '.feature-card',
+            '.glow-on-hover'
+          ]
+
+          const allCards = new Set<Element>()
+          
+          selectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(el => allCards.add(el))
+          })
+
+          console.log(`Found ${allCards.size} cards for tilt effects`)
+
+          allCards.forEach((card: Element) => {
+            const cardEl = card as HTMLElement
+            
+            // Skip if already processed
+            if (cardEl.dataset.tiltAdded) return
+            cardEl.dataset.tiltAdded = 'true'
+            
+            console.log('Adding tilt to:', cardEl.className)
+            
+            // Tilt effect - exactly like Alba Emoting
+            cardEl.addEventListener('mousemove', (e: MouseEvent) => {
+              const rect = cardEl.getBoundingClientRect()
+              const rotateX = ((e.clientY - rect.top) / rect.height - 0.5) * -6
+              const rotateY = ((e.clientX - rect.left) / rect.width - 0.5) * 6
+              
+              gsap.to(cardEl, {
+                rotateX,
+                rotateY,
+                transformPerspective: 600,
+                transformOrigin: 'center',
+                duration: 0.15
+              })
+            })
+
+            cardEl.addEventListener('mouseleave', () => {
+              gsap.to(cardEl, {
+                rotateX: 0,
+                rotateY: 0,
+                duration: 0.4,
+                ease: 'power3.out'
+              })
+            })
+          })
+        }
+
+        // Run immediately and on DOM changes
+        addTiltEffects()
+        
+        // Also run after a short delay to catch dynamically added elements
+        setTimeout(addTiltEffects, 500)
+        setTimeout(addTiltEffects, 1500)
+        setTimeout(addTiltEffects, 3000)
       },
 
       // Magnetic effect for buttons
