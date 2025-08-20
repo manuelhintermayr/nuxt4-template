@@ -299,11 +299,6 @@
     animation: rainbow 2s ease-in-out infinite alternate !important;
 }
 
-:global(.mf-cursor.-demo:before) {
-    background: #10b981 !important;
-    transform: rotate(45deg) !important;
-}
-
 /* Rainbow animation for custom state */
 @keyframes rainbow {
     0% {
@@ -313,16 +308,6 @@
     100% {
         filter: hue-rotate(360deg);
     }
-}
-
-/* Enhanced sticky demo styles */
-.sticky-demo {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sticky-demo:hover {
-    transform: scale(1.1);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 </style>
