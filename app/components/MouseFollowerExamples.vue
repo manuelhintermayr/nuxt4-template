@@ -3,23 +3,6 @@
         <h4 ref="mouseTitle" class="text-lg font-semibold text-gray-900 dark:text-white">{{
             $t('examples.mouseFollower.title') }}</h4>
 
-        <!-- Interactive Elements Section -->
-        <div ref="interactiveSection" class="space-y-4">
-            <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{ $t('examples.mouseFollower.interactive')
-                }}</h5>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <UButton color="primary" data-cursor-text="Click me!" class="w-full">
-                    {{ $t('examples.mouseFollower.button') }}
-                </UButton>
-                <UButton color="gray" variant="soft" data-cursor-text="Explore" class="w-full">
-                    {{ $t('examples.mouseFollower.softButton') }}
-                </UButton>
-                <UButton color="green" variant="outline" data-cursor-text="Learn more" class="w-full">
-                    {{ $t('examples.mouseFollower.outlineButton') }}
-                </UButton>
-            </div>
-        </div>
-
         <!-- Project Cards Section -->
         <div ref="cardsSection" class="space-y-4">
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{
@@ -79,9 +62,9 @@
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{
                 $t('examples.mouseFollower.specialStates') }}
             </h5>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 dark:md:grid-cols-2 gap-4">
                 <div data-cursor="-inverse"
-                    class="card-tilt p-4 bg-gray-900 text-white rounded-lg text-center cursor-pointer">
+                    class="card-tilt p-4 bg-gray-900 text-white rounded-lg text-center cursor-pointer dark:hidden">
                     <UIcon name="i-heroicons-moon" class="w-6 h-6 mx-auto mb-2" />
                     <p class="text-sm">{{ $t('examples.mouseFollower.states.inverse') }}</p>
                 </div>
@@ -93,9 +76,9 @@
                     </p>
                 </div>
 
-                <div class="card-tilt theme p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-center cursor-pointer"
-                    data-cursor-text="Theme Element">
-                    <UIcon name="i-heroicons-paint-brush" class="w-6 h-6 mx-auto mb-2" />
+                <div class="card-tilt theme theme-element p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-center cursor-pointer"
+                    data-cursor="-theme" data-cursor-text="Theme Element">
+                    <UIcon name="i-heroicons-paint-brush" class="w-6 h-6 mx-auto mb-2 theme-icon" />
                     <p class="text-sm">{{ $t('examples.mouseFollower.states.theme') }}</p>
                 </div>
             </div>
@@ -158,7 +141,7 @@
                         <p class="text-gray-700 dark:text-gray-300 mb-3">{{ $t('examples.mouseFollower.sticky.hover') }}
                         </p>
                         <div id="stick-target"
-                            class="bg-yellow-400 text-yellow-900 rounded-full w-12 h-12 flex items-center justify-center font-bold mx-auto shadow-md">
+                            class="bg-yellow-400 text-yellow-900 rounded-full w-20 h-20 flex items-center justify-center font-bold mx-auto shadow-md text-sm">
                             {{ $t('examples.mouseFollower.sticky.element2') }}
                         </div>
                     </div>
@@ -176,8 +159,10 @@
                 $t('examples.mouseFollower.skewingEffects') }}
             </h5>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(2)"
-                    @mouseleave="removeSkewing()">
+                <UCard class="card-tilt cursor-pointer text-center" 
+                    @mouseenter="setSkewing(5)" 
+                    @mouseleave="removeSkewing()"
+                    data-cursor-text="Light Skewing">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-right-left" class="w-8 h-8 mx-auto mb-3 text-orange-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.light') }}</h6>
@@ -187,8 +172,10 @@
                     </div>
                 </UCard>
 
-                <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(5)"
-                    @mouseleave="removeSkewing()">
+                <UCard class="card-tilt cursor-pointer text-center" 
+                    @mouseenter="setSkewing(50)" 
+                    @mouseleave="removeSkewing()"
+                    data-cursor-text="Strong Skewing">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-up-down" class="w-8 h-8 mx-auto mb-3 text-purple-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.strong') }}</h6>
@@ -198,8 +185,10 @@
                     </div>
                 </UCard>
 
-                <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(10)"
-                    @mouseleave="removeSkewing()">
+                <UCard class="card-tilt cursor-pointer text-center" 
+                    @mouseenter="setSkewing(100)" 
+                    @mouseleave="removeSkewing()"
+                    data-cursor-text="Extreme Skewing">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-pointing-out" class="w-8 h-8 mx-auto mb-3 text-red-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.extreme') }}</h6>
@@ -212,6 +201,23 @@
         </div>
     </div>
 </template>
+
+<style scoped>
+/* Theme Element Hover Styles */
+.theme-element {
+    transition: all 0.3s ease;
+}
+
+/* Mouse Follower Theme State Styles - Global styles */
+:global(.mf-cursor.-theme:before) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+:global(.mf-cursor.-theme .mf-cursor-text) {
+    color: #fbbf24 !important;
+    font-weight: 600 !important;
+}
+</style>
 
 <script setup lang="ts">
 // Mouse Follower examples demonstrating various cursor states and interactions with GSAP animations
@@ -226,14 +232,29 @@ const skewingSection = ref<HTMLElement>()
 
 // Access MouseFollower instance from the global window object (set by the plugin)
 const setSkewing = (factor: number) => {
-    if (typeof window !== 'undefined' && (window as any).mouseFollower) {
-        (window as any).mouseFollower.setSkewing(factor)
+    if (typeof window !== 'undefined') {
+        const cursor = (window as any).mouseFollower || (window as any).$cursor
+        if (cursor) {
+            cursor.skewing = factor
+            // Make skewing much more visible
+            cursor.options.skewingDelta = 0.01  // Increase sensitivity (default: 0.001)
+            cursor.options.skewingDeltaMax = 1.0  // Increase max effect (default: 0.15)
+            // Force a render to apply changes
+            cursor.render(true)
+        }
     }
 }
 
 const removeSkewing = () => {
-    if (typeof window !== 'undefined' && (window as any).mouseFollower) {
-        (window as any).mouseFollower.removeSkewing()
+    if (typeof window !== 'undefined') {
+        const cursor = (window as any).mouseFollower || (window as any).$cursor
+        if (cursor) {
+            cursor.skewing = 0
+            // Reset to normal values
+            cursor.options.skewingDelta = 0.001
+            cursor.options.skewingDeltaMax = 0.15
+            cursor.render(true)
+        }
     }
 }
 

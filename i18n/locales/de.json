@@ -295,10 +295,6 @@
         },
         "mouseFollower": {
             "title": "Mouse Follower",
-            "interactive": "Interaktive Elemente",
-            "button": "Haupt-Button",
-            "softButton": "Soft Button",
-            "outlineButton": "Outline Button",
             "projectCards": "Projekt-Karten",
             "project1": {
                 "title": "Web-Anwendung",

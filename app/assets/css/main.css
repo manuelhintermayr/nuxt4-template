@@ -19,3 +19,17 @@
 
   --color-lila: #8b5cf6;
 }
+
+/* Cursor Styles */
+.mf-cursor-text {
+  color: theme('colors.gray.100');
+}
+
+.dark .mf-cursor-text {
+  color: theme('colors.gray.900');
+}
+
+.mf-cursor:before {
+    width: 49px;
+    height: 49px;
+}
