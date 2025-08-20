@@ -6,7 +6,7 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.utility.description') }}
         </p>
-        
+
         <div class="grid grid-cols-1 gap-6">
             <!-- Command Palette Alternative -->
             <UCard class="card-tilt">
@@ -17,14 +17,8 @@
                     </div>
                 </template>
                 <div class="p-4">
-                    <UButton 
-                        :label="t('examples.utility.commandPalette.openButton')"
-                        color="neutral" 
-                        variant="outline" 
-                        icon="i-lucide-search"
-                        block
-                        @click="isCommandPaletteOpen = true"
-                    />
+                    <UButton :label="t('examples.utility.commandPalette.openButton')" color="neutral" variant="outline"
+                        icon="i-lucide-search" block @click="isCommandPaletteOpen = true" />
                 </div>
             </UCard>
 
@@ -32,23 +26,16 @@
             <UModal v-model="isCommandPaletteOpen">
                 <div class="p-6">
                     <h3 class="text-lg font-semibold mb-4">{{ t('examples.utility.commandPalette.title') }}</h3>
-                    <UInput 
-                        :placeholder="t('examples.utility.commandPalette.placeholder')"
-                        icon="i-lucide-search"
-                        v-model="commandSearch"
-                        class="mb-4"
-                    />
-                    
+                    <UInput :placeholder="t('examples.utility.commandPalette.placeholder')" icon="i-lucide-search"
+                        v-model="commandSearch" class="mb-4" />
+
                     <div class="space-y-4">
                         <div v-for="group in filteredCommandGroups" :key="group.id" class="space-y-2">
                             <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ group.label }}</h4>
                             <div class="space-y-1">
-                                <div 
-                                    v-for="item in group.items" 
-                                    :key="item.label"
+                                <div v-for="item in group.items" :key="item.label"
                                     class="flex items-center justify-between p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer"
-                                    @click="handleCommand(item)"
-                                >
+                                    @click="handleCommand(item)">
                                     <div class="flex items-center gap-2">
                                         <UIcon :name="item.icon" class="w-4 h-4" />
                                         <span>{{ item.label }}</span>
@@ -90,12 +77,12 @@ const commandGroups = computed(() => [
             {
                 label: t('examples.utility.commandPalette.commands.about'),
                 icon: 'i-lucide-info',
-                onSelect: () => closeAndNavigate('/about')
+                onSelect: () => closeAndNavigate('/')
             },
             {
                 label: t('examples.utility.commandPalette.commands.contact'),
                 icon: 'i-lucide-mail',
-                onSelect: () => closeAndNavigate('/contact')
+                onSelect: () => closeAndNavigate('/')
             }
         ]
     },
@@ -159,10 +146,10 @@ const commandGroups = computed(() => [
 // Filtered command groups based on search
 const filteredCommandGroups = computed(() => {
     if (!commandSearch.value) return commandGroups.value
-    
+
     return commandGroups.value.map(group => ({
         ...group,
-        items: group.items.filter(item => 
+        items: group.items.filter(item =>
             item.label.toLowerCase().includes(commandSearch.value.toLowerCase())
         )
     })).filter(group => group.items.length > 0)
@@ -182,34 +169,34 @@ const closeAndNavigate = (path: string) => {
 
 // Keyboard shortcut
 onMounted(() => {
-  if (!utilitySection.value) return
-  
-  const { setupSection, utils } = useAnimations()
-  
-  // Setup section with proper loading removal
-  setupSection(utilitySection)
-  
-  if (utils?.fadeInUp) {
-    utils.fadeInUp(utilitySection.value, {
-      scrollTrigger: {
-        trigger: utilitySection.value,
-        start: 'top 85%'
-      }
-    })
-  }
+    if (!utilitySection.value) return
 
-  // Keyboard shortcut
-  const handleKeydown = (e: KeyboardEvent) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault()
-      isCommandPaletteOpen.value = !isCommandPaletteOpen.value
+    const { setupSection, utils } = useAnimations()
+
+    // Setup section with proper loading removal
+    setupSection(utilitySection)
+
+    if (utils?.fadeInUp) {
+        utils.fadeInUp(utilitySection.value, {
+            scrollTrigger: {
+                trigger: utilitySection.value,
+                start: 'top 85%'
+            }
+        })
     }
-  }
 
-  window.addEventListener('keydown', handleKeydown)
-  
-  onUnmounted(() => {
-    window.removeEventListener('keydown', handleKeydown)
-  })
+    // Keyboard shortcut
+    const handleKeydown = (e: KeyboardEvent) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault()
+            isCommandPaletteOpen.value = !isCommandPaletteOpen.value
+        }
+    }
+
+    window.addEventListener('keydown', handleKeydown)
+
+    onUnmounted(() => {
+        window.removeEventListener('keydown', handleKeydown)
+    })
 })
 </script>

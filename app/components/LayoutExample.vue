@@ -6,12 +6,12 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.layout.description') }}
         </p>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Card Variants -->
             <div class="space-y-4">
                 <h5 class="font-medium">{{ t('examples.layout.card.title') }}</h5>
-                
+
                 <!-- Default Card -->
                 <UCard class="card-tilt">
                     <template #header>
@@ -54,7 +54,7 @@
             <!-- Container Examples -->
             <div class="space-y-4">
                 <h5 class="font-medium">{{ t('examples.layout.container.title') }}</h5>
-                
+
                 <UCard class="card-tilt">
                     <template #header>
                         <h6 class="text-sm font-semibold">{{ t('examples.layout.container.responsive') }}</h6>
@@ -80,7 +80,7 @@
                             </UChip>
                             <span class="text-sm">{{ t('examples.layout.chip.withButton') }}</span>
                         </div>
-                        
+
                         <div class="flex items-center gap-4">
                             <UChip color="error" position="top-right">
                                 <UAvatar src="https://github.com/benjamincanac.png" />
@@ -110,20 +110,20 @@ const { t } = useI18n()
 const layoutSection = ref<HTMLElement>()
 
 onMounted(() => {
-  if (!layoutSection.value) return
-  
-  const { setupSection, utils } = useAnimations()
-  
-  // Setup section with proper loading removal
-  setupSection(layoutSection)
-  
-  if (utils?.fadeInUp) {
-    utils.fadeInUp(layoutSection.value, {
-      scrollTrigger: {
-        trigger: layoutSection.value,
-        start: 'top 85%'
-      }
-    })
-  }
+    if (!layoutSection.value) return
+
+    const { setupSection, utils } = useAnimations()
+
+    // Setup section with proper loading removal
+    setupSection(layoutSection)
+
+    if (utils?.fadeInUp) {
+        utils.fadeInUp(layoutSection.value, {
+            scrollTrigger: {
+                trigger: layoutSection.value,
+                start: 'top 85%'
+            }
+        })
+    }
 })
 </script>

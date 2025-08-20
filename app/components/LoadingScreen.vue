@@ -1,15 +1,9 @@
 <template>
     <Teleport to="body">
-        <Transition
-            name="loading"
-            @enter="onEnter"
-            @leave="onLeave"
-        >
-            <div
-                v-if="isVisible"
+        <Transition name="loading" @enter="onEnter" @leave="onLeave">
+            <div v-if="isVisible"
                 class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900 transition-all duration-500"
-                :class="{ 'opacity-100': isVisible, 'opacity-0': !isVisible }"
-            >
+                :class="{ 'opacity-100': isVisible, 'opacity-0': !isVisible }">
                 <div class="text-center space-y-8">
                     <!-- Logo/Title -->
                     <div class="space-y-4">
@@ -25,20 +19,12 @@
                     <div class="space-y-6">
                         <!-- Progress Bar with Indeterminate Animation -->
                         <div class="w-80 max-w-full mx-auto">
-                            <UProgress 
-                                :value="undefined" 
-                                color="primary"
-                                size="md"
-                                class="indeterminate-progress"
-                            />
+                            <UProgress :value="undefined" color="primary" size="md" class="indeterminate-progress" />
                         </div>
 
                         <!-- Loading Text -->
                         <div class="flex items-center justify-center space-x-2">
-                            <UIcon 
-                                name="i-lucide-loader-circle" 
-                                class="w-5 h-5 animate-spin text-primary-500"
-                            />
+                            <UIcon name="i-lucide-loader-circle" class="w-5 h-5 animate-spin text-primary-500" />
                             <span class="text-gray-600 dark:text-gray-400 font-medium">
                                 {{ loadingText }}
                             </span>
@@ -92,9 +78,9 @@ watch(() => props.isLoading, (newValue) => {
 // Simulate loading progress
 const simulateLoading = () => {
     const steps = [300, 600, 900, 1200] // Faster timing for better UX
-    
+
     loadingText.value = loadingTexts.value[0] || ''
-    
+
     steps.forEach((delay, index) => {
         setTimeout(() => {
             if (props.isLoading && loadingTexts.value[index + 1]) {
@@ -139,11 +125,13 @@ defineExpose({
 </script>
 
 <style scoped>
-.loading-enter-active, .loading-leave-active {
+.loading-enter-active,
+.loading-leave-active {
     transition: opacity 0.5s ease-in-out;
 }
 
-.loading-enter-from, .loading-leave-to {
+.loading-enter-from,
+.loading-leave-to {
     opacity: 0;
 }
 
@@ -156,6 +144,7 @@ defineExpose({
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }

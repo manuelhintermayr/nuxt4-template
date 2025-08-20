@@ -6,7 +6,7 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.navigationAdvanced.description') }}
         </p>
-        
+
         <div class="space-y-6">
             <!-- Tabs -->
             <UCard class="card-tilt">
@@ -35,13 +35,8 @@
                 </template>
                 <div class="p-4 space-y-4">
                     <div class="text-center">
-                        <UPagination 
-                            v-model:page="currentPage" 
-                            :total="totalItems" 
-                            :items-per-page="itemsPerPage"
-                            :sibling-count="2"
-                            show-edges
-                        />
+                        <UPagination v-model:page="currentPage" :total="totalItems" :items-per-page="itemsPerPage"
+                            :sibling-count="2" show-edges />
                     </div>
                     <div class="text-center text-sm text-gray-600 dark:text-gray-400">
                         {{ t('examples.navigationAdvanced.pagination.showing', {
@@ -61,17 +56,12 @@
                 <div class="p-4 space-y-4">
                     <UStepper :items="stepperItems" v-model="currentStep" />
                     <div class="flex justify-between">
-                        <UButton 
-                            :disabled="currentStep === 0"
-                            @click="currentStep = Math.max(0, currentStep - 1)"
-                            variant="outline"
-                        >
+                        <UButton :disabled="currentStep === 0" @click="currentStep = Math.max(0, currentStep - 1)"
+                            variant="outline">
                             {{ t('examples.navigationAdvanced.stepper.previous') }}
                         </UButton>
-                        <UButton 
-                            :disabled="currentStep === stepperItems.length - 1"
-                            @click="currentStep = Math.min(stepperItems.length - 1, currentStep + 1)"
-                        >
+                        <UButton :disabled="currentStep === stepperItems.length - 1"
+                            @click="currentStep = Math.min(stepperItems.length - 1, currentStep + 1)">
                             {{ t('examples.navigationAdvanced.stepper.next') }}
                         </UButton>
                     </div>
@@ -88,9 +78,11 @@
                     <div class="p-4 space-y-3">
                         <div class="space-y-2">
                             <ULink to="/" class="block">{{ t('examples.navigationAdvanced.link.home') }}</ULink>
-                            <ULink to="/about" class="block">{{ t('examples.navigationAdvanced.link.about') }}</ULink>
-                            <ULink to="/contact" active-class="text-primary-500 font-semibold" class="block">
-                                {{ t('examples.navigationAdvanced.link.contact') }} ({{ t('examples.navigationAdvanced.link.active') }})
+                            <ULink to="/" class="block">{{ t('examples.navigationAdvanced.link.about') }}</ULink>
+                            <ULink to="/" active-class="text-primary-500 font-semibold" class="block">
+                                {{ t('examples.navigationAdvanced.link.contact') }} ({{
+                                    t('examples.navigationAdvanced.link.active')
+                                }})
                             </ULink>
                             <ULink href="https://github.com" target="_blank" class="block">
                                 {{ t('examples.navigationAdvanced.link.external') }} ↗
@@ -105,24 +97,12 @@
                         <h5 class="font-semibold">{{ t('examples.navigationAdvanced.overlays.title') }}</h5>
                     </template>
                     <div class="p-4 space-y-3">
-                        <UButton 
-                            :label="t('examples.navigationAdvanced.overlays.openModal')" 
-                            variant="outline" 
-                            block
-                            @click="showModal = true"
-                        />
-                        <UButton 
-                            :label="t('examples.navigationAdvanced.overlays.openSlideover')" 
-                            variant="soft" 
-                            block
-                            @click="showSlideover = true"
-                        />
-                        <UButton 
-                            :label="t('examples.navigationAdvanced.overlays.openPopover')" 
-                            variant="ghost" 
-                            block
-                            @click="showPopover = !showPopover"
-                        />
+                        <UButton :label="t('examples.navigationAdvanced.overlays.openModal')" variant="outline" block
+                            @click="showModal = true" />
+                        <UButton :label="t('examples.navigationAdvanced.overlays.openSlideover')" variant="soft" block
+                            @click="showSlideover = true" />
+                        <UButton :label="t('examples.navigationAdvanced.overlays.openPopover')" variant="ghost" block
+                            @click="showPopover = !showPopover" />
                     </div>
                 </UCard>
             </div>
@@ -156,7 +136,8 @@
 
         <!-- Popover -->
         <div v-if="showPopover" class="fixed inset-0 z-50 bg-black/20" @click="showPopover = false">
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                 <h6 class="font-semibold mb-2">{{ t('examples.navigationAdvanced.popover.title') }}</h6>
                 <p class="text-sm mb-4">{{ t('examples.navigationAdvanced.popover.content') }}</p>
                 <UButton size="sm" @click="showPopover = false">
@@ -208,12 +189,12 @@ const navigationMenuItems = computed(() => [
     {
         label: t('examples.navigationAdvanced.navigationMenu.about'),
         icon: 'i-lucide-info',
-        to: '/about'
+        to: '/'
     },
     {
         label: t('examples.navigationAdvanced.navigationMenu.contact'),
         icon: 'i-lucide-mail',
-        to: '/contact'
+        to: '/'
     }
 ])
 
@@ -259,20 +240,20 @@ const stepperItems = computed(() => [
 ])
 
 onMounted(() => {
-  if (!navAdvancedSection.value) return
-  
-  const { setupSection, utils } = useAnimations()
-  
-  // Setup section with proper loading removal
-  setupSection(navAdvancedSection)
-  
-  if (utils?.fadeInUp) {
-    utils.fadeInUp(navAdvancedSection.value, {
-      scrollTrigger: {
-        trigger: navAdvancedSection.value,
-        start: 'top 85%'
-      }
-    })
-  }
+    if (!navAdvancedSection.value) return
+
+    const { setupSection, utils } = useAnimations()
+
+    // Setup section with proper loading removal
+    setupSection(navAdvancedSection)
+
+    if (utils?.fadeInUp) {
+        utils.fadeInUp(navAdvancedSection.value, {
+            scrollTrigger: {
+                trigger: navAdvancedSection.value,
+                start: 'top 85%'
+            }
+        })
+    }
 })
 </script>

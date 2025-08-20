@@ -6,17 +6,14 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.accordion.description') }}
         </p>
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <!-- Basic Accordion -->
             <UCard class="card-tilt">
                 <template #header>
                     <h5 class="font-semibold">{{ t('examples.accordion.basic') }}</h5>
                 </template>
-                <UAccordion 
-                    :items="basicAccordionItems"
-                    class="w-full"
-                />
+                <UAccordion :items="basicAccordionItems" class="w-full" />
             </UCard>
 
             <!-- Multiple Type Accordion -->
@@ -24,11 +21,7 @@
                 <template #header>
                     <h5 class="font-semibold">{{ t('examples.accordion.multiple') }}</h5>
                 </template>
-                <UAccordion 
-                    type="multiple"
-                    :items="multipleAccordionItems"
-                    class="w-full"
-                />
+                <UAccordion type="multiple" :items="multipleAccordionItems" class="w-full" />
             </UCard>
         </div>
     </div>
@@ -72,20 +65,20 @@ const multipleAccordionItems = computed(() => [
 const accordionSection = ref<HTMLElement>()
 
 onMounted(() => {
-  if (!accordionSection.value) return
-  
-  const { setupSection, utils } = useAnimations()
-  
-  // Setup section with proper loading removal
-  setupSection(accordionSection)
-  
-  if (utils?.fadeInUp) {
-    utils.fadeInUp(accordionSection.value, {
-      scrollTrigger: {
-        trigger: accordionSection.value,
-        start: 'top 85%'
-      }
-    })
-  }
+    if (!accordionSection.value) return
+
+    const { setupSection, utils } = useAnimations()
+
+    // Setup section with proper loading removal
+    setupSection(accordionSection)
+
+    if (utils?.fadeInUp) {
+        utils.fadeInUp(accordionSection.value, {
+            scrollTrigger: {
+                trigger: accordionSection.value,
+                start: 'top 85%'
+            }
+        })
+    }
 })
 </script>

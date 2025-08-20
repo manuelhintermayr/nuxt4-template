@@ -1,6 +1,7 @@
 <template>
     <div ref="formSection" class="space-y-4 gsap-loading">
-        <h4 ref="formTitle" class="text-lg font-semibold text-gray-900 dark:text-white">{{ $t('examples.forms.title') }}</h4>
+        <h4 ref="formTitle" class="text-lg font-semibold text-gray-900 dark:text-white">{{ $t('examples.forms.title') }}
+        </h4>
         <div ref="formGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
             <UInput :placeholder="$t('examples.forms.namePlaceholder')" />
             <UInput type="email" :placeholder="'sample@mail.com'" />
@@ -26,22 +27,22 @@ const selectOptions = computed(() => [
 ])
 
 onMounted(() => {
-  if (!formSection.value) return
-  
-  const { setupSection, animateTitle, animateStaggered } = useAnimations()
-  
-  // Setup section
-  setupSection(formSection)
-  
-  // Animate title
-  animateTitle(formTitle, formSection)
-  
-  // Animate form fields with stagger
-  if (formGrid.value?.children) {
-    animateStaggered(Array.from(formGrid.value.children), formGrid, {
-      y: 20,
-      stagger: 0.15
-    })
-  }
+    if (!formSection.value) return
+
+    const { setupSection, animateTitle, animateStaggered } = useAnimations()
+
+    // Setup section
+    setupSection(formSection)
+
+    // Animate title
+    animateTitle(formTitle, formSection)
+
+    // Animate form fields with stagger
+    if (formGrid.value?.children) {
+        animateStaggered(Array.from(formGrid.value.children), formGrid, {
+            y: 20,
+            stagger: 0.15
+        })
+    }
 })
 </script>

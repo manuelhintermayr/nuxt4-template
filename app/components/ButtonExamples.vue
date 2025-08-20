@@ -1,6 +1,7 @@
 <template>
     <div ref="buttonSection" class="space-y-4 gsap-loading">
-        <h4 ref="buttonTitle" class="text-lg font-semibold text-gray-900 dark:text-white">{{ $t('examples.buttons.title') }}</h4>
+        <h4 ref="buttonTitle" class="text-lg font-semibold text-gray-900 dark:text-white">{{
+            $t('examples.buttons.title') }}</h4>
         <div ref="buttonGrid" class="flex flex-wrap gap-2">
             <UButton data-cursor-pointer>{{ $t('examples.buttons.default') }}</UButton>
             <UButton color="primary" variant="solid" data-cursor-pointer>{{ $t('examples.buttons.primary') }}</UButton>
@@ -22,17 +23,17 @@ const buttonTitle = ref<HTMLElement>()
 const buttonGrid = ref<HTMLElement>()
 
 onMounted(() => {
-  if (!buttonSection.value) return
-  
-  const { setupSection, animateTitle, animateButtons } = useAnimations()
-  
-  // Setup section with common patterns
-  setupSection(buttonSection)
-  
-  // Animate title
-  animateTitle(buttonTitle, buttonSection)
-  
-  // Animate buttons with magnetic effects
-  animateButtons('button', buttonGrid)
+    if (!buttonSection.value) return
+
+    const { setupSection, animateTitle, animateButtons } = useAnimations()
+
+    // Setup section with common patterns
+    setupSection(buttonSection)
+
+    // Animate title
+    animateTitle(buttonTitle, buttonSection)
+
+    // Animate buttons with magnetic effects
+    animateButtons('button', buttonGrid)
 })
 </script>

@@ -6,7 +6,7 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.dataDisplay.description') }}
         </p>
-        
+
         <div class="space-y-6">
             <!-- Simple Carousel Alternative -->
             <UCard class="card-tilt">
@@ -15,12 +15,9 @@
                 </template>
                 <div class="p-4">
                     <div class="flex space-x-2 overflow-x-auto">
-                        <div 
-                            v-for="(item, index) in carouselItems" 
-                            :key="index"
-                            class="flex-shrink-0 flex items-center justify-center h-48 w-80 rounded-lg text-white text-lg font-semibold" 
-                            :style="item.style"
-                        >
+                        <div v-for="(item, index) in carouselItems" :key="index"
+                            class="flex-shrink-0 flex items-center justify-center h-48 w-80 rounded-lg text-white text-lg font-semibold"
+                            :style="item.style">
                             {{ item.label }}
                         </div>
                     </div>
@@ -34,28 +31,18 @@
                 </template>
                 <div class="p-4 space-y-3">
                     <div class="border rounded">
-                        <UButton 
-                            :label="t('examples.dataDisplay.collapsible.firstToggle')" 
-                            color="neutral" 
-                            variant="ghost" 
-                            trailing-icon="i-lucide-chevron-down" 
-                            block 
-                            @click="firstCollapsed = !firstCollapsed"
-                        />
+                        <UButton :label="t('examples.dataDisplay.collapsible.firstToggle')" color="neutral"
+                            variant="ghost" trailing-icon="i-lucide-chevron-down" block
+                            @click="firstCollapsed = !firstCollapsed" />
                         <div v-if="!firstCollapsed" class="p-4 bg-gray-50 dark:bg-gray-800">
                             <p class="text-sm">{{ t('examples.dataDisplay.collapsible.firstContent') }}</p>
                         </div>
                     </div>
 
                     <div class="border rounded">
-                        <UButton 
-                            :label="t('examples.dataDisplay.collapsible.secondToggle')" 
-                            color="neutral" 
-                            variant="ghost" 
-                            trailing-icon="i-lucide-chevron-down" 
-                            block 
-                            @click="secondCollapsed = !secondCollapsed"
-                        />
+                        <UButton :label="t('examples.dataDisplay.collapsible.secondToggle')" color="neutral"
+                            variant="ghost" trailing-icon="i-lucide-chevron-down" block
+                            @click="secondCollapsed = !secondCollapsed" />
                         <div v-if="!secondCollapsed" class="p-4 bg-gray-50 dark:bg-gray-800">
                             <p class="text-sm">{{ t('examples.dataDisplay.collapsible.secondContent') }}</p>
                             <UButton size="xs" color="primary" variant="soft" class="mt-2">
@@ -74,24 +61,24 @@
                         <h5 class="font-semibold">{{ t('examples.dataDisplay.contextMenu.title') }}</h5>
                     </template>
                     <div class="p-4">
-                        <div 
-                            class="flex items-center justify-center rounded-md border border-dashed border-gray-300 dark:border-gray-600 text-sm aspect-video bg-gray-50 dark:bg-gray-800 cursor-pointer"
-                            @contextmenu.prevent="showContextMenu = !showContextMenu"
-                            @click="showContextMenu = false"
-                        >
+                        <div class="flex items-center justify-center rounded-md border border-dashed border-gray-300 dark:border-gray-600 text-sm aspect-video bg-gray-50 dark:bg-gray-800 cursor-pointer"
+                            @contextmenu.prevent="showContextMenu = !showContextMenu" @click="showContextMenu = false">
                             {{ t('examples.dataDisplay.contextMenu.rightClick') }}
                         </div>
                         <div v-if="showContextMenu" class="mt-2 p-2 bg-white dark:bg-gray-800 border rounded shadow">
                             <div class="space-y-1">
-                                <div class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
+                                <div
+                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
                                     <UIcon name="i-lucide-copy" class="w-4 h-4" />
                                     {{ t('examples.dataDisplay.contextMenu.copy') }}
                                 </div>
-                                <div class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
+                                <div
+                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
                                     <UIcon name="i-lucide-scissors" class="w-4 h-4" />
                                     {{ t('examples.dataDisplay.contextMenu.cut') }}
                                 </div>
-                                <div class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
+                                <div
+                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
                                     <UIcon name="i-lucide-clipboard" class="w-4 h-4" />
                                     {{ t('examples.dataDisplay.contextMenu.paste') }}
                                 </div>
@@ -106,29 +93,29 @@
                         <h5 class="font-semibold">{{ t('examples.dataDisplay.dropdownMenu.title') }}</h5>
                     </template>
                     <div class="p-4 relative">
-                        <UButton 
-                            :label="t('examples.dataDisplay.dropdownMenu.trigger')" 
-                            icon="i-lucide-menu" 
-                            color="neutral" 
-                            variant="outline"
-                            @click="showDropdown = !showDropdown"
-                        />
-                        <div v-if="showDropdown" class="absolute top-16 left-4 z-10 p-2 bg-white dark:bg-gray-800 border rounded shadow min-w-40">
+                        <UButton :label="t('examples.dataDisplay.dropdownMenu.trigger')" icon="i-lucide-menu"
+                            color="neutral" variant="outline" @click="showDropdown = !showDropdown" />
+                        <div v-if="showDropdown"
+                            class="absolute top-16 left-4 z-10 p-2 bg-white dark:bg-gray-800 border rounded shadow min-w-40">
                             <div class="space-y-1">
-                                <div class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
+                                <div
+                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
                                     <UIcon name="i-lucide-user" class="w-4 h-4" />
                                     {{ t('examples.dataDisplay.dropdownMenu.profile') }}
                                 </div>
-                                <div class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
+                                <div
+                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
                                     <UIcon name="i-lucide-settings" class="w-4 h-4" />
                                     {{ t('examples.dataDisplay.dropdownMenu.settings') }}
                                 </div>
-                                <div class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
+                                <div
+                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
                                     <UIcon name="i-lucide-credit-card" class="w-4 h-4" />
                                     {{ t('examples.dataDisplay.dropdownMenu.billing') }}
                                 </div>
                                 <hr class="my-1">
-                                <div class="flex items-center gap-2 px-2 py-1 hover:bg-red-100 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 rounded cursor-pointer">
+                                <div
+                                    class="flex items-center gap-2 px-2 py-1 hover:bg-red-100 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 rounded cursor-pointer">
                                     <UIcon name="i-lucide-log-out" class="w-4 h-4" />
                                     {{ t('examples.dataDisplay.dropdownMenu.logout') }}
                                 </div>
@@ -144,19 +131,11 @@
                     <h5 class="font-semibold">{{ t('examples.dataDisplay.drawer.title') }}</h5>
                 </template>
                 <div class="p-4 flex gap-4">
-                    <UButton 
-                        :label="t('examples.dataDisplay.drawer.bottom')" 
-                        color="neutral" 
-                        variant="outline"
-                        @click="showBottomModal = true"
-                    />
+                    <UButton :label="t('examples.dataDisplay.drawer.bottom')" color="neutral" variant="outline"
+                        @click="showBottomModal = true" />
 
-                    <UButton 
-                        :label="t('examples.dataDisplay.drawer.right')" 
-                        color="primary" 
-                        variant="soft"
-                        @click="showSideModal = true"
-                    />
+                    <UButton :label="t('examples.dataDisplay.drawer.right')" color="primary" variant="soft"
+                        @click="showSideModal = true" />
                 </div>
             </UCard>
 
@@ -166,11 +145,7 @@
                     <h5 class="font-semibold">{{ t('examples.dataDisplay.tree.title') }}</h5>
                 </template>
                 <div class="p-4">
-                    <UTree 
-                        :items="treeItems"
-                        class="w-full"
-                        :default-expanded="['src']"
-                    />
+                    <UTree :items="treeItems" class="w-full" :default-expanded="['src']" />
                 </div>
             </UCard>
 
@@ -180,12 +155,7 @@
                     <h5 class="font-semibold">{{ t('examples.dataDisplay.table.title') }}</h5>
                 </template>
                 <div class="p-0">
-                    <UTable 
-                        :data="tableData" 
-                        :columns="tableColumns"
-                        class="w-full"
-                        :loading="tableLoading"
-                    />
+                    <UTable :data="tableData" :columns="tableColumns" class="w-full" :loading="tableLoading" />
                 </div>
             </UCard>
 
@@ -195,11 +165,7 @@
                     <h5 class="font-semibold">{{ t('examples.dataDisplay.timeline.title') }}</h5>
                 </template>
                 <div class="p-4">
-                    <UTimeline 
-                        :items="timelineItems"
-                        :default-value="2"
-                        class="w-full"
-                    />
+                    <UTimeline :items="timelineItems" :default-value="2" class="w-full" />
                 </div>
             </UCard>
 
@@ -243,21 +209,21 @@ const showSideModal = ref(false)
 
 // Carousel data
 const carouselItems = [
-    { 
-        label: 'Slide 1', 
-        style: 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);' 
+    {
+        label: 'Slide 1',
+        style: 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);'
     },
-    { 
-        label: 'Slide 2', 
-        style: 'background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);' 
+    {
+        label: 'Slide 2',
+        style: 'background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);'
     },
-    { 
-        label: 'Slide 3', 
-        style: 'background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);' 
+    {
+        label: 'Slide 3',
+        style: 'background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);'
     },
-    { 
-        label: 'Slide 4', 
-        style: 'background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);' 
+    {
+        label: 'Slide 4',
+        style: 'background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);'
     }
 ]
 
@@ -318,23 +284,23 @@ const tableColumns = [
 ]
 
 const tableData = computed(() => [
-    { 
-        name: 'John Doe', 
-        role: 'Developer', 
-        status: 'Active', 
-        email: 'john@example.com' 
+    {
+        name: 'John Doe',
+        role: 'Developer',
+        status: 'Active',
+        email: 'john@example.com'
     },
-    { 
-        name: 'Jane Smith', 
-        role: 'Designer', 
-        status: 'Active', 
-        email: 'jane@example.com' 
+    {
+        name: 'Jane Smith',
+        role: 'Designer',
+        status: 'Active',
+        email: 'jane@example.com'
     },
-    { 
-        name: 'Bob Johnson', 
-        role: 'Manager', 
-        status: 'Inactive', 
-        email: 'bob@example.com' 
+    {
+        name: 'Bob Johnson',
+        role: 'Manager',
+        status: 'Inactive',
+        email: 'bob@example.com'
     }
 ])
 
@@ -371,20 +337,20 @@ const timelineItems = computed(() => [
 ])
 
 onMounted(() => {
-  if (!dataDisplaySection.value) return
-  
-  const { setupSection, utils } = useAnimations()
-  
-  // Setup section with proper loading removal
-  setupSection(dataDisplaySection)
-  
-  if (utils?.fadeInUp) {
-    utils.fadeInUp(dataDisplaySection.value, {
-      scrollTrigger: {
-        trigger: dataDisplaySection.value,
-        start: 'top 85%'
-      }
-    })
-  }
+    if (!dataDisplaySection.value) return
+
+    const { setupSection, utils } = useAnimations()
+
+    // Setup section with proper loading removal
+    setupSection(dataDisplaySection)
+
+    if (utils?.fadeInUp) {
+        utils.fadeInUp(dataDisplaySection.value, {
+            scrollTrigger: {
+                trigger: dataDisplaySection.value,
+                start: 'top 85%'
+            }
+        })
+    }
 })
 </script>

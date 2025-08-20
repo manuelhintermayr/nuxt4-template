@@ -6,7 +6,7 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.formsAdvanced.description') }}
         </p>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Date Input (if Calendar not available) -->
             <UCard class="card-tilt">
@@ -27,18 +27,12 @@
                     <div class="space-y-2">
                         <label class="text-sm font-medium">{{ t('examples.formsAdvanced.checkboxGroup.title') }}</label>
                         <div class="space-y-2">
-                            <UCheckbox 
-                                v-model="darkModeEnabled" 
-                                :label="t('examples.formsAdvanced.checkboxGroup.darkMode')"
-                            />
-                            <UCheckbox 
-                                v-model="animationsEnabled" 
-                                :label="t('examples.formsAdvanced.checkboxGroup.animations')"
-                            />
-                            <UCheckbox 
-                                v-model="notificationsEnabled" 
-                                :label="t('examples.formsAdvanced.checkboxGroup.notifications')"
-                            />
+                            <UCheckbox v-model="darkModeEnabled"
+                                :label="t('examples.formsAdvanced.checkboxGroup.darkMode')" />
+                            <UCheckbox v-model="animationsEnabled"
+                                :label="t('examples.formsAdvanced.checkboxGroup.animations')" />
+                            <UCheckbox v-model="notificationsEnabled"
+                                :label="t('examples.formsAdvanced.checkboxGroup.notifications')" />
                         </div>
                     </div>
                 </div>
@@ -50,11 +44,7 @@
                     <h5 class="font-semibold">{{ t('examples.formsAdvanced.radioGroup.title') }}</h5>
                 </template>
                 <div class="p-2">
-                    <URadioGroup 
-                        v-model="selectedTheme" 
-                        :items="radioOptions"
-                        legend="Theme"
-                    />
+                    <URadioGroup v-model="selectedTheme" :items="radioOptions" legend="Theme" />
                 </div>
             </UCard>
 
@@ -64,15 +54,9 @@
                     <h5 class="font-semibold">{{ t('examples.formsAdvanced.switch.title') }}</h5>
                 </template>
                 <div class="p-2 space-y-3">
-                    <USwitch 
-                        v-model="notificationsSwitch" 
-                        :label="t('examples.formsAdvanced.switch.notifications')"
-                    />
-                    <USwitch 
-                        v-model="autoSave" 
-                        :label="t('examples.formsAdvanced.switch.autoSave')"
-                        :description="t('examples.formsAdvanced.switch.autoSaveDesc')"
-                    />
+                    <USwitch v-model="notificationsSwitch" :label="t('examples.formsAdvanced.switch.notifications')" />
+                    <USwitch v-model="autoSave" :label="t('examples.formsAdvanced.switch.autoSave')"
+                        :description="t('examples.formsAdvanced.switch.autoSaveDesc')" />
                 </div>
             </UCard>
 
@@ -83,7 +67,9 @@
                 </template>
                 <div class="p-4 space-y-4">
                     <div class="space-y-2">
-                        <label class="text-sm font-medium">{{ t('examples.formsAdvanced.slider.volume') }}: {{ volumeValue }}%</label>
+                        <label class="text-sm font-medium">{{ t('examples.formsAdvanced.slider.volume') }}: {{
+                            volumeValue
+                            }}%</label>
                         <USlider v-model="volumeValue" :min="0" :max="100" />
                     </div>
                     <div class="space-y-2">
@@ -107,7 +93,8 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <label class="text-sm font-medium">{{ t('examples.formsAdvanced.progress.indeterminate') }}</label>
+                        <label class="text-sm font-medium">{{ t('examples.formsAdvanced.progress.indeterminate')
+                            }}</label>
                         <UProgress />
                     </div>
                 </div>
@@ -155,20 +142,20 @@ const handleFileUpload = (event: Event) => {
 }
 
 onMounted(() => {
-  if (!formsAdvancedSection.value) return
-  
-  const { setupSection, utils } = useAnimations()
-  
-  // Setup section with proper loading removal
-  setupSection(formsAdvancedSection)
-  
-  if (utils?.fadeInUp) {
-    utils.fadeInUp(formsAdvancedSection.value, {
-      scrollTrigger: {
-        trigger: formsAdvancedSection.value,
-        start: 'top 85%'
-      }
-    })
-  }
+    if (!formsAdvancedSection.value) return
+
+    const { setupSection, utils } = useAnimations()
+
+    // Setup section with proper loading removal
+    setupSection(formsAdvancedSection)
+
+    if (utils?.fadeInUp) {
+        utils.fadeInUp(formsAdvancedSection.value, {
+            scrollTrigger: {
+                trigger: formsAdvancedSection.value,
+                start: 'top 85%'
+            }
+        })
+    }
 })
 </script>

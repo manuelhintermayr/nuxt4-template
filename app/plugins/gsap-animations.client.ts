@@ -27,6 +27,9 @@ const CARD_SELECTORS = [
 
 export default defineNuxtPlugin((nuxtApp) => {
     if (process.client) {
+        // Ensure GSAP is properly initialized
+        gsap.ticker.lagSmoothing(0)
+        
         // Register ScrollTrigger plugin only if enabled
         if (animationConfig.enableScrollTrigger) {
             gsap.registerPlugin(ScrollTrigger)
@@ -78,16 +81,58 @@ export default defineNuxtPlugin((nuxtApp) => {
                     return null
                 }
 
+                // Check if elements exist
+                if (!elements) {
+                    console.warn('scaleIn: elements parameter is null or undefined')
+                    return null
+                }
+
+                // Set initial state with CSS directly
+                if (typeof elements === 'string') {
+                    const els = document.querySelectorAll(elements)
+                    if (els.length === 0) {
+                        console.warn(`scaleIn: No elements found for selector: ${elements}`)
+                        return null
+                    }
+                    els.forEach(el => {
+                        const htmlEl = el as HTMLElement
+                        if (htmlEl && htmlEl.style) {
+                            htmlEl.style.transform = 'scale(0.8)'
+                            htmlEl.style.opacity = '0'
+                        }
+                    })
+                } else if (Array.isArray(elements)) {
+                    const validElements = elements.filter(el => el && (el as HTMLElement).style)
+                    if (validElements.length === 0) {
+                        console.warn('scaleIn: No valid elements in array')
+                        return null
+                    }
+                    validElements.forEach(el => {
+                        const htmlEl = el as HTMLElement
+                        htmlEl.style.transform = 'scale(0.8)'
+                        htmlEl.style.opacity = '0'
+                    })
+                    elements = validElements // Update elements to only valid ones
+                } else {
+                    const htmlEl = elements as HTMLElement
+                    if (!htmlEl || !htmlEl.style) {
+                        console.warn('scaleIn: Invalid element provided')
+                        return null
+                    }
+                    htmlEl.style.transform = 'scale(0.8)'
+                    htmlEl.style.opacity = '0'
+                }
+
                 const defaults = {
-                    scale: 0.8,
-                    opacity: 0,
+                    transform: 'scale(1)',
+                    opacity: 1,
                     duration: 0.7,
                     ease: 'back.out(1.4)',
                     scrollTrigger: createScrollTrigger('top 80%')
                 }
 
                 const config = { ...defaults, ...options }
-                return gsap.from(elements, config)
+                return gsap.to(elements, config)
             },
 
             // Hero entrance animation
@@ -96,16 +141,31 @@ export default defineNuxtPlugin((nuxtApp) => {
                     return null
                 }
 
+                const containerSelector = typeof container === 'string' ? container : ''
+                const h2Elements = document.querySelectorAll(`${containerSelector} h2`)
+                const pElements = document.querySelectorAll(`${containerSelector} p`)
+
+                // Set initial states
+                h2Elements.forEach(el => {
+                    const htmlEl = el as HTMLElement
+                    htmlEl.style.transform = 'translateY(40px) scale(0.96)'
+                    htmlEl.style.opacity = '0'
+                })
+                pElements.forEach(el => {
+                    const htmlEl = el as HTMLElement
+                    htmlEl.style.transform = 'translateY(20px)'
+                    htmlEl.style.opacity = '0'
+                })
+
                 const tl = gsap.timeline({ defaults: { ease: 'power2.out', duration: 0.9 } })
 
-                tl.from(`${typeof container === 'string' ? container : ''} h2`, {
-                    y: 40,
-                    opacity: 0,
-                    scale: 0.96
+                tl.to(`${containerSelector} h2`, {
+                    transform: 'translateY(0px) scale(1)',
+                    opacity: 1
                 })
-                    .from(`${typeof container === 'string' ? container : ''} p`, {
-                        y: 20,
-                        opacity: 0
+                    .to(`${containerSelector} p`, {
+                        transform: 'translateY(0px)',
+                        opacity: 1
                     }, '-=0.4')
 
                 return tl

@@ -10,16 +10,10 @@
                 </div>
                 <div class="flex items-center space-x-4">
                     <LanguageSwitcher />
-                    <div 
-                        ref="darkModeButton"
-                        data-cursor-pointer
-                    >
-                        <UButton
-                            :icon="colorMode.preference === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
-                            variant="ghost"
-                            @click="toggleColorMode"
-                            :aria-label="colorMode.preference === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
-                        />
+                    <div ref="darkModeButton" data-cursor-pointer>
+                        <UButton :icon="colorMode.preference === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
+                            variant="ghost" @click="toggleColorMode"
+                            :aria-label="colorMode.preference === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'" />
                     </div>
                 </div>
             </div>
@@ -39,16 +33,16 @@ const toggleColorMode = () => {
 }
 
 onMounted(() => {
-  const { utils } = useAnimations()
-  
-  // Add magnetic effect to interactive elements
-  if (utils?.addMagneticEffect) {
-    nextTick(() => {
-      const elements = [brandTitle.value, darkModeButton.value].filter(Boolean)
-      if (elements.length > 0) {
-        utils.addMagneticEffect(elements)
-      }
-    })
-  }
+    const { utils } = useAnimations()
+
+    // Add magnetic effect to interactive elements
+    if (utils?.addMagneticEffect) {
+        nextTick(() => {
+            const elements = [brandTitle.value, darkModeButton.value].filter(Boolean)
+            if (elements.length > 0) {
+                utils.addMagneticEffect(elements)
+            }
+        })
+    }
 })
 </script>

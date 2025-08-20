@@ -6,7 +6,7 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.overlay.description') }}
         </p>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Toast -->
             <UCard class="card-tilt">
@@ -14,34 +14,14 @@
                     <h5 class="font-semibold">{{ t('examples.overlay.toast.title') }}</h5>
                 </template>
                 <div class="p-4 space-y-3">
-                    <UButton 
-                        :label="t('examples.overlay.toast.success')" 
-                        color="success" 
-                        variant="soft" 
-                        block
-                        @click="showSuccessToast"
-                    />
-                    <UButton 
-                        :label="t('examples.overlay.toast.error')" 
-                        color="error" 
-                        variant="soft" 
-                        block
-                        @click="showErrorToast"
-                    />
-                    <UButton 
-                        :label="t('examples.overlay.toast.withAction')" 
-                        color="primary" 
-                        variant="soft" 
-                        block
-                        @click="showActionToast"
-                    />
-                    <UButton 
-                        :label="t('examples.overlay.toast.withProgress')" 
-                        color="info" 
-                        variant="soft" 
-                        block
-                        @click="showProgressToast"
-                    />
+                    <UButton :label="t('examples.overlay.toast.success')" color="success" variant="soft" block
+                        @click="showSuccessToast" />
+                    <UButton :label="t('examples.overlay.toast.error')" color="error" variant="soft" block
+                        @click="showErrorToast" />
+                    <UButton :label="t('examples.overlay.toast.withAction')" color="primary" variant="soft" block
+                        @click="showActionToast" />
+                    <UButton :label="t('examples.overlay.toast.withProgress')" color="info" variant="soft" block
+                        @click="showProgressToast" />
                 </div>
             </UCard>
 
@@ -53,42 +33,30 @@
                 <div class="p-4 space-y-4">
                     <div class="space-y-3">
                         <div class="flex justify-center">
-                            <UTooltip 
-                                :text="t('examples.overlay.tooltip.basic')"
-                                :content="{ side: 'top' }"
-                            >
+                            <UTooltip :text="t('examples.overlay.tooltip.basic')" :content="{ side: 'top' }">
                                 <UButton variant="outline" size="sm">
                                     {{ t('examples.overlay.tooltip.hoverTop') }}
                                 </UButton>
                             </UTooltip>
                         </div>
-                        
+
                         <div class="flex justify-between">
-                            <UTooltip 
-                                :text="t('examples.overlay.tooltip.left')"
-                                :content="{ side: 'left' }"
-                            >
+                            <UTooltip :text="t('examples.overlay.tooltip.left')" :content="{ side: 'left' }">
                                 <UButton variant="outline" size="sm">
                                     ← {{ t('examples.overlay.tooltip.left') }}
                                 </UButton>
                             </UTooltip>
-                            
-                            <UTooltip 
-                                :text="t('examples.overlay.tooltip.right')"
-                                :content="{ side: 'right' }"
-                            >
+
+                            <UTooltip :text="t('examples.overlay.tooltip.right')" :content="{ side: 'right' }">
                                 <UButton variant="outline" size="sm">
                                     {{ t('examples.overlay.tooltip.right') }} →
                                 </UButton>
                             </UTooltip>
                         </div>
-                        
+
                         <div class="flex justify-center">
-                            <UTooltip 
-                                :text="t('examples.overlay.tooltip.withKbd')"
-                                :kbds="['⌘', 'K']"
-                                :content="{ side: 'bottom' }"
-                            >
+                            <UTooltip :text="t('examples.overlay.tooltip.withKbd')" :kbds="['⌘', 'K']"
+                                :content="{ side: 'bottom' }">
                                 <UButton variant="outline" size="sm" icon="i-lucide-command">
                                     {{ t('examples.overlay.tooltip.withKbd') }}
                                 </UButton>
@@ -155,20 +123,20 @@ const showProgressToast = () => {
 }
 
 onMounted(() => {
-  if (!overlaySection.value) return
-  
-  const { setupSection, utils } = useAnimations()
-  
-  // Setup section with proper loading removal
-  setupSection(overlaySection)
-  
-  if (utils?.fadeInUp) {
-    utils.fadeInUp(overlaySection.value, {
-      scrollTrigger: {
-        trigger: overlaySection.value,
-        start: 'top 85%'
-      }
-    })
-  }
+    if (!overlaySection.value) return
+
+    const { setupSection, utils } = useAnimations()
+
+    // Setup section with proper loading removal
+    setupSection(overlaySection)
+
+    if (utils?.fadeInUp) {
+        utils.fadeInUp(overlaySection.value, {
+            scrollTrigger: {
+                trigger: overlaySection.value,
+                start: 'top 85%'
+            }
+        })
+    }
 })
 </script>

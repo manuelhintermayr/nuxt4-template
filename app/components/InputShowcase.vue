@@ -6,7 +6,7 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.inputShowcase.description') }}
         </p>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Input Number -->
             <UCard class="card-tilt">
@@ -33,19 +33,11 @@
                 <div class="p-4 space-y-4">
                     <div class="space-y-2">
                         <label class="text-sm font-medium">{{ t('examples.inputShowcase.inputTags.skills') }}</label>
-                        <UInputTags 
-                            v-model="skillTags" 
-                            :placeholder="t('examples.inputShowcase.inputTags.placeholder')"
-                        />
+                        <UInputTags v-model="skillTags"
+                            :placeholder="t('examples.inputShowcase.inputTags.placeholder')" />
                     </div>
                     <div class="flex flex-wrap gap-1">
-                        <UBadge 
-                            v-for="tag in skillTags" 
-                            :key="tag" 
-                            size="sm"
-                            color="primary"
-                            variant="soft"
-                        >
+                        <UBadge v-for="tag in skillTags" :key="tag" size="sm" color="primary" variant="soft">
                             {{ tag }}
                         </UBadge>
                     </div>
@@ -81,12 +73,8 @@
                     </div>
                     <div class="space-y-2">
                         <label class="text-sm font-medium">{{ t('examples.inputShowcase.select.multiple') }}</label>
-                        <USelect 
-                            v-model="selectedLanguages" 
-                            :items="languageOptions" 
-                            multiple
-                            :placeholder="t('examples.inputShowcase.select.multiplePlaceholder')"
-                        />
+                        <USelect v-model="selectedLanguages" :items="languageOptions" multiple
+                            :placeholder="t('examples.inputShowcase.select.multiplePlaceholder')" />
                     </div>
                 </div>
             </UCard>
@@ -97,25 +85,15 @@
                     <h5 class="font-semibold">{{ t('examples.inputShowcase.advancedInput.title') }}</h5>
                 </template>
                 <div class="p-4 space-y-4">
-                    <UInput 
-                        v-model="searchQuery"
-                        icon="i-lucide-search"
+                    <UInput v-model="searchQuery" icon="i-lucide-search"
                         :placeholder="t('examples.inputShowcase.advancedInput.searchPlaceholder')"
-                        :loading="searchLoading"
-                    />
-                    <UInput 
-                        v-model="emailInput"
-                        trailing-icon="i-lucide-at-sign"
-                        :placeholder="t('examples.inputShowcase.advancedInput.emailPlaceholder')"
-                        type="email"
-                    />
-                    <UInput 
-                        v-model="passwordInput"
-                        :trailing-icon="showPassword ? 'i-lucide-eye-off' : 'i-lucide-eye'"
+                        :loading="searchLoading" />
+                    <UInput v-model="emailInput" trailing-icon="i-lucide-at-sign"
+                        :placeholder="t('examples.inputShowcase.advancedInput.emailPlaceholder')" type="email" />
+                    <UInput v-model="passwordInput" :trailing-icon="showPassword ? 'i-lucide-eye-off' : 'i-lucide-eye'"
                         :type="showPassword ? 'text' : 'password'"
                         :placeholder="t('examples.inputShowcase.advancedInput.passwordPlaceholder')"
-                        @click:trailing="showPassword = !showPassword"
-                    />
+                        @click:trailing="showPassword = !showPassword" />
                 </div>
             </UCard>
 
@@ -130,7 +108,8 @@
                         <div class="flex flex-wrap gap-2">
                             <UKbd>⌘</UKbd>
                             <UKbd>K</UKbd>
-                            <span class="text-sm self-center">{{ t('examples.inputShowcase.kbd.commandPalette') }}</span>
+                            <span class="text-sm self-center">{{ t('examples.inputShowcase.kbd.commandPalette')
+                                }}</span>
                         </div>
                         <div class="flex flex-wrap gap-2">
                             <UKbd>Ctrl</UKbd>
@@ -156,20 +135,14 @@
                 <div class="p-4 space-y-4">
                     <div class="space-y-2">
                         <label class="text-sm font-medium">{{ t('examples.inputShowcase.textarea.basic') }}</label>
-                        <UTextarea 
-                            v-model="basicTextarea" 
-                            :placeholder="t('examples.inputShowcase.textarea.placeholder')"
-                            :rows="3"
-                        />
+                        <UTextarea v-model="basicTextarea"
+                            :placeholder="t('examples.inputShowcase.textarea.placeholder')" :rows="3" />
                     </div>
                     <div class="space-y-2">
                         <label class="text-sm font-medium">{{ t('examples.inputShowcase.textarea.autoresize') }}</label>
-                        <UTextarea 
-                            v-model="autoResizeTextarea" 
-                            :placeholder="t('examples.inputShowcase.textarea.autoPlaceholder')"
-                            autoresize
-                            :maxrows="6"
-                        />
+                        <UTextarea v-model="autoResizeTextarea"
+                            :placeholder="t('examples.inputShowcase.textarea.autoPlaceholder')" autoresize
+                            :maxrows="6" />
                     </div>
                 </div>
             </UCard>
@@ -188,13 +161,13 @@
                                     {{ t('examples.inputShowcase.tooltip.hoverMe') }}
                                 </UButton>
                             </UTooltip>
-                            
+
                             <UTooltip :text="t('examples.inputShowcase.tooltip.withKbd')" :kbds="['Ctrl', 'S']">
                                 <UButton color="neutral" variant="outline" size="sm" icon="i-lucide-save">
                                     {{ t('examples.inputShowcase.tooltip.save') }}
                                 </UButton>
                             </UTooltip>
-                            
+
                             <UTooltip :text="t('examples.inputShowcase.tooltip.withDelay')" :delay-duration="0">
                                 <UButton color="success" variant="ghost" size="sm" icon="i-lucide-zap">
                                     {{ t('examples.inputShowcase.tooltip.instant') }}
@@ -243,7 +216,7 @@ const frameworkOptions = [
 
 const languageOptions = [
     'JavaScript',
-    'TypeScript', 
+    'TypeScript',
     'Python',
     'Java',
     'C#',
@@ -262,20 +235,20 @@ watch(searchQuery, () => {
 })
 
 onMounted(() => {
-  if (!inputShowcaseSection.value) return
-  
-  const { setupSection, utils } = useAnimations()
-  
-  // Setup section with proper loading removal
-  setupSection(inputShowcaseSection)
-  
-  if (utils?.fadeInUp) {
-    utils.fadeInUp(inputShowcaseSection.value, {
-      scrollTrigger: {
-        trigger: inputShowcaseSection.value,
-        start: 'top 85%'
-      }
-    })
-  }
+    if (!inputShowcaseSection.value) return
+
+    const { setupSection, utils } = useAnimations()
+
+    // Setup section with proper loading removal
+    setupSection(inputShowcaseSection)
+
+    if (utils?.fadeInUp) {
+        utils.fadeInUp(inputShowcaseSection.value, {
+            scrollTrigger: {
+                trigger: inputShowcaseSection.value,
+                start: 'top 85%'
+            }
+        })
+    }
 })
 </script>
