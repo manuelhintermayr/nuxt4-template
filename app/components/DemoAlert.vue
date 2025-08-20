@@ -1,8 +1,8 @@
 <template>
   <UAlert
     icon="i-heroicons-information-circle"
-    description="Dies ist eine Beispiel-Benachrichtigung mit Nuxt UI!"
-    title="Info"
+    :description="$t('examples.alert.description')"
+    :title="$t('examples.alert.title')"
     color="primary"
     variant="soft"
   />

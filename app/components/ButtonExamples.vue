@@ -1,13 +1,13 @@
 <template>
   <div class="space-y-4">
-    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Buttons</h4>
+    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $t('examples.buttons.title') }}</h4>
     <div class="flex flex-wrap gap-2">
-      <UButton>Default</UButton>
-      <UButton color="primary" variant="solid">Primary</UButton>
-      <UButton color="neutral" variant="soft">Soft Neutral</UButton>
-      <UButton color="error" variant="outline">Outline Error</UButton>
-      <UButton variant="ghost">Ghost</UButton>
-      <UButton variant="link">Link</UButton>
+      <UButton>{{ $t('examples.buttons.default') }}</UButton>
+      <UButton color="primary" variant="solid">{{ $t('examples.buttons.primary') }}</UButton>
+      <UButton color="neutral" variant="soft">{{ $t('examples.buttons.softNeutral') }}</UButton>
+      <UButton color="error" variant="outline">{{ $t('examples.buttons.outlineError') }}</UButton>
+      <UButton variant="ghost">{{ $t('examples.buttons.ghost') }}</UButton>
+      <UButton variant="link">{{ $t('examples.buttons.link') }}</UButton>
     </div>
   </div>
 </template>

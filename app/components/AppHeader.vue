@@ -5,10 +5,13 @@
         <div class="flex items-center">
           <UIcon name="i-heroicons-rocket-launch" class="w-8 h-8 text-primary-500 mr-3" />
           <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
-            Nuxt 4 + UI Template
+            {{ $t('header.title') }}
           </h1>
         </div>
-        <UColorModeToggle />
+        <div class="flex items-center space-x-4">
+          <LanguageSwitcher />
+          <UColorModeToggle />
+        </div>
       </div>
     </div>
   </header>

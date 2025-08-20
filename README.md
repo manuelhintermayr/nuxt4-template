@@ -1,117 +1,223 @@
-# Nuxt 4 + UI Template
+# Nuxt 4 Template
 
-Ein modernes Nuxt 4-Projekt mit Nuxt UI für schnelle und schöne Benutzeroberflächen.
+A modern, production-ready Nuxt 4 starter template with comprehensive configurations and internationalization support. Perfect for building modern web applications with cutting-edge technologies.
+
+**Developed by:** [Manuel Hintermayr](https://github.com/manuelhintermayr)  
+**Repository:** https://github.com/manuelhintermayr/nuxt4-template
 
 ## 🚀 Features
 
-- ⚡️ **Nuxt 4** - Die neueste Version mit verbesserter Performance
-- 🎨 **Nuxt UI** - Moderne UI-Komponenten basierend auf Tailwind CSS
-- 🌙 **Dark Mode** - Automatischer Dark/Light Mode Support
-- 📱 **Responsive** - Mobile-first Design
-- 🔧 **TypeScript** - Vollständige TypeScript-Unterstützung
+- ⚡️ **Nuxt 4** - Latest version with improved performance and new features
+- 🎨 **Nuxt UI** - Modern UI components based on Tailwind CSS and Headless UI
+- 🌍 **Internationalization** - Full i18n support with @nuxtjs/i18n
+- 🌙 **Dark Mode** - Built-in dark/light mode toggle
+- 📱 **Responsive Design** - Mobile-first approach
+- 🔧 **TypeScript** - Full TypeScript support with type safety
+- 🎯 **Component Architecture** - Modular, reusable Vue components
+- 🎭 **Heroicons** - Beautiful SVG icons from the Heroicons library
+- 🏗️ **Developer Experience** - Hot module replacement and fast refresh
+
+## 🛠️ Technology Stack
+
+### Core Frameworks
+- **[Nuxt 4](https://nuxt.com/)** - The Intuitive Vue Framework
+- **[Vue 3](https://vuejs.org/)** - Progressive JavaScript Framework
+- **[TypeScript](https://www.typescriptlang.org/)** - Typed JavaScript
+
+### UI & Styling
+- **[Nuxt UI](https://ui.nuxt.com/)** - Fully styled and customizable components
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Headless UI](https://headlessui.dev/)** - Unstyled, accessible UI components
+
+### Internationalization
+- **[@nuxtjs/i18n](https://i18n.nuxtjs.org/)** - Internationalization module
+- **Support for:** English (en) and German (de) out of the box
+- **Lazy loading** - Translation files loaded on demand
+
+### Icons & Assets
+- **[@iconify-json/heroicons](https://iconify.design/)** - Heroicons icon collection
+- **[@nuxt/icon](https://github.com/nuxt/icon)** - Icon component with 200k+ icons
 
 ## 📦 Installation
 
-Make sure to install dependencies:
-
 ```bash
-# npm
+# Clone the repository
+git clone https://github.com/manuelhintermayr/nuxt4-template.git
+cd nuxt4-template
+
+# Install dependencies
 npm install
-
-# pnpm
+# or
 pnpm install
-
-# yarn
+# or
 yarn install
-
-# bun
+# or
 bun install
 ```
 
-## Development Server
+## 🚦 Development
 
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
+# or
 pnpm dev
-
-# yarn
+# or
 yarn dev
-
-# bun
+# or
 bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-## 🏗️ Projektstruktur
+## 🏗️ Project Structure
 
 ```
 nuxt4-template/
 ├── app/
-│   └── app.vue          # Haupt-App-Komponente
-├── assets/
-│   └── css/
-│       └── main.css     # Globale Styles mit Nuxt UI
-├── public/              # Statische Assets
-├── nuxt.config.ts       # Nuxt-Konfiguration
-└── package.json         # Projekt-Dependencies
+│   ├── app.vue                 # Root application component
+│   ├── components/             # Reusable Vue components
+│   │   ├── AppHeader.vue       # Header with navigation and language switcher
+│   │   ├── WelcomeSection.vue  # Welcome hero section
+│   │   ├── FeatureCard.vue     # Reusable feature card component
+│   │   ├── FeaturesGrid.vue    # Grid showcase of main features
+│   │   ├── ButtonExamples.vue  # Button variants demonstration
+│   │   ├── FormExamples.vue    # Form components showcase
+│   │   ├── DemoAlert.vue       # Alert component example
+│   │   ├── ExamplesSection.vue # Container for all examples
+│   │   └── LanguageSwitcher.vue # Language selection dropdown
+│   └── pages/
+│       └── index.vue           # Main landing page
+├── i18n/
+│   ├── i18n.config.ts         # i18n configuration
+│   └── locales/               # Translation files
+│       ├── en.json            # English translations
+│       └── de.json            # German translations
+├── public/                    # Static assets
+├── nuxt.config.ts            # Nuxt configuration
+└── package.json              # Dependencies and scripts
 ```
 
-## 🎨 Nuxt UI Komponenten
+## 🎨 Component Architecture
 
-Dieses Template beinhaltet Beispiele für:
+### Modular Design
+All UI elements are extracted into reusable components following Vue.js best practices:
 
-- Buttons und Interaktive Elemente
-- Formulare (Input, Textarea, Select)
-- Cards und Layout-Komponenten
-- Icons (Heroicons)
-- Benachrichtigungen und Alerts
-- Dark Mode Toggle
+- **Props-based components** - `FeatureCard.vue` accepts title, description, icon, and color props
+- **Composable integration** - Uses Nuxt's auto-imported composables like `useI18n`
+- **TypeScript interfaces** - Fully typed props and component APIs
+- **Scoped styling** - Component-specific styles when needed
 
-## 📚 Dokumentation
+### Available Components
 
-- [Nuxt Documentation](https://nuxt.com/docs/getting-started/introduction)
-- [Nuxt UI Documentation](https://ui.nuxt.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Deployment Documentation](https://nuxt.com/docs/getting-started/deployment)
+#### Layout Components
+- `AppHeader` - Navigation header with logo, title, language switcher, and dark mode toggle
+- `WelcomeSection` - Hero section with internationalized welcome message
 
-## 🤝 Beitragen
+#### Content Components
+- `FeatureCard` - Reusable card component for showcasing features
+- `FeaturesGrid` - Grid layout showcasing Nuxt 4, Nuxt UI, and Dark Mode features
+- `ExamplesSection` - Container for component demonstrations
 
-Dieses Template soll als Startpunkt für Nuxt 4-Projekte dienen. Fühlen Sie sich frei, es anzupassen und zu erweitern!
+#### Interactive Components
+- `ButtonExamples` - Showcase of different button variants (solid, soft, outline, ghost, link)
+- `FormExamples` - Form components including inputs, textarea, and select
+- `DemoAlert` - Alert component with icon and message
+- `LanguageSwitcher` - Dropdown for language selection
+
+## 🌍 Internationalization
+
+### Supported Languages
+- **English (en)** - Default language
+- **German (de)** - Secondary language
+
+### Translation Structure
+```json
+{
+  "header": {
+    "title": "Page title"
+  },
+  "welcome": {
+    "title": "Welcome message",
+    "subtitle": "Description"
+  },
+  "features": {
+    "nuxt4": {
+      "title": "Feature title",
+      "description": "Feature description"
+    }
+  }
+}
+```
+
+### Adding New Languages
+1. Create a new JSON file in `i18n/locales/` (e.g., `fr.json`)
+2. Add the locale configuration in `nuxt.config.ts`:
+```typescript
+locales: [
+  { code: 'en', name: 'English', file: 'en.json' },
+  { code: 'de', name: 'Deutsch', file: 'de.json' },
+  { code: 'fr', name: 'Français', file: 'fr.json' }
+]
+```
+
+## 🏭 Production
+
+Build the application for production:
+
+```bash
+npm run build
+# or
+pnpm build
+# or
+yarn build
+# or
+bun run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+# or
+pnpm preview
+# or
+yarn preview
+# or
+bun run preview
+```
+
+## 📚 Documentation
+
+- **[Nuxt 4 Documentation](https://nuxt.com/docs/getting-started/introduction)** - Learn about Nuxt features
+- **[Nuxt UI Documentation](https://ui.nuxt.com/)** - UI component library
+- **[Vue 3 Documentation](https://vuejs.org/guide/)** - Vue.js framework guide
+- **[Tailwind CSS Documentation](https://tailwindcss.com/docs)** - Utility-first CSS
+- **[Nuxt i18n Documentation](https://i18n.nuxtjs.org/)** - Internationalization guide
+- **[TypeScript Documentation](https://www.typescriptlang.org/docs/)** - TypeScript handbook
+
+## 🤝 Contributing
+
+This template is designed to be a starting point for Nuxt 4 projects. Feel free to:
+
+- Fork the repository
+- Customize components and styling
+- Add new features and integrations
+- Submit pull requests for improvements
+- Report issues and suggestions
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 💝 Acknowledgments
+
+- **Nuxt Team** for the amazing framework
+- **Tailwind Labs** for Tailwind CSS and Headless UI
+- **Heroicons** for the beautiful icon set
+- **Vue.js Team** for the progressive framework
+
+---
+
+**Happy coding!** 🚀
+
+Built with ❤️ by [Manuel Hintermayr](https://github.com/manuelhintermayr)

@@ -1,0 +1,52 @@
+{
+  "header": {
+    "title": "Nuxt 4 + UI Template"
+  },
+  "languageSwitcher": {
+    "placeholder": "Sprache"
+  },
+  "welcome": {
+    "title": "Willkommen zu Ihrem Nuxt 4 Projekt",
+    "subtitle": "Mit Nuxt UI für moderne und responsive Benutzeroberflächen"
+  },
+  "features": {
+    "nuxt4": {
+      "title": "Nuxt 4",
+      "description": "Die neueste Version von Nuxt mit verbesserter Performance und neuen Features."
+    },
+    "nuxtUI": {
+      "title": "Nuxt UI",
+      "description": "Moderne UI-Komponenten basierend auf Tailwind CSS und Headless UI."
+    },
+    "darkMode": {
+      "title": "Dark Mode",
+      "description": "Automatischer Dark Mode Support mit einfacher Umschaltung."
+    }
+  },
+  "examples": {
+    "title": "Beispiel-Komponenten",
+    "buttons": {
+      "title": "Buttons",
+      "default": "Standard",
+      "primary": "Primär",
+      "softNeutral": "Soft Neutral",
+      "outlineError": "Outline Fehler",
+      "ghost": "Ghost",
+      "link": "Link"
+    },
+    "forms": {
+      "title": "Formulare",
+      "namePlaceholder": "Ihr Name",
+      "emailPlaceholder": "ihre@email.de",
+      "messagePlaceholder": "Ihre Nachricht...",
+      "selectPlaceholder": "Wählen Sie eine Option",
+      "option1": "Option 1",
+      "option2": "Option 2",
+      "option3": "Option 3"
+    },
+    "alert": {
+      "title": "Info",
+      "description": "Dies ist eine Beispiel-Benachrichtigung mit Nuxt UI!"
+    }
+  }
+}
