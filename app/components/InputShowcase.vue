@@ -145,6 +145,66 @@
                 </div>
             </UCard>
         </div>
+
+        <!-- Additional Row for Textarea and Tooltip -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Textarea -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.inputShowcase.textarea.title') }}</h5>
+                </template>
+                <div class="p-4 space-y-4">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium">{{ t('examples.inputShowcase.textarea.basic') }}</label>
+                        <UTextarea 
+                            v-model="basicTextarea" 
+                            :placeholder="t('examples.inputShowcase.textarea.placeholder')"
+                            :rows="3"
+                        />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium">{{ t('examples.inputShowcase.textarea.autoresize') }}</label>
+                        <UTextarea 
+                            v-model="autoResizeTextarea" 
+                            :placeholder="t('examples.inputShowcase.textarea.autoPlaceholder')"
+                            autoresize
+                            :maxrows="6"
+                        />
+                    </div>
+                </div>
+            </UCard>
+
+            <!-- Tooltip -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.inputShowcase.tooltip.title') }}</h5>
+                </template>
+                <div class="p-4 space-y-4">
+                    <div class="space-y-2">
+                        <p class="text-sm">{{ t('examples.inputShowcase.tooltip.description') }}</p>
+                        <div class="flex gap-3 flex-wrap">
+                            <UTooltip :text="t('examples.inputShowcase.tooltip.basicTooltip')">
+                                <UButton color="primary" variant="soft" size="sm">
+                                    {{ t('examples.inputShowcase.tooltip.hoverMe') }}
+                                </UButton>
+                            </UTooltip>
+                            
+                            <UTooltip :text="t('examples.inputShowcase.tooltip.withKbd')" :kbds="['Ctrl', 'S']">
+                                <UButton color="neutral" variant="outline" size="sm" icon="i-lucide-save">
+                                    {{ t('examples.inputShowcase.tooltip.save') }}
+                                </UButton>
+                            </UTooltip>
+                            
+                            <UTooltip :text="t('examples.inputShowcase.tooltip.withDelay')" :delay-duration="0">
+                                <UButton color="success" variant="ghost" size="sm" icon="i-lucide-zap">
+                                    {{ t('examples.inputShowcase.tooltip.instant') }}
+                                </UButton>
+                            </UTooltip>
+                        </div>
+                    </div>
+                </div>
+            </UCard>
+        </div>
     </div>
 </template>
 
@@ -167,6 +227,10 @@ const emailInput = ref('')
 const passwordInput = ref('')
 const searchLoading = ref(false)
 const showPassword = ref(false)
+
+// Textarea states
+const basicTextarea = ref('')
+const autoResizeTextarea = ref('This is sample text that demonstrates the autoresize functionality of the textarea component.')
 
 // Options
 const frameworkOptions = [

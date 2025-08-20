@@ -210,6 +210,27 @@
                 "contentTitle": "Drawer Content",
                 "contentText": "This is the content inside the drawer. You can put any components here.",
                 "sidebarTitle": "Navigation"
+            },
+            "tree": {
+                "title": "Tree View"
+            },
+            "table": {
+                "title": "Data Table",
+                "nameColumn": "Name",
+                "roleColumn": "Role", 
+                "statusColumn": "Status",
+                "emailColumn": "Email"
+            },
+            "timeline": {
+                "title": "Timeline",
+                "step1Title": "Project Kickoff",
+                "step1Desc": "Kicked off the project with team alignment. Set up project milestones.",
+                "step2Title": "Design Phase", 
+                "step2Desc": "User research and design workshops. Created wireframes and prototypes.",
+                "step3Title": "Development Sprint",
+                "step3Desc": "Frontend and backend development. Implemented core features and APIs.",
+                "step4Title": "Testing & Deployment",
+                "step4Desc": "QA testing and performance optimization. Deployed to production."
             }
         },
         "utility": {
@@ -339,7 +360,7 @@
             },
             "inputTags": {
                 "title": "Input Tags",
-                "skillsLabel": "Add your skills",
+                "skills": "Add your skills",
                 "placeholder": "Type and press Enter..."
             },
             "pinInput": {
@@ -354,21 +375,47 @@
             },
             "advancedInput": {
                 "title": "Advanced Input",
-                "search": "Search...",
-                "email": "Enter your email",
-                "password": "Enter password"
+                "searchPlaceholder": "Search...",
+                "emailPlaceholder": "Enter your email",
+                "passwordPlaceholder": "Enter password"
             },
             "kbd": {
                 "title": "Keyboard Shortcuts",
-                "save": "Save",
+                "shortcuts": "Common shortcuts",
+                "commandPalette": "Command Palette",
                 "copy": "Copy",
-                "paste": "Paste",
-                "undo": "Undo"
+                "escape": "Escape"
+            },
+            "textarea": {
+                "title": "Textarea",
+                "basic": "Basic Textarea",
+                "placeholder": "Enter your message...",
+                "autoresize": "Auto-resize Textarea",
+                "autoPlaceholder": "This textarea will grow as you type..."
+            },
+            "tooltip": {
+                "title": "Tooltips",
+                "description": "Interactive tooltip examples",
+                "basicTooltip": "This is a basic tooltip",
+                "hoverMe": "Hover me",
+                "withKbd": "Save your work",
+                "save": "Save",
+                "withDelay": "Instant tooltip",
+                "instant": "Instant"
             }
         },
         "navigationAdvanced": {
             "title": "Advanced Navigation",
             "description": "Complex navigation patterns and overlay components",
+            "tabs": {
+                "title": "Tab Navigation",
+                "tab1": "Account",
+                "tab1Content": "Manage your account settings and preferences here.",
+                "tab2": "Security",
+                "tab2Content": "Configure your security settings and two-factor authentication.",
+                "tab3": "Notifications",
+                "tab3Content": "Control your notification preferences and email settings."
+            },
             "navigationMenu": {
                 "title": "Navigation Menu",
                 "home": "Home",
@@ -423,6 +470,34 @@
                 "title": "Popover Content",
                 "content": "This is a simple popover with additional information.",
                 "close": "Close"
+            }
+        },
+        "overlay": {
+            "title": "Overlay Components",
+            "description": "Interactive overlays, notifications, and feedback components",
+            "toast": {
+                "title": "Toast Notifications",
+                "success": "Success Toast",
+                "error": "Error Toast", 
+                "withAction": "Toast with Action",
+                "withProgress": "Toast with Progress",
+                "successTitle": "Success!",
+                "successDesc": "Your changes have been saved successfully.",
+                "errorTitle": "Error occurred",
+                "errorDesc": "Something went wrong. Please try again.",
+                "actionTitle": "Item deleted",
+                "actionDesc": "The item has been removed from your list.",
+                "undo": "Undo",
+                "progressTitle": "Downloading...",
+                "progressDesc": "Please wait while we process your request."
+            },
+            "tooltip": {
+                "title": "Tooltip Positions",
+                "basic": "Basic tooltip message",
+                "hoverTop": "Hover (Top)",
+                "left": "Left",
+                "right": "Right",
+                "withKbd": "Command Palette"
             }
         }
     },

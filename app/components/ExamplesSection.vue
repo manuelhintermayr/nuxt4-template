@@ -7,6 +7,7 @@
         <div ref="exampleComponents" class="space-y-4">
             <ButtonExamples />
             <FormExamples />
+            <MouseFollowerExamples />
             <FormsAdvancedExample />
             <InputShowcase />
             <LayoutExample />
@@ -15,8 +16,8 @@
             <NavigationExample />
             <NavigationAdvanced />
             <DataDisplayExample />
+            <OverlayExample />
             <UtilityExample />
-            <MouseFollowerExamples />
             <DemoAlert />
         </div>
     </div>

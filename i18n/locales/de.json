@@ -214,6 +214,27 @@
                 "contentTitle": "Schubladen-Inhalt",
                 "contentText": "Dies ist der Inhalt innerhalb der Schublade. Sie können hier beliebige Komponenten einfügen.",
                 "sidebarTitle": "Navigation"
+            },
+            "tree": {
+                "title": "Baum-Ansicht"
+            },
+            "table": {
+                "title": "Daten-Tabelle",
+                "nameColumn": "Name",
+                "roleColumn": "Rolle", 
+                "statusColumn": "Status",
+                "emailColumn": "E-Mail"
+            },
+            "timeline": {
+                "title": "Zeitleiste",
+                "step1Title": "Projekt-Auftakt",
+                "step1Desc": "Projekt-Kick-off mit Team-Abstimmung. Meilensteine festgelegt.",
+                "step2Title": "Design-Phase", 
+                "step2Desc": "Nutzerforschung und Design-Workshops. Wireframes und Prototypen erstellt.",
+                "step3Title": "Entwicklungs-Sprint",
+                "step3Desc": "Frontend- und Backend-Entwicklung. Kernfunktionen und APIs implementiert.",
+                "step4Title": "Test & Deployment",
+                "step4Desc": "QA-Tests und Performance-Optimierung. Produktions-Deployment durchgeführt."
             }
         },
         "utility": {
@@ -339,7 +360,7 @@
             },
             "inputTags": {
                 "title": "Eingabe Tags",
-                "skillsLabel": "Fügen Sie Ihre Fähigkeiten hinzu",
+                "skills": "Fügen Sie Ihre Fähigkeiten hinzu",
                 "placeholder": "Tippen und Enter drücken..."
             },
             "pinInput": {
@@ -354,21 +375,47 @@
             },
             "advancedInput": {
                 "title": "Erweiterte Eingabe",
-                "search": "Suchen...",
-                "email": "E-Mail eingeben",
-                "password": "Passwort eingeben"
+                "searchPlaceholder": "Suchen...",
+                "emailPlaceholder": "E-Mail eingeben",
+                "passwordPlaceholder": "Passwort eingeben"
             },
             "kbd": {
                 "title": "Tastaturkürzel",
-                "save": "Speichern",
+                "shortcuts": "Häufige Kürzel",
+                "commandPalette": "Befehlspalette",
                 "copy": "Kopieren",
-                "paste": "Einfügen",
-                "undo": "Rückgängig"
+                "escape": "Escape"
+            },
+            "textarea": {
+                "title": "Textbereich",
+                "basic": "Basis Textbereich",
+                "placeholder": "Geben Sie Ihre Nachricht ein...",
+                "autoresize": "Automatische Größenanpassung",
+                "autoPlaceholder": "Dieser Textbereich wächst mit Ihrer Eingabe..."
+            },
+            "tooltip": {
+                "title": "Tooltips",
+                "description": "Interaktive Tooltip-Beispiele",
+                "basicTooltip": "Dies ist ein Basis-Tooltip",
+                "hoverMe": "Berühren Sie mich",
+                "withKbd": "Speichere deine Arbeit",
+                "save": "Speichern",
+                "withDelay": "Sofort-Tooltip",
+                "instant": "Sofort"
             }
         },
         "navigationAdvanced": {
             "title": "Erweiterte Navigation",
             "description": "Komplexe Navigationsmuster und Overlay-Komponenten",
+            "tabs": {
+                "title": "Tab-Navigation",
+                "tab1": "Konto",
+                "tab1Content": "Verwalten Sie hier Ihre Kontoeinstellungen und Präferenzen.",
+                "tab2": "Sicherheit",
+                "tab2Content": "Konfigurieren Sie Ihre Sicherheitseinstellungen und Zwei-Faktor-Authentifizierung.",
+                "tab3": "Benachrichtigungen",
+                "tab3Content": "Steuern Sie Ihre Benachrichtigungseinstellungen und E-Mail-Einstellungen."
+            },
             "navigationMenu": {
                 "title": "Navigationsmenü",
                 "home": "Startseite",
@@ -423,6 +470,34 @@
                 "title": "Popover Inhalt",
                 "content": "Dies ist ein einfaches Popover mit zusätzlichen Informationen.",
                 "close": "Schließen"
+            }
+        },
+        "overlay": {
+            "title": "Overlay-Komponenten",
+            "description": "Interaktive Overlays, Benachrichtigungen und Feedback-Komponenten",
+            "toast": {
+                "title": "Toast-Benachrichtigungen",
+                "success": "Erfolg Toast",
+                "error": "Fehler Toast", 
+                "withAction": "Toast mit Aktion",
+                "withProgress": "Toast mit Fortschritt",
+                "successTitle": "Erfolgreich!",
+                "successDesc": "Ihre Änderungen wurden erfolgreich gespeichert.",
+                "errorTitle": "Fehler aufgetreten",
+                "errorDesc": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",
+                "actionTitle": "Element gelöscht",
+                "actionDesc": "Das Element wurde aus Ihrer Liste entfernt.",
+                "undo": "Rückgängig",
+                "progressTitle": "Wird heruntergeladen...",
+                "progressDesc": "Bitte warten Sie, während wir Ihre Anfrage bearbeiten."
+            },
+            "tooltip": {
+                "title": "Tooltip-Positionen",
+                "basic": "Basis-Tooltip-Nachricht",
+                "hoverTop": "Berühren (Oben)",
+                "left": "Links",
+                "right": "Rechts",
+                "withKbd": "Befehlspalette"
             }
         }
     },

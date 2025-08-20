@@ -160,6 +160,49 @@
                 </div>
             </UCard>
 
+            <!-- Tree View -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.dataDisplay.tree.title') }}</h5>
+                </template>
+                <div class="p-4">
+                    <UTree 
+                        :items="treeItems"
+                        class="w-full"
+                        :default-expanded="['src']"
+                    />
+                </div>
+            </UCard>
+
+            <!-- Table -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.dataDisplay.table.title') }}</h5>
+                </template>
+                <div class="p-0">
+                    <UTable 
+                        :data="tableData" 
+                        :columns="tableColumns"
+                        class="w-full"
+                        :loading="tableLoading"
+                    />
+                </div>
+            </UCard>
+
+            <!-- Timeline -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.dataDisplay.timeline.title') }}</h5>
+                </template>
+                <div class="p-4">
+                    <UTimeline 
+                        :items="timelineItems"
+                        :default-value="2"
+                        class="w-full"
+                    />
+                </div>
+            </UCard>
+
             <!-- Modals -->
             <UModal v-model="showBottomModal">
                 <div class="p-6">
@@ -217,6 +260,115 @@ const carouselItems = [
         style: 'background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);' 
     }
 ]
+
+// Tree data
+const treeItems = computed(() => [
+    {
+        label: 'src/',
+        icon: 'i-lucide-folder',
+        value: 'src',
+        defaultExpanded: true,
+        children: [
+            {
+                label: 'components/',
+                icon: 'i-lucide-folder',
+                value: 'components',
+                children: [
+                    { label: 'Button.vue', icon: 'i-vscode-icons-file-type-vue', value: 'button' },
+                    { label: 'Card.vue', icon: 'i-vscode-icons-file-type-vue', value: 'card' }
+                ]
+            },
+            {
+                label: 'composables/',
+                icon: 'i-lucide-folder',
+                value: 'composables',
+                children: [
+                    { label: 'useAuth.ts', icon: 'i-vscode-icons-file-type-typescript', value: 'auth' }
+                ]
+            }
+        ]
+    },
+    { label: 'app.vue', icon: 'i-vscode-icons-file-type-vue', value: 'app' },
+    { label: 'nuxt.config.ts', icon: 'i-vscode-icons-file-type-nuxt', value: 'config' }
+])
+
+// Table data
+const tableLoading = ref(false)
+const tableColumns = [
+    {
+        accessorKey: 'name',
+        header: () => t('examples.dataDisplay.table.nameColumn'),
+        id: 'name'
+    },
+    {
+        accessorKey: 'role',
+        header: () => t('examples.dataDisplay.table.roleColumn'),
+        id: 'role'
+    },
+    {
+        accessorKey: 'status',
+        header: () => t('examples.dataDisplay.table.statusColumn'),
+        id: 'status'
+    },
+    {
+        accessorKey: 'email',
+        header: () => t('examples.dataDisplay.table.emailColumn'),
+        id: 'email'
+    }
+]
+
+const tableData = computed(() => [
+    { 
+        name: 'John Doe', 
+        role: 'Developer', 
+        status: 'Active', 
+        email: 'john@example.com' 
+    },
+    { 
+        name: 'Jane Smith', 
+        role: 'Designer', 
+        status: 'Active', 
+        email: 'jane@example.com' 
+    },
+    { 
+        name: 'Bob Johnson', 
+        role: 'Manager', 
+        status: 'Inactive', 
+        email: 'bob@example.com' 
+    }
+])
+
+// Timeline data
+const timelineItems = computed(() => [
+    {
+        date: 'Mar 15, 2025',
+        title: t('examples.dataDisplay.timeline.step1Title'),
+        description: t('examples.dataDisplay.timeline.step1Desc'),
+        icon: 'i-lucide-rocket',
+        value: 1
+    },
+    {
+        date: 'Mar 22, 2025',
+        title: t('examples.dataDisplay.timeline.step2Title'),
+        description: t('examples.dataDisplay.timeline.step2Desc'),
+        icon: 'i-lucide-palette',
+        value: 2
+    },
+    {
+        date: 'Mar 29, 2025',
+        title: t('examples.dataDisplay.timeline.step3Title'),
+        description: t('examples.dataDisplay.timeline.step3Desc'),
+        icon: 'i-lucide-code',
+        value: 3
+    },
+    {
+        date: 'Apr 5, 2025',
+        title: t('examples.dataDisplay.timeline.step4Title'),
+        description: t('examples.dataDisplay.timeline.step4Desc'),
+        icon: 'i-lucide-check-circle',
+        value: 4
+    }
+])
 
 onMounted(() => {
   if (!dataDisplaySection.value) return

@@ -8,6 +8,16 @@
         </p>
         
         <div class="space-y-6">
+            <!-- Tabs -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.navigationAdvanced.tabs.title') }}</h5>
+                </template>
+                <div class="p-4">
+                    <UTabs :items="tabItems" class="w-full" />
+                </div>
+            </UCard>
+
             <!-- Navigation Menu -->
             <UCard class="card-tilt">
                 <template #header>
@@ -204,6 +214,28 @@ const navigationMenuItems = computed(() => [
         label: t('examples.navigationAdvanced.navigationMenu.contact'),
         icon: 'i-lucide-mail',
         to: '/contact'
+    }
+])
+
+// Tab items
+const tabItems = computed(() => [
+    {
+        label: t('examples.navigationAdvanced.tabs.tab1'),
+        icon: 'i-lucide-user',
+        content: t('examples.navigationAdvanced.tabs.tab1Content'),
+        value: 'account'
+    },
+    {
+        label: t('examples.navigationAdvanced.tabs.tab2'),
+        icon: 'i-lucide-lock',
+        content: t('examples.navigationAdvanced.tabs.tab2Content'),
+        value: 'security'
+    },
+    {
+        label: t('examples.navigationAdvanced.tabs.tab3'),
+        icon: 'i-lucide-bell',
+        content: t('examples.navigationAdvanced.tabs.tab3Content'),
+        value: 'notifications'
     }
 ])
 
