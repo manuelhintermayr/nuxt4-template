@@ -10,7 +10,8 @@ const animationConfig = {
     enableCardHover: true,        // Card hover lift effects
     enableMagneticEffect: true,   // Magnetic button effects
     enableScrollTrigger: true,    // ScrollTrigger-based animations
-    enableAutoTiltDetection: true // Automatically detect and add tilt to cards
+    enableAutoTiltDetection: true, // Automatically detect and add tilt to cards
+    enableLogging: false          // Enable console logging for debugging
 }
 
 // Central configuration for card selectors to avoid duplication
@@ -157,11 +158,15 @@ export default defineNuxtPlugin((nuxtApp) => {
                         document.querySelectorAll(selector).forEach(el => allCards.add(el))
                     })
 
-                    console.log(`Found ${allCards.size} cards for tilt effects`)
+                    if (animationConfig.enableLogging) {
+                        console.log(`Found ${allCards.size} cards for tilt effects`)
+                    }
 
                     allCards.forEach((card: Element) => {
                         const cardEl = card as HTMLElement
-                        console.log('Adding tilt to:', cardEl.className)
+                        if (animationConfig.enableLogging) {
+                            console.log('Adding tilt to:', cardEl.className)
+                        }
 
                         // Apply unified tilt effect
                         applyTiltEffect(cardEl, animationConfig.enableTiltEffects)
