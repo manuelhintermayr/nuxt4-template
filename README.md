@@ -33,6 +33,7 @@ A modern, production-ready Nuxt 4 starter template with comprehensive configurat
 ### UI & Styling
 - **[Nuxt UI](https://ui.nuxt.com/)** - Fully styled and customizable components
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **All UI components implemented based on [Nuxt UI Documentation](https://ui.nuxt.com/components/app)**
 
 ### Animation & Effects
 - **[GSAP](https://greensock.com/gsap/)** - Professional-grade animation library
