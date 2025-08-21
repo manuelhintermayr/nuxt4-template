@@ -29,9 +29,9 @@
                 </template>
                 <div class="p-4">
                     <UButtonGroup>
-                        <UButton color="neutral" variant="outline" label="Edit" icon="i-heroicons-pencil" />
-                        <UButton color="neutral" variant="outline" label="Share" icon="i-heroicons-share" />
-                        <UButton color="neutral" variant="outline" label="Delete" icon="i-heroicons-trash" />
+                        <UButton color="neutral" variant="outline" :label="$t('examples.buttons.buttonGroups.edit')" icon="i-heroicons-pencil" />
+                        <UButton color="neutral" variant="outline" :label="$t('examples.buttons.buttonGroups.share')" icon="i-heroicons-share" />
+                        <UButton color="neutral" variant="outline" :label="$t('examples.buttons.buttonGroups.delete')" icon="i-heroicons-trash" />
                     </UButtonGroup>
                 </div>
             </UCard>
@@ -43,9 +43,9 @@
                 </template>
                 <div class="p-4">
                     <UButtonGroup orientation="vertical" class="w-fit">
-                        <UButton color="neutral" variant="outline" label="Profile" icon="i-heroicons-user" />
-                        <UButton color="neutral" variant="outline" label="Settings" icon="i-heroicons-cog-6-tooth" />
-                        <UButton color="neutral" variant="outline" label="Logout" icon="i-heroicons-arrow-left-on-rectangle" />
+                        <UButton color="neutral" variant="outline" :label="$t('examples.buttons.buttonGroups.profile')" icon="i-heroicons-user" />
+                        <UButton color="neutral" variant="outline" :label="$t('examples.buttons.buttonGroups.settings')" icon="i-heroicons-cog-6-tooth" />
+                        <UButton color="neutral" variant="outline" :label="$t('examples.buttons.buttonGroups.logout')" icon="i-heroicons-arrow-left-on-rectangle" />
                     </UButtonGroup>
                 </div>
             </UCard>
@@ -57,8 +57,8 @@
                 </template>
                 <div class="p-4">
                     <UButtonGroup>
-                        <UInput color="neutral" variant="outline" placeholder="Enter your email" />
-                        <UButton color="primary" variant="solid" label="Subscribe" />
+                        <UInput color="neutral" variant="outline" :placeholder="$t('examples.buttons.buttonGroups.emailPlaceholder')" />
+                        <UButton color="primary" variant="solid" :label="$t('examples.buttons.buttonGroups.subscribe')" />
                     </UButtonGroup>
                 </div>
             </UCard>

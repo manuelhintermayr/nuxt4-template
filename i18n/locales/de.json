@@ -1,6 +1,8 @@
 {
     "header": {
-        "title": "Nuxt 4 + UI Template"
+        "title": "Nuxt 4 + UI Template",
+        "switchToLight": "Zu hellem Modus wechseln",
+        "switchToDark": "Zu dunklem Modus wechseln"
     },
     "languageSwitcher": {
         "placeholder": "Sprache"
@@ -49,7 +51,15 @@
                 "title": "Button Gruppen",
                 "horizontal": "Horizontale Gruppe",
                 "vertical": "Vertikale Gruppe",
-                "input": "Input mit Button"
+                "input": "Input mit Button",
+                "edit": "Bearbeiten",
+                "share": "Teilen",
+                "delete": "Löschen",
+                "profile": "Profil",
+                "settings": "Einstellungen",
+                "logout": "Abmelden",
+                "emailPlaceholder": "E-Mail eingeben",
+                "subscribe": "Abonnieren"
             }
         },
         "forms": {
@@ -225,7 +235,10 @@
                 "right": "Rechte Schublade",
                 "contentTitle": "Schubladen-Inhalt",
                 "contentText": "Dies ist der Inhalt innerhalb der Schublade. Sie können hier beliebige Komponenten einfügen.",
-                "sidebarTitle": "Navigation"
+                "sidebarTitle": "Navigation",
+                "profile": "Profil",
+                "settings": "Einstellungen",
+                "logout": "Abmelden"
             },
             "tree": {
                 "title": "Baum-Ansicht"
@@ -255,7 +268,9 @@
             "commandPalette": {
                 "title": "Befehlspalette",
                 "openButton": "Befehlspalette öffnen",
+                "openCollapsible": "Befehlspalette öffnen",
                 "placeholder": "Befehl eingeben oder suchen...",
+                "keyboardShortcut": "Tastaturkürzel verwenden:",
                 "groups": {
                     "navigation": "Navigation",
                     "actions": "Aktionen",
@@ -488,7 +503,10 @@
             },
             "slideover": {
                 "title": "Slideover Panel",
-                "content": "Dies ist ein Slideover-Panel, das von der Seite hineinschiebt."
+                "content": "Dies ist ein Slideover-Panel, das von der Seite hineinschiebt.",
+                "option1": "Option 1",
+                "option2": "Option 2",
+                "option3": "Option 3"
             },
             "popover": {
                 "title": "Popover Inhalt",

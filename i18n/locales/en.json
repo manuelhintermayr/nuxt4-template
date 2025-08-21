@@ -1,6 +1,8 @@
 {
     "header": {
-        "title": "Nuxt 4 + UI Template"
+        "title": "Nuxt 4 + UI Template",
+        "switchToLight": "Switch to light mode",
+        "switchToDark": "Switch to dark mode"
     },
     "languageSwitcher": {
         "placeholder": "Language"
@@ -49,7 +51,15 @@
                 "title": "Button Groups",
                 "horizontal": "Horizontal Group",
                 "vertical": "Vertical Group",
-                "input": "Input with Button"
+                "input": "Input with Button",
+                "edit": "Edit",
+                "share": "Share",
+                "delete": "Delete",
+                "profile": "Profile",
+                "settings": "Settings",
+                "logout": "Logout",
+                "emailPlaceholder": "Enter your email",
+                "subscribe": "Subscribe"
             }
         },
         "forms": {
@@ -221,7 +231,10 @@
                 "right": "Right Drawer",
                 "contentTitle": "Drawer Content",
                 "contentText": "This is the content inside the drawer. You can put any components here.",
-                "sidebarTitle": "Navigation"
+                "sidebarTitle": "Navigation",
+                "profile": "Profile",
+                "settings": "Settings",
+                "logout": "Logout"
             },
             "tree": {
                 "title": "Tree View"
@@ -251,7 +264,9 @@
             "commandPalette": {
                 "title": "Command Palette",
                 "openButton": "Open Command Palette",
+                "openCollapsible": "Open Command Palette",
                 "placeholder": "Type a command or search...",
+                "keyboardShortcut": "Use keyboard shortcut:",
                 "groups": {
                     "navigation": "Navigation",
                     "actions": "Actions",
@@ -488,7 +503,10 @@
             },
             "slideover": {
                 "title": "Slideover Panel",
-                "content": "This is a slideover panel that slides in from the side."
+                "content": "This is a slideover panel that slides in from the side.",
+                "option1": "Option 1",
+                "option2": "Option 2",
+                "option3": "Option 3"
             },
             "popover": {
                 "title": "Popover Content",

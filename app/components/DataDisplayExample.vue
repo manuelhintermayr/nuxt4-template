@@ -114,9 +114,9 @@
                             <div class="p-6 min-w-80">
                                 <h6 class="font-semibold mb-4">{{ t('examples.dataDisplay.drawer.sidebarTitle') }}</h6>
                                 <div class="space-y-2">
-                                    <UButton label="Profile" icon="i-lucide-user" color="neutral" variant="ghost" block />
-                                    <UButton label="Settings" icon="i-lucide-settings" color="neutral" variant="ghost" block />
-                                    <UButton label="Logout" icon="i-lucide-log-out" color="error" variant="ghost" block />
+                                    <UButton :label="t('examples.dataDisplay.drawer.profile')" icon="i-lucide-user" color="neutral" variant="ghost" block />
+                                    <UButton :label="t('examples.dataDisplay.drawer.settings')" icon="i-lucide-settings" color="neutral" variant="ghost" block />
+                                    <UButton :label="t('examples.dataDisplay.drawer.logout')" icon="i-lucide-log-out" color="error" variant="ghost" block />
                                 </div>
                             </div>
                         </template>

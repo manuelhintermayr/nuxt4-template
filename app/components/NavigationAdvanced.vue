@@ -151,9 +151,9 @@
                     </div>
                     <p class="mb-4">{{ t('examples.navigationAdvanced.slideover.content') }}</p>
                     <div class="space-y-2">
-                        <UButton label="Option 1" variant="ghost" block />
-                        <UButton label="Option 2" variant="ghost" block />
-                        <UButton label="Option 3" variant="ghost" block />
+                        <UButton :label="t('examples.navigationAdvanced.slideover.option1')" variant="ghost" block />
+                        <UButton :label="t('examples.navigationAdvanced.slideover.option2')" variant="ghost" block />
+                        <UButton :label="t('examples.navigationAdvanced.slideover.option3')" variant="ghost" block />
                     </div>
                 </div>
             </template>

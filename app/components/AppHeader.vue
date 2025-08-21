@@ -13,7 +13,7 @@
                     <div ref="darkModeButton" data-cursor-pointer>
                         <UButton :icon="colorMode.preference === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
                             variant="ghost" @click="toggleColorMode"
-                            :aria-label="colorMode.preference === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'" />
+                            :aria-label="colorMode.preference === 'dark' ? $t('header.switchToLight') : $t('header.switchToDark')" />
                     </div>
                 </div>
             </div>

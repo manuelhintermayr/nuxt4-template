@@ -15,7 +15,7 @@
                 </template>
                 <div class="p-4">
                     <UCollapsible v-model:open="isCommandPaletteCollapsed" class="border rounded">
-                        <UButton label="Open Command Palette" color="neutral"
+                        <UButton :label="t('examples.utility.commandPalette.openCollapsible')" color="neutral"
                             variant="ghost" trailing-icon="i-lucide-chevron-down" icon="i-lucide-search" block />
                         <template #content>
                             <div class="p-4 bg-gray-50 dark:bg-gray-800">
@@ -28,7 +28,7 @@
                                         icon="i-lucide-search" block />
                                 </UCommandPalette>
                                 <div class="mt-3 text-xs text-gray-500 dark:text-gray-400 flex items-center justify-between">
-                                    <span>Use keyboard shortcut:</span>
+                                    <span>{{ t('examples.utility.commandPalette.keyboardShortcut') }}</span>
                                     <UBadge size="sm">Ctrl+K</UBadge>
                                 </div>
                             </div>
