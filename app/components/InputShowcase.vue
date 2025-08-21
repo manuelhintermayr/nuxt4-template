@@ -203,7 +203,7 @@ const showPassword = ref(false)
 
 // Textarea states
 const basicTextarea = ref('')
-const autoResizeTextarea = ref('This is sample text that demonstrates the autoresize functionality of the textarea component.')
+const autoResizeTextarea = ref(t('examples.inputShowcase.textarea.sampleText'))
 
 // Options
 const frameworkOptions = [

@@ -400,7 +400,8 @@
                 "basic": "Basic Textarea",
                 "placeholder": "Enter your message...",
                 "autoresize": "Auto-resize Textarea",
-                "autoPlaceholder": "This textarea will grow as you type..."
+                "autoPlaceholder": "This textarea will grow as you type...",
+                "sampleText": "This is sample text that demonstrates the autoresize functionality of the textarea component."
             },
             "tooltip": {
                 "title": "Tooltips",
