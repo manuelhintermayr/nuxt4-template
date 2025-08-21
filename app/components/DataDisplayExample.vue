@@ -206,12 +206,12 @@ const dropdownMenuItems = computed(() => [
         onSelect: () => console.log('Billing clicked')
     },
     {
-        type: 'separator'
+        type: 'separator' as const
     },
     {
         label: t('examples.dataDisplay.dropdownMenu.logout'),
         icon: 'i-lucide-log-out',
-        color: 'error',
+        color: 'error' as const,
         onSelect: () => console.log('Logout clicked')
     }
 ])
