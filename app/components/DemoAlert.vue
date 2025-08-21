@@ -9,8 +9,6 @@
 </template>
 
 <script setup lang="ts">
-// Demo alert component with GSAP animation
-
 const alertContainer = ref<HTMLElement>()
 const alertElement = ref<HTMLElement>()
 

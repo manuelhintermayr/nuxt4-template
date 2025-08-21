@@ -24,8 +24,6 @@
 </template>
 
 <script setup lang="ts">
-// Examples section containing all component demonstrations with GSAP animations
-
 const examplesContainer = ref<HTMLElement>()
 const examplesTitle = ref<HTMLElement>()
 const exampleComponents = ref<HTMLElement>()

@@ -18,8 +18,6 @@
 </template>
 
 <script setup lang="ts">
-// Features grid showcasing the main features with GSAP animations
-
 const gridContainer = ref<HTMLElement>()
 const featureCards = ref<HTMLElement[]>([])
 

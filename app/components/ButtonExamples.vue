@@ -79,8 +79,6 @@
 </template>
 
 <script setup lang="ts">
-// Button examples showcasing different variants with GSAP animations
-
 const buttonSection = ref<HTMLElement>()
 const buttonTitle = ref<HTMLElement>()
 const buttonGrid = ref<HTMLElement>()

@@ -22,8 +22,6 @@
 </template>
 
 <script setup lang="ts">
-// Header component for the Nuxt 4 + UI template with GSAP magnetic effects
-
 const colorMode = useColorMode()
 const brandTitle = ref<HTMLElement>()
 const darkModeButton = ref<HTMLElement>()
