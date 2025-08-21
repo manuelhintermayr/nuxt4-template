@@ -8,7 +8,7 @@
         </p>
 
         <div class="grid grid-cols-1 gap-6">
-            <!-- Command Palette Alternative -->
+            <!-- Command Palette -->
             <UCard class="card-tilt">
                 <template #header>
                     <div class="flex justify-between items-center">
@@ -17,38 +17,13 @@
                     </div>
                 </template>
                 <div class="p-4">
-                    <UButton :label="t('examples.utility.commandPalette.openButton')" color="neutral" variant="outline"
-                        icon="i-lucide-search" block @click="isCommandPaletteOpen = true" />
+                    <UCommandPalette v-model:open="isCommandPaletteOpen" :groups="commandGroups" 
+                        :placeholder="t('examples.utility.commandPalette.placeholder')" class="w-full">
+                        <UButton :label="t('examples.utility.commandPalette.openButton')" color="neutral" variant="outline"
+                            icon="i-lucide-search" block />
+                    </UCommandPalette>
                 </div>
             </UCard>
-
-            <!-- Command Palette Modal -->
-            <UModal v-model="isCommandPaletteOpen">
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold mb-4">{{ t('examples.utility.commandPalette.title') }}</h3>
-                    <UInput :placeholder="t('examples.utility.commandPalette.placeholder')" icon="i-lucide-search"
-                        v-model="commandSearch" class="mb-4" />
-
-                    <div class="space-y-4">
-                        <div v-for="group in filteredCommandGroups" :key="group.id" class="space-y-2">
-                            <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ group.label }}</h4>
-                            <div class="space-y-1">
-                                <div v-for="item in group.items" :key="item.label"
-                                    class="flex items-center justify-between p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer"
-                                    @click="handleCommand(item)">
-                                    <div class="flex items-center gap-2">
-                                        <UIcon :name="item.icon" class="w-4 h-4" />
-                                        <span>{{ item.label }}</span>
-                                    </div>
-                                    <div v-if="item.kbds" class="flex gap-1">
-                                        <UBadge v-for="kbd in item.kbds" :key="kbd" size="xs">{{ kbd }}</UBadge>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </UModal>
         </div>
     </div>
 </template>
@@ -61,9 +36,8 @@ const utilitySection = ref<HTMLElement>()
 
 // Command palette state
 const isCommandPaletteOpen = ref(false)
-const commandSearch = ref('')
 
-// Command groups
+// Command groups for UCommandPalette
 const commandGroups = computed(() => [
     {
         id: 'navigation',
@@ -143,25 +117,7 @@ const commandGroups = computed(() => [
     }
 ])
 
-// Filtered command groups based on search
-const filteredCommandGroups = computed(() => {
-    if (!commandSearch.value) return commandGroups.value
-
-    return commandGroups.value.map(group => ({
-        ...group,
-        items: group.items.filter(item =>
-            item.label.toLowerCase().includes(commandSearch.value.toLowerCase())
-        )
-    })).filter(group => group.items.length > 0)
-})
-
 // Command handlers
-const handleCommand = (command: any) => {
-    if (command?.onSelect) {
-        command.onSelect()
-    }
-}
-
 const closeAndNavigate = (path: string) => {
     isCommandPaletteOpen.value = false
     console.log('Navigate to:', path)

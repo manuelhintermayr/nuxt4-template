@@ -17,8 +17,8 @@
             <NavigationAdvanced />
             <DataDisplayExample />
             <OverlayExample />
-            <UtilityExample />
             <DemoAlert />
+            <UtilityExample />
         </div>
     </div>
 </template>
