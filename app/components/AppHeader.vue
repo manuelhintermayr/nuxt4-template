@@ -38,7 +38,7 @@ onMounted(() => {
     // Add magnetic effect to interactive elements
     if (utils?.addMagneticEffect) {
         nextTick(() => {
-            const elements = [brandTitle.value, darkModeButton.value].filter(Boolean)
+            const elements = [brandTitle.value, darkModeButton.value].filter((el): el is HTMLElement => el !== undefined)
             if (elements.length > 0) {
                 utils.addMagneticEffect(elements)
             }
