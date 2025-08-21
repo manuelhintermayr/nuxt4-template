@@ -104,7 +104,7 @@ const showActionToast = () => {
         actions: [
             {
                 label: t('examples.overlay.toast.undo'),
-                color: 'white'
+                color: 'neutral'
             }
         ]
     })
@@ -117,7 +117,7 @@ const showProgressToast = () => {
         icon: 'i-lucide-download',
         color: 'info',
         progress: {
-            value: 75
+            color: 'info'
         }
     })
 }
