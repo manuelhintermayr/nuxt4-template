@@ -25,32 +25,36 @@
                 </div>
             </UCard>
 
-            <!-- Collapsible Alternative -->
+            <!-- Collapsible -->
             <UCard class="card-tilt">
                 <template #header>
                     <h5 class="font-semibold">{{ t('examples.dataDisplay.collapsible.title') }}</h5>
                 </template>
                 <div class="p-4 space-y-3">
-                    <div class="border rounded">
+                    <!-- First Collapsible -->
+                    <UCollapsible v-model:open="firstCollapsed" class="border rounded">
                         <UButton :label="t('examples.dataDisplay.collapsible.firstToggle')" color="neutral"
-                            variant="ghost" trailing-icon="i-lucide-chevron-down" block
-                            @click="firstCollapsed = !firstCollapsed" />
-                        <div v-if="!firstCollapsed" class="p-4 bg-gray-50 dark:bg-gray-800">
-                            <p class="text-sm">{{ t('examples.dataDisplay.collapsible.firstContent') }}</p>
-                        </div>
-                    </div>
+                            variant="ghost" trailing-icon="i-lucide-chevron-down" block />
+                        <template #content>
+                            <div class="p-4 bg-gray-50 dark:bg-gray-800">
+                                <p class="text-sm">{{ t('examples.dataDisplay.collapsible.firstContent') }}</p>
+                            </div>
+                        </template>
+                    </UCollapsible>
 
-                    <div class="border rounded">
+                    <!-- Second Collapsible -->
+                    <UCollapsible v-model:open="secondCollapsed" class="border rounded">
                         <UButton :label="t('examples.dataDisplay.collapsible.secondToggle')" color="neutral"
-                            variant="ghost" trailing-icon="i-lucide-chevron-down" block
-                            @click="secondCollapsed = !secondCollapsed" />
-                        <div v-if="!secondCollapsed" class="p-4 bg-gray-50 dark:bg-gray-800">
-                            <p class="text-sm">{{ t('examples.dataDisplay.collapsible.secondContent') }}</p>
-                            <UButton size="xs" color="primary" variant="soft" class="mt-2">
-                                {{ t('examples.dataDisplay.collapsible.action') }}
-                            </UButton>
-                        </div>
-                    </div>
+                            variant="ghost" trailing-icon="i-lucide-chevron-down" block />
+                        <template #content>
+                            <div class="p-4 bg-gray-50 dark:bg-gray-800">
+                                <p class="text-sm">{{ t('examples.dataDisplay.collapsible.secondContent') }}</p>
+                                <UButton size="xs" color="primary" variant="soft" class="mt-2">
+                                    {{ t('examples.dataDisplay.collapsible.action') }}
+                                </UButton>
+                            </div>
+                        </template>
+                    </UCollapsible>
                 </div>
             </UCard>
 
@@ -184,8 +188,8 @@ const { t } = useI18n()
 const dataDisplaySection = ref<HTMLElement>()
 
 // Component states
-const firstCollapsed = ref(true)
-const secondCollapsed = ref(true)
+const firstCollapsed = ref(false)
+const secondCollapsed = ref(false)
 const showDropdown = ref(false)
 const showBottomDrawer = ref(false)
 const showSideDrawer = ref(false)
