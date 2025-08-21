@@ -4,13 +4,9 @@
         "switchToLight": "Switch to light mode",
         "switchToDark": "Switch to dark mode"
     },
-    "languageSwitcher": {
-        "placeholder": "Language"
-    },
     "welcome": {
         "title": "Nuxt 4 Template",
         "subtitle": "A modern, production-ready starter template with Nuxt UI",
-        "developedBy": "Developed by",
         "repository": "View Repository",
         "productionReady": "Production Ready",
         "builtWith": "Built with",
@@ -48,7 +44,6 @@
             "defaultSection": "Default Buttons",
             "buttonGroupsSection": "Button Groups",
             "buttonGroups": {
-                "title": "Button Groups",
                 "horizontal": "Horizontal Group",
                 "vertical": "Vertical Group",
                 "input": "Input with Button",
@@ -67,7 +62,6 @@
             "description": "Form components for data input and user interaction",
             "namePlaceholder": "Your Name",
             "messagePlaceholder": "Your message...",
-            "submit": "Submit",
             "basicSection": "Basic Forms"
         },
         "accordion": {
@@ -117,42 +111,15 @@
                 "animations": "Animations",
                 "notifications": "Notifications"
             },
-            "colorPicker": {
-                "title": "Color Picker"
-            },
-            "fileUpload": {
-                "title": "File Upload",
-                "label": "Drop your files here",
-                "description": "SVG, PNG, JPG or GIF (max. 2MB)"
-            },
-            "formField": {
-                "title": "Form Fields",
-                "emailLabel": "Email Address",
-                "emailDescription": "We'll never share your email with anyone else.",
-                "passwordLabel": "Password",
-                "passwordHelp": "Must be at least 8 characters long."
-            },
-            "checkbox": {
-                "title": "Checkboxes",
-                "terms": "I agree to the terms and conditions",
-                "newsletter": "Subscribe to newsletter",
-                "newsletterDescription": "Get the latest news and updates.",
-                "indeterminate": "Indeterminate state"
-            },
             "radioGroup": {
                 "title": "Radio Group",
-                "themeLabel": "Choose Theme",
                 "light": "Light",
                 "dark": "Dark",
-                "auto": "Auto",
                 "system": "System"
             },
             "switch": {
                 "title": "Switches",
                 "notifications": "Enable notifications",
-                "notificationsDescription": "Get notified about important updates.",
-                "marketing": "Marketing emails",
-                "marketingDescription": "Receive promotional content and offers.",
                 "autoSave": "Auto-save changes",
                 "autoSaveDesc": "Automatically save your changes as you work."
             },
@@ -163,10 +130,6 @@
             },
             "progress": {
                 "title": "Progress",
-                "description": "Interactive progress bars",
-                "upload": "Upload Progress",
-                "download": "Download Progress",
-                "processing": "Processing...",
                 "indeterminate": "Indeterminate Progress"
             }
         },
@@ -214,8 +177,7 @@
                 "rightClick": "Right click here",
                 "copy": "Copy",
                 "cut": "Cut",
-                "paste": "Paste",
-                "delete": "Delete"
+                "paste": "Paste"
             },
             "dropdownMenu": {
                 "title": "Dropdown Menu",
@@ -242,7 +204,7 @@
             "table": {
                 "title": "Data Table",
                 "nameColumn": "Name",
-                "roleColumn": "Role", 
+                "roleColumn": "Role",
                 "statusColumn": "Status",
                 "emailColumn": "Email"
             },
@@ -250,7 +212,7 @@
                 "title": "Timeline",
                 "step1Title": "Project Kickoff",
                 "step1Desc": "Kicked off the project with team alignment. Set up project milestones.",
-                "step2Title": "Design Phase", 
+                "step2Title": "Design Phase",
                 "step2Desc": "User research and design workshops. Created wireframes and prototypes.",
                 "step3Title": "Development Sprint",
                 "step3Desc": "Frontend and backend development. Implemented core features and APIs.",
@@ -391,7 +353,6 @@
             "inputNumber": {
                 "title": "Number Input",
                 "basic": "Basic Number Input",
-                "stepped": "Stepped Input (0-100, step 5)",
                 "step": "Step Input (step 10)"
             },
             "inputTags": {
@@ -401,8 +362,6 @@
             },
             "pinInput": {
                 "title": "PIN Input",
-                "otpLabel": "Enter OTP Code",
-                "maskedLabel": "Masked PIN",
                 "otp": "OTP Code",
                 "password": "PIN Password"
             },
@@ -520,7 +479,7 @@
             "toast": {
                 "title": "Toast Notifications",
                 "success": "Success Toast",
-                "error": "Error Toast", 
+                "error": "Error Toast",
                 "withAction": "Toast with Action",
                 "withProgress": "Toast with Progress",
                 "successTitle": "Success!",
@@ -550,7 +509,6 @@
     },
     "loadingScreen": {
         "title": "Nuxt 4 Template",
-        "subtitle": "Loading your experience...",
-        "builtWith": "Built with"
+        "subtitle": "Loading your experience..."
     }
 }

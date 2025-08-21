@@ -4,13 +4,9 @@
         "switchToLight": "Zu hellem Modus wechseln",
         "switchToDark": "Zu dunklem Modus wechseln"
     },
-    "languageSwitcher": {
-        "placeholder": "Sprache"
-    },
     "welcome": {
         "title": "Nuxt 4 Template",
         "subtitle": "Ein modernes, produktionsbereites Starter-Template mit Nuxt UI",
-        "developedBy": "Entwickelt von",
         "repository": "Repository ansehen",
         "productionReady": "Production Ready",
         "builtWith": "Erstellt mit",
@@ -48,7 +44,6 @@
             "defaultSection": "Standard Buttons",
             "buttonGroupsSection": "Button Gruppen",
             "buttonGroups": {
-                "title": "Button Gruppen",
                 "horizontal": "Horizontale Gruppe",
                 "vertical": "Vertikale Gruppe",
                 "input": "Input mit Button",
@@ -67,7 +62,6 @@
             "description": "Formular-Komponenten für Dateneingabe und Benutzerinteraktion",
             "namePlaceholder": "Ihr Name",
             "messagePlaceholder": "Ihre Nachricht...",
-            "submit": "Absenden",
             "basicSection": "Basis Formulare"
         },
         "alert": {
@@ -121,42 +115,15 @@
                 "animations": "Animationen",
                 "notifications": "Benachrichtigungen"
             },
-            "colorPicker": {
-                "title": "Farbwähler"
-            },
-            "fileUpload": {
-                "title": "Datei-Upload",
-                "label": "Dateien hier ablegen",
-                "description": "SVG, PNG, JPG oder GIF (max. 2MB)"
-            },
-            "formField": {
-                "title": "Formularfelder",
-                "emailLabel": "E-Mail-Adresse",
-                "emailDescription": "Wir teilen Ihre E-Mail niemals mit Dritten.",
-                "passwordLabel": "Passwort",
-                "passwordHelp": "Muss mindestens 8 Zeichen lang sein."
-            },
-            "checkbox": {
-                "title": "Checkboxen",
-                "terms": "Ich stimme den Nutzungsbedingungen zu",
-                "newsletter": "Newsletter abonnieren",
-                "newsletterDescription": "Erhalten Sie die neuesten Nachrichten und Updates.",
-                "indeterminate": "Unbestimmter Zustand"
-            },
             "radioGroup": {
                 "title": "Radio Gruppe",
-                "themeLabel": "Theme wählen",
                 "light": "Hell",
                 "dark": "Dunkel",
-                "auto": "Auto",
                 "system": "System"
             },
             "switch": {
                 "title": "Schalter",
                 "notifications": "Benachrichtigungen aktivieren",
-                "notificationsDescription": "Benachrichtigungen über wichtige Updates erhalten.",
-                "marketing": "Marketing-E-Mails",
-                "marketingDescription": "Werbeinhalte und Angebote erhalten.",
                 "autoSave": "Änderungen automatisch speichern",
                 "autoSaveDesc": "Speichert Ihre Änderungen automatisch während der Arbeit."
             },
@@ -167,10 +134,6 @@
             },
             "progress": {
                 "title": "Fortschritt",
-                "description": "Interaktive Fortschrittsbalken",
-                "upload": "Upload-Fortschritt",
-                "download": "Download-Fortschritt",
-                "processing": "Verarbeitung...",
                 "indeterminate": "Unbestimmter Fortschritt"
             }
         },
@@ -218,8 +181,7 @@
                 "rightClick": "Hier rechtsklicken",
                 "copy": "Kopieren",
                 "cut": "Ausschneiden",
-                "paste": "Einfügen",
-                "delete": "Löschen"
+                "paste": "Einfügen"
             },
             "dropdownMenu": {
                 "title": "Dropdown-Menü",
@@ -246,7 +208,7 @@
             "table": {
                 "title": "Daten-Tabelle",
                 "nameColumn": "Name",
-                "roleColumn": "Rolle", 
+                "roleColumn": "Rolle",
                 "statusColumn": "Status",
                 "emailColumn": "E-Mail"
             },
@@ -254,7 +216,7 @@
                 "title": "Zeitleiste",
                 "step1Title": "Projekt-Auftakt",
                 "step1Desc": "Projekt-Kick-off mit Team-Abstimmung. Meilensteine festgelegt.",
-                "step2Title": "Design-Phase", 
+                "step2Title": "Design-Phase",
                 "step2Desc": "Nutzerforschung und Design-Workshops. Wireframes und Prototypen erstellt.",
                 "step3Title": "Entwicklungs-Sprint",
                 "step3Desc": "Frontend- und Backend-Entwicklung. Kernfunktionen und APIs implementiert.",
@@ -391,7 +353,6 @@
             "inputNumber": {
                 "title": "Zahleneingabe",
                 "basic": "Basis Zahleneingabe",
-                "stepped": "Gestufte Eingabe (0-100, Schritt 5)",
                 "step": "Schritt-Eingabe (Schritt 10)"
             },
             "inputTags": {
@@ -401,8 +362,6 @@
             },
             "pinInput": {
                 "title": "PIN-Eingabe",
-                "otpLabel": "OTP-Code eingeben",
-                "maskedLabel": "Maskierte PIN",
                 "otp": "OTP-Code",
                 "password": "PIN-Passwort"
             },
@@ -520,7 +479,7 @@
             "toast": {
                 "title": "Toast-Benachrichtigungen",
                 "success": "Erfolg Toast",
-                "error": "Fehler Toast", 
+                "error": "Fehler Toast",
                 "withAction": "Toast mit Aktion",
                 "withProgress": "Toast mit Fortschritt",
                 "successTitle": "Erfolgreich!",
@@ -550,7 +509,6 @@
     },
     "loadingScreen": {
         "title": "Nuxt 4 Template",
-        "subtitle": "Template wird geladen...",
-        "builtWith": "Erstellt mit"
+        "subtitle": "Template wird geladen..."
     }
 }
