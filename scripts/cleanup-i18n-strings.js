@@ -9,38 +9,38 @@ const rootDir = path.join(__dirname, '..');
 
 // Strings to be deleted
 const STRINGS_TO_DELETE = [
-  "languageSwitcher.placeholder",
-  "welcome.developedBy",
-  "examples.buttons.buttonGroups.title",
-  "examples.forms.submit",
-  "examples.formsAdvanced.colorPicker.title",
-  "examples.formsAdvanced.fileUpload.title",
-  "examples.formsAdvanced.fileUpload.label",
-  "examples.formsAdvanced.fileUpload.description",
-  "examples.formsAdvanced.formField.title",
-  "examples.formsAdvanced.formField.emailLabel",
-  "examples.formsAdvanced.formField.emailDescription",
-  "examples.formsAdvanced.formField.passwordLabel",
-  "examples.formsAdvanced.formField.passwordHelp",
-  "examples.formsAdvanced.checkbox.title",
-  "examples.formsAdvanced.checkbox.terms",
-  "examples.formsAdvanced.checkbox.newsletter",
-  "examples.formsAdvanced.checkbox.newsletterDescription",
-  "examples.formsAdvanced.checkbox.indeterminate",
-  "examples.formsAdvanced.radioGroup.themeLabel",
-  "examples.formsAdvanced.radioGroup.auto",
-  "examples.formsAdvanced.switch.notificationsDescription",
-  "examples.formsAdvanced.switch.marketing",
-  "examples.formsAdvanced.switch.marketingDescription",
-  "examples.formsAdvanced.progress.description",
-  "examples.formsAdvanced.progress.upload",
-  "examples.formsAdvanced.progress.download",
-  "examples.formsAdvanced.progress.processing",
-  "examples.dataDisplay.contextMenu.delete",
-  "examples.inputShowcase.inputNumber.stepped",
-  "examples.inputShowcase.pinInput.otpLabel",
-  "examples.inputShowcase.pinInput.maskedLabel",
-  "loadingScreen.builtWith"
+    "languageSwitcher.placeholder",
+    "welcome.developedBy",
+    "examples.buttons.buttonGroups.title",
+    "examples.forms.submit",
+    "examples.formsAdvanced.colorPicker.title",
+    "examples.formsAdvanced.fileUpload.title",
+    "examples.formsAdvanced.fileUpload.label",
+    "examples.formsAdvanced.fileUpload.description",
+    "examples.formsAdvanced.formField.title",
+    "examples.formsAdvanced.formField.emailLabel",
+    "examples.formsAdvanced.formField.emailDescription",
+    "examples.formsAdvanced.formField.passwordLabel",
+    "examples.formsAdvanced.formField.passwordHelp",
+    "examples.formsAdvanced.checkbox.title",
+    "examples.formsAdvanced.checkbox.terms",
+    "examples.formsAdvanced.checkbox.newsletter",
+    "examples.formsAdvanced.checkbox.newsletterDescription",
+    "examples.formsAdvanced.checkbox.indeterminate",
+    "examples.formsAdvanced.radioGroup.themeLabel",
+    "examples.formsAdvanced.radioGroup.auto",
+    "examples.formsAdvanced.switch.notificationsDescription",
+    "examples.formsAdvanced.switch.marketing",
+    "examples.formsAdvanced.switch.marketingDescription",
+    "examples.formsAdvanced.progress.description",
+    "examples.formsAdvanced.progress.upload",
+    "examples.formsAdvanced.progress.download",
+    "examples.formsAdvanced.progress.processing",
+    "examples.dataDisplay.contextMenu.delete",
+    "examples.inputShowcase.inputNumber.stepped",
+    "examples.inputShowcase.pinInput.otpLabel",
+    "examples.inputShowcase.pinInput.maskedLabel",
+    "loadingScreen.builtWith"
 ];
 
 /**
@@ -49,7 +49,7 @@ const STRINGS_TO_DELETE = [
 function deleteString(obj, keyPath) {
     const keys = keyPath.split('.');
     const lastKey = keys.pop();
-    
+
     // Navigate to parent object
     let current = obj;
     for (const key of keys) {
@@ -58,7 +58,7 @@ function deleteString(obj, keyPath) {
         }
         current = current[key];
     }
-    
+
     // Delete the string
     if (current[lastKey] !== undefined) {
         delete current[lastKey];
@@ -77,7 +77,7 @@ function cleanEmptyObjects(obj) {
     for (const key in obj) {
         if (typeof obj[key] === 'object' && obj[key] !== null) {
             cleanEmptyObjects(obj[key]);
-            
+
             // If object is empty, delete it
             if (Object.keys(obj[key]).length === 0) {
                 delete obj[key];
@@ -92,43 +92,43 @@ function cleanEmptyObjects(obj) {
  */
 async function cleanupI18nFiles() {
     const localeFiles = ['en.json', 'de.json'];
-    
+
     console.log('🧹 Starting cleanup of i18n files...\n');
-    
+
     for (const localeFile of localeFiles) {
         const filePath = path.join(rootDir, 'i18n/locales', localeFile);
-        
+
         if (!fs.existsSync(filePath)) {
             console.log(`⚠️  File not found: ${filePath}`);
             continue;
         }
-        
+
         console.log(`📂 Processing: ${localeFile}`);
-        
+
         // Load JSON file
         const content = fs.readFileSync(filePath, 'utf8');
         const jsonData = JSON.parse(content);
-        
+
         let deletedCount = 0;
-        
+
         // Delete each string
         for (const stringPath of STRINGS_TO_DELETE) {
             if (deleteString(jsonData, stringPath)) {
                 deletedCount++;
             }
         }
-        
+
         // Remove empty objects
         console.log('🧹 Removing empty objects...');
         cleanEmptyObjects(jsonData);
-        
+
         // Write cleaned JSON back
         const prettyJson = JSON.stringify(jsonData, null, 4);
         fs.writeFileSync(filePath, prettyJson, 'utf8');
-        
+
         console.log(`✅ ${localeFile}: ${deletedCount} strings deleted\n`);
     }
-    
+
     console.log('🎉 Cleanup completed!');
     console.log(`📊 Total ${STRINGS_TO_DELETE.length} strings removed from both language files.`);
 }

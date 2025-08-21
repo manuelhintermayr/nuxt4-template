@@ -15,11 +15,13 @@
                 </template>
                 <div class="p-4 space-y-4">
                     <div class="space-y-2">
-                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.inputNumber.basic') }}:</label>
+                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.inputNumber.basic')
+                            }}:</label>
                         <UInputNumber v-model="basicNumber" :min="0" :max="100" />
                     </div>
                     <div class="space-y-2">
-                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.inputNumber.step') }}:</label>
+                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.inputNumber.step')
+                            }}:</label>
                         <UInputNumber v-model="stepNumber" :step="5" :min="0" :max="100" />
                     </div>
                 </div>
@@ -51,11 +53,13 @@
                 </template>
                 <div class="p-4 space-y-4">
                     <div class="space-y-2">
-                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.pinInput.otp') }}:</label>
+                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.pinInput.otp')
+                            }}:</label>
                         <UPinInput v-model="otpCode" :length="6" type="number" otp />
                     </div>
                     <div class="space-y-2">
-                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.pinInput.password') }}:</label>
+                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.pinInput.password')
+                            }}:</label>
                         <UPinInput v-model="pinCode" :length="4" mask />
                     </div>
                 </div>
@@ -68,11 +72,13 @@
                 </template>
                 <div class="p-4 space-y-4">
                     <div class="space-y-2">
-                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.select.basic') }}:</label>
+                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.select.basic')
+                            }}:</label>
                         <USelect v-model="selectedFramework" :items="frameworkOptions" />
                     </div>
                     <div class="space-y-2">
-                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.select.multiple') }}:</label>
+                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.select.multiple')
+                            }}:</label>
                         <USelect v-model="selectedLanguages" :items="languageOptions" multiple
                             :placeholder="t('examples.inputShowcase.select.multiplePlaceholder')" />
                     </div>
@@ -109,7 +115,7 @@
                             <UKbd>⌘</UKbd>
                             <UKbd>K</UKbd>
                             <span class="text-sm self-center">{{ t('examples.inputShowcase.kbd.commandPalette')
-                                }}</span>
+                            }}</span>
                         </div>
                         <div class="flex flex-wrap gap-2">
                             <UKbd>Ctrl</UKbd>
@@ -134,15 +140,17 @@
                 </template>
                 <div class="p-4 space-y-4">
                     <div class="space-y-2">
-                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.textarea.basic') }}:</label>
+                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.textarea.basic')
+                            }}:</label>
                         <UTextarea v-model="basicTextarea"
                             :placeholder="t('examples.inputShowcase.textarea.placeholder')" :rows="3" class="w-full" />
                     </div>
                     <div class="space-y-2">
-                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.textarea.autoresize') }}:</label>
+                        <label class="text-sm font-medium block mb-1">{{ t('examples.inputShowcase.textarea.autoresize')
+                            }}:</label>
                         <UTextarea v-model="autoResizeTextarea"
-                            :placeholder="t('examples.inputShowcase.textarea.autoPlaceholder')" autoresize
-                            :maxrows="6" class="w-full" />
+                            :placeholder="t('examples.inputShowcase.textarea.autoPlaceholder')" autoresize :maxrows="6"
+                            class="w-full" />
                     </div>
                 </div>
             </UCard>

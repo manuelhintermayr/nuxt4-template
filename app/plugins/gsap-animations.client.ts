@@ -29,7 +29,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (process.client) {
         // Ensure GSAP is properly initialized
         gsap.ticker.lagSmoothing(0)
-        
+
         // Register ScrollTrigger plugin only if enabled
         if (animationConfig.enableScrollTrigger) {
             gsap.registerPlugin(ScrollTrigger)
@@ -256,8 +256,8 @@ export default defineNuxtPlugin((nuxtApp) => {
                 }
 
                 const config = { ...defaults, ...options }
-                const element = typeof sectionElement === 'string' ? 
-                    document.querySelector(sectionElement) as HTMLElement : 
+                const element = typeof sectionElement === 'string' ?
+                    document.querySelector(sectionElement) as HTMLElement :
                     sectionElement as HTMLElement
 
                 if (!element) return null

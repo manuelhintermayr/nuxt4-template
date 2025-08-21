@@ -22,12 +22,13 @@
                                 <p class="text-sm mb-4 text-gray-600 dark:text-gray-400">
                                     {{ t('examples.utility.commandPalette.placeholder') }}
                                 </p>
-                                <UCommandPalette v-model:open="isCommandPaletteOpen" :groups="commandGroups" 
+                                <UCommandPalette v-model:open="isCommandPaletteOpen" :groups="commandGroups"
                                     :placeholder="t('examples.utility.commandPalette.placeholder')" class="w-full">
-                                    <UButton :label="t('examples.utility.commandPalette.openButton')" color="primary" variant="solid"
-                                        icon="i-lucide-search" block />
+                                    <UButton :label="t('examples.utility.commandPalette.openButton')" color="primary"
+                                        variant="solid" icon="i-lucide-search" block />
                                 </UCommandPalette>
-                                <div class="mt-3 text-xs text-gray-500 dark:text-gray-400 flex items-center justify-between">
+                                <div
+                                    class="mt-3 text-xs text-gray-500 dark:text-gray-400 flex items-center justify-between">
                                     <span>{{ t('examples.utility.commandPalette.keyboardShortcut') }}</span>
                                     <UBadge size="sm">Ctrl+K</UBadge>
                                 </div>

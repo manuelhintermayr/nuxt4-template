@@ -69,7 +69,7 @@
                     <div class="space-y-2">
                         <label class="text-sm font-medium">{{ t('examples.formsAdvanced.slider.volume') }}: {{
                             volumeValue
-                            }}%</label>
+                        }}%</label>
                         <USlider v-model="volumeValue" :min="0" :max="100" />
                     </div>
                     <div class="space-y-2">
@@ -94,7 +94,7 @@
                     </div>
                     <div class="space-y-2">
                         <label class="text-sm font-medium">{{ t('examples.formsAdvanced.progress.indeterminate')
-                            }}</label>
+                        }}</label>
                         <UProgress />
                     </div>
                 </div>

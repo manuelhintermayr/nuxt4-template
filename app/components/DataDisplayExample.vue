@@ -67,7 +67,8 @@
                     </template>
                     <div class="p-4">
                         <UContextMenu :items="contextMenuItems">
-                            <div class="flex items-center justify-center rounded-md border border-dashed border-gray-300 dark:border-gray-600 text-sm aspect-video bg-gray-50 dark:bg-gray-800 cursor-pointer">
+                            <div
+                                class="flex items-center justify-center rounded-md border border-dashed border-gray-300 dark:border-gray-600 text-sm aspect-video bg-gray-50 dark:bg-gray-800 cursor-pointer">
                                 {{ t('examples.dataDisplay.contextMenu.rightClick') }}
                             </div>
                         </UContextMenu>
@@ -114,9 +115,12 @@
                             <div class="p-6 min-w-80">
                                 <h6 class="font-semibold mb-4">{{ t('examples.dataDisplay.drawer.sidebarTitle') }}</h6>
                                 <div class="space-y-2">
-                                    <UButton :label="t('examples.dataDisplay.drawer.profile')" icon="i-lucide-user" color="neutral" variant="ghost" block />
-                                    <UButton :label="t('examples.dataDisplay.drawer.settings')" icon="i-lucide-settings" color="neutral" variant="ghost" block />
-                                    <UButton :label="t('examples.dataDisplay.drawer.logout')" icon="i-lucide-log-out" color="error" variant="ghost" block />
+                                    <UButton :label="t('examples.dataDisplay.drawer.profile')" icon="i-lucide-user"
+                                        color="neutral" variant="ghost" block />
+                                    <UButton :label="t('examples.dataDisplay.drawer.settings')" icon="i-lucide-settings"
+                                        color="neutral" variant="ghost" block />
+                                    <UButton :label="t('examples.dataDisplay.drawer.logout')" icon="i-lucide-log-out"
+                                        color="error" variant="ghost" block />
                                 </div>
                             </div>
                         </template>

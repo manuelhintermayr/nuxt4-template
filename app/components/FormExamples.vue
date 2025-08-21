@@ -6,20 +6,20 @@
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.forms.description') }}
         </p>
-        
+
         <!-- Basic Forms Section -->
         <div class="space-y-4">
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{ t('examples.forms.basicSection') }}</h5>
             <form ref="formGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
-            <!-- Name, Email, Nachricht -->
-            <UInput v-model="name" :placeholder="t('examples.forms.namePlaceholder')" class="col-span-2" />
-            <UInput v-model="email" type="email" :placeholder="'sample@mail.com'" class="col-span-2" />
-            <UTextarea v-model="message" :placeholder="t('examples.forms.messagePlaceholder')" class="col-span-2" />
+                <!-- Name, Email, Nachricht -->
+                <UInput v-model="name" :placeholder="t('examples.forms.namePlaceholder')" class="col-span-2" />
+                <UInput v-model="email" type="email" :placeholder="'sample@mail.com'" class="col-span-2" />
+                <UTextarea v-model="message" :placeholder="t('examples.forms.messagePlaceholder')" class="col-span-2" />
 
-            <!-- Submit Button -->
-            <div class="col-span-2 flex justify-end">
-                <UButton type="submit" color="primary">{{ t('examples.forms.submit') }}</UButton>
-            </div>
+                <!-- Submit Button -->
+                <div class="col-span-2 flex justify-end">
+                    <UButton type="submit" color="primary">{{ t('examples.forms.submit') }}</UButton>
+                </div>
             </form>
         </div>
     </div>

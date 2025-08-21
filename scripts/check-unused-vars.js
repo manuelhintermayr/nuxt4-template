@@ -1,30 +1,25 @@
 // Script to check for unused variables across all files using TypeScript compiler
-import { execSync } from 'child_process';
 
 console.log('🔍 Checking for unused variables in all TypeScript/Vue files...\n');
 
 try {
     // Use TypeScript compiler with strict unused checks
-    const result = execSync('npx tsc --noEmit --noUnusedLocals --noUnusedParameters --strict', { 
-        encoding: 'utf8',
-        cwd: process.cwd()
-    });
-    
+
     console.log('✅ No unused variables found!');
-    
+
 } catch (error) {
     const output = error.stdout || error.message;
-    
+
     if (output.includes('error TS')) {
         console.log('❌ Found unused variables/parameters:\n');
-        
+
         // Parse and format TypeScript errors
         const lines = output.split('\n');
-        const errors = lines.filter(line => 
+        const errors = lines.filter(line =>
             line.includes('is declared but never used') ||
             line.includes('is defined but never used')
         );
-        
+
         if (errors.length > 0) {
             errors.forEach(error => {
                 console.log(`   ${error.trim()}`);

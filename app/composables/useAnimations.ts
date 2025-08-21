@@ -41,29 +41,29 @@ export interface UseAnimationsReturn {
 
 export const useAnimations = (): UseAnimationsReturn => {
   const { $animationUtils } = useNuxtApp()
-  
+
   const utils = computed(() => {
     if ($animationUtils && typeof $animationUtils === 'object') {
       return $animationUtils as AnimationUtils
     }
     return null
   })
-  
+
   const isReady = computed(() => !!utils.value)
 
   // Setup a section with common patterns
   const setupSection = (
-    sectionRef: Ref<HTMLElement | undefined>, 
+    sectionRef: Ref<HTMLElement | undefined>,
     options: { removeLoading?: boolean; autoTilt?: boolean } = {}
   ) => {
     const { removeLoading = true, autoTilt = true } = options
-    
+
     if (!sectionRef.value || !utils.value) return
-    
+
     if (removeLoading) {
       sectionRef.value.classList.remove('gsap-loading')
     }
-    
+
     if (autoTilt) {
       utils.value.addTiltToAllCards()
     }
@@ -71,11 +71,11 @@ export const useAnimations = (): UseAnimationsReturn => {
 
   // Animate a title element
   const animateTitle = (
-    titleRef: Ref<HTMLElement | undefined>, 
+    titleRef: Ref<HTMLElement | undefined>,
     triggerRef?: Ref<HTMLElement | undefined>
   ) => {
     if (!titleRef.value || !utils.value?.fadeInUp) return
-    
+
     utils.value.fadeInUp(titleRef.value, {
       scrollTrigger: {
         trigger: triggerRef?.value || titleRef.value,
@@ -86,11 +86,11 @@ export const useAnimations = (): UseAnimationsReturn => {
 
   // Animate cards with stagger
   const animateCards = (
-    cardsRef: Ref<HTMLElement[]>, 
+    cardsRef: Ref<HTMLElement[]>,
     triggerRef?: Ref<HTMLElement | undefined>
   ) => {
     if (!cardsRef.value?.length || !utils.value?.fadeInUp) return
-    
+
     utils.value.fadeInUp(cardsRef.value, {
       scrollTrigger: {
         trigger: triggerRef?.value || cardsRef.value[0]?.parentElement || undefined,
@@ -98,7 +98,7 @@ export const useAnimations = (): UseAnimationsReturn => {
       },
       stagger: 0.15
     })
-    
+
     // Add interactive effects
     if (utils.value.addCardEffects) {
       nextTick(() => {
@@ -111,14 +111,14 @@ export const useAnimations = (): UseAnimationsReturn => {
 
   // Animate buttons with scale and magnetic effects
   const animateButtons = (
-    buttonsSelector: string, 
+    buttonsSelector: string,
     containerRef: Ref<HTMLElement | undefined>
   ) => {
     if (!containerRef.value || !utils.value) return
-    
+
     const buttons = Array.from(containerRef.value.querySelectorAll(buttonsSelector))
     if (!buttons.length) return
-    
+
     // Scale in animation
     if (utils.value.scaleIn) {
       utils.value.scaleIn(buttons, {
@@ -130,7 +130,7 @@ export const useAnimations = (): UseAnimationsReturn => {
         scale: 0.9
       })
     }
-    
+
     // Add magnetic effects
     if (utils.value.addMagneticEffect) {
       nextTick(() => {
@@ -148,7 +148,7 @@ export const useAnimations = (): UseAnimationsReturn => {
     options: AnimationOptions = {}
   ) => {
     if (!utils.value?.fadeInUp) return
-    
+
     const defaultOptions: AnimationOptions = {
       scrollTrigger: {
         trigger: triggerRef?.value,
@@ -157,7 +157,7 @@ export const useAnimations = (): UseAnimationsReturn => {
       stagger: 0.1,
       ...options
     }
-    
+
     utils.value.fadeInUp(elements, defaultOptions)
   }
 

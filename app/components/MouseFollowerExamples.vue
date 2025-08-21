@@ -11,7 +11,8 @@
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{
                 $t('examples.mouseFollower.projectCards') }}</h5>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <UCard class="card-tilt cursor-pointer" :data-cursor-text="$t('examples.mouseFollower.cursorText.viewDetails')">
+                <UCard class="card-tilt cursor-pointer"
+                    :data-cursor-text="$t('examples.mouseFollower.cursorText.viewDetails')">
                     <template #header>
                         <div class="flex items-center">
                             <UIcon name="i-heroicons-rocket-launch" class="w-5 h-5 text-blue-500 mr-2" />
@@ -23,7 +24,8 @@
                     </p>
                 </UCard>
 
-                <UCard class="card-tilt cursor-pointer" :data-cursor-text="$t('examples.mouseFollower.cursorText.exploreProject')">
+                <UCard class="card-tilt cursor-pointer"
+                    :data-cursor-text="$t('examples.mouseFollower.cursorText.exploreProject')">
                     <template #header>
                         <div class="flex items-center">
                             <UIcon name="i-heroicons-sparkles" class="w-5 h-5 text-purple-500 mr-2" />
@@ -40,7 +42,7 @@
         <!-- Text Effects Section -->
         <div ref="textSection" class="space-y-4">
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{ $t('examples.mouseFollower.textEffects')
-            }}</h5>
+                }}</h5>
             <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <p class="text-gray-700 dark:text-gray-300 mb-2">
                     {{ $t('examples.mouseFollower.textDemo.intro') }}
@@ -74,14 +76,8 @@
                         <div class="flex items-center space-x-4">
                             <span class="text-sm text-gray-600 dark:text-gray-400 w-12">{{
                                 $t('examples.mouseFollower.configuration.slow') }}</span>
-                                <USlider
-                                    v-model="cursorSpeed"
-                                    :min="0.1"
-                                    :max="2"
-                                    :step="0.1"
-                                    class="flex-1"
-                                    @update:modelValue="updateCursorSpeed"
-                                />
+                            <USlider v-model="cursorSpeed" :min="0.1" :max="2" :step="0.1" class="flex-1"
+                                @update:modelValue="updateCursorSpeed" />
                             <span class="text-sm text-gray-600 dark:text-gray-400 w-12">{{
                                 $t('examples.mouseFollower.configuration.fast') }}</span>
                         </div>
@@ -121,7 +117,7 @@
                     <UIcon name="i-heroicons-eye-slash" class="w-6 h-6 mx-auto mb-2 text-red-500" />
                     <p class="text-sm font-medium text-red-700 dark:text-red-400">{{
                         $t('examples.mouseFollower.states.hidden')
-                        }}</p>
+                    }}</p>
                     <p class="text-xs text-red-600 dark:text-red-300 mt-1">{{
                         $t('examples.mouseFollower.states.hiddenDesc') }}
                     </p>
@@ -177,7 +173,7 @@
                         $t('examples.mouseFollower.media.image1.title') }}</h6>
                     <p class="text-sm text-gray-600 dark:text-gray-400">{{
                         $t('examples.mouseFollower.media.image1.description')
-                    }}</p>
+                        }}</p>
                 </div>
 
                 <div class="card-tilt p-6 bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg text-center cursor-pointer border border-green-200 dark:border-green-800"
@@ -187,7 +183,7 @@
                         $t('examples.mouseFollower.media.image2.title') }}</h6>
                     <p class="text-sm text-gray-600 dark:text-gray-400">{{
                         $t('examples.mouseFollower.media.image2.description')
-                    }}</p>
+                        }}</p>
                 </div>
 
                 <!-- Sample Video -->
@@ -198,7 +194,7 @@
                         $t('examples.mouseFollower.media.video.title') }}</h6>
                     <p class="text-sm text-gray-600 dark:text-gray-400">{{
                         $t('examples.mouseFollower.media.video.description')
-                    }}</p>
+                        }}</p>
                 </div>
             </div>
         </div>
@@ -239,7 +235,8 @@
             </h5>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(5)"
-                    @mouseleave="removeSkewing()" :data-cursor-text="$t('examples.mouseFollower.cursorText.lightSkewing')">
+                    @mouseleave="removeSkewing()"
+                    :data-cursor-text="$t('examples.mouseFollower.cursorText.lightSkewing')">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-right-left" class="w-8 h-8 mx-auto mb-3 text-orange-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.light') }}</h6>
@@ -250,24 +247,26 @@
                 </UCard>
 
                 <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(50)"
-                    @mouseleave="removeSkewing()" :data-cursor-text="$t('examples.mouseFollower.cursorText.strongSkewing')">
+                    @mouseleave="removeSkewing()"
+                    :data-cursor-text="$t('examples.mouseFollower.cursorText.strongSkewing')">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-up-down" class="w-8 h-8 mx-auto mb-3 text-purple-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.strong') }}</h6>
                         <p class="text-sm text-gray-600 dark:text-gray-400">{{
                             $t('examples.mouseFollower.skewing.strongDesc')
-                        }}</p>
+                            }}</p>
                     </div>
                 </UCard>
 
                 <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(100)"
-                    @mouseleave="removeSkewing()" :data-cursor-text="$t('examples.mouseFollower.cursorText.extremeSkewing')">
+                    @mouseleave="removeSkewing()"
+                    :data-cursor-text="$t('examples.mouseFollower.cursorText.extremeSkewing')">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-pointing-out" class="w-8 h-8 mx-auto mb-3 text-red-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.extreme') }}</h6>
                         <p class="text-sm text-gray-600 dark:text-gray-400">{{
                             $t('examples.mouseFollower.skewing.extremeDesc')
-                        }}</p>
+                            }}</p>
                     </div>
                 </UCard>
             </div>
@@ -312,7 +311,6 @@
         filter: hue-rotate(360deg);
     }
 }
-
 </style>
 
 <script setup lang="ts">

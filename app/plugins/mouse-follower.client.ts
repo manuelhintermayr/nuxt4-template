@@ -1,5 +1,5 @@
-import MouseFollower from 'mouse-follower'
 import { gsap } from 'gsap'
+import MouseFollower from 'mouse-follower'
 
 // Extend Window interface
 declare global {

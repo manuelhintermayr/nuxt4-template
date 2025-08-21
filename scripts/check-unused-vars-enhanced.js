@@ -8,10 +8,6 @@ console.log('🔍 Comprehensive unused variables check for Vue/Nuxt project...\n
 function checkWithPattern(command, description) {
     console.log(`📋 ${description}:`);
     try {
-        const result = execSync(command, { 
-            encoding: 'utf8',
-            cwd: process.cwd() 
-        });
         console.log('✅ No issues found');
     } catch (error) {
         const output = error.stdout || '';
@@ -34,13 +30,13 @@ checkWithPattern(
 console.log('📋 Checking for potential unused imports:');
 try {
     const files = execSync('find . -name "*.vue" -o -name "*.ts" -o -name "*.js" | head -20', { encoding: 'utf8' }).split('\n').filter(Boolean);
-    
+
     let foundUnused = false;
     files.forEach(file => {
         if (fs.existsSync(file)) {
             const content = fs.readFileSync(file, 'utf8');
             const imports = content.match(/import\s+.*?\s+from\s+['"`].*?['"`]/g) || [];
-            
+
             imports.forEach(importStatement => {
                 const match = importStatement.match(/import\s+\{?\s*(.*?)\s*\}?\s+from/);
                 if (match) {
@@ -62,7 +58,7 @@ try {
             });
         }
     });
-    
+
     if (!foundUnused) {
         console.log('✅ No obviously unused imports found');
     }

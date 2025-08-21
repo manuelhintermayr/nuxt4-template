@@ -29,8 +29,8 @@ onMounted(() => {
     const { animateCards } = useAnimations()
 
     // Animate feature cards with stagger and interactive effects
-        setTimeout(() => {
-            animateCards(featureCards, gridContainer)
-        }, 300)
+    setTimeout(() => {
+        animateCards(featureCards, gridContainer)
+    }, 300)
 })
 </script>

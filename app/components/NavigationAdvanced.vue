@@ -101,13 +101,15 @@
                             @click="showModal = true" />
                         <UButton :label="t('examples.navigationAdvanced.overlays.openSlideover')" variant="soft" block
                             @click="showSlideover = true" />
-                        
+
                         <!-- Popover with trigger button inside -->
                         <UPopover v-model:open="showPopover">
-                            <UButton :label="t('examples.navigationAdvanced.overlays.openPopover')" variant="ghost" block />
+                            <UButton :label="t('examples.navigationAdvanced.overlays.openPopover')" variant="ghost"
+                                block />
                             <template #content>
                                 <div class="p-4">
-                                    <h6 class="font-semibold mb-2">{{ t('examples.navigationAdvanced.popover.title') }}</h6>
+                                    <h6 class="font-semibold mb-2">{{ t('examples.navigationAdvanced.popover.title') }}
+                                    </h6>
                                     <p class="text-sm mb-4">{{ t('examples.navigationAdvanced.popover.content') }}</p>
                                     <UButton size="sm" @click="showPopover = false">
                                         {{ t('examples.navigationAdvanced.popover.close') }}
