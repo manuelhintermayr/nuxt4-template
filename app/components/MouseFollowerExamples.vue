@@ -11,7 +11,7 @@
             <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">{{
                 $t('examples.mouseFollower.projectCards') }}</h5>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <UCard class="card-tilt cursor-pointer" data-cursor-text="View Details">
+                <UCard class="card-tilt cursor-pointer" :data-cursor-text="$t('examples.mouseFollower.cursorText.viewDetails')">
                     <template #header>
                         <div class="flex items-center">
                             <UIcon name="i-heroicons-rocket-launch" class="w-5 h-5 text-blue-500 mr-2" />
@@ -23,7 +23,7 @@
                     </p>
                 </UCard>
 
-                <UCard class="card-tilt cursor-pointer" data-cursor-text="Explore Project">
+                <UCard class="card-tilt cursor-pointer" :data-cursor-text="$t('examples.mouseFollower.cursorText.exploreProject')">
                     <template #header>
                         <div class="flex items-center">
                             <UIcon name="i-heroicons-sparkles" class="w-5 h-5 text-purple-500 mr-2" />
@@ -44,14 +44,14 @@
             <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <p class="text-gray-700 dark:text-gray-300 mb-2">
                     {{ $t('examples.mouseFollower.textDemo.intro') }}
-                    <span data-cursor-text="Custom message!"
+                    <span :data-cursor-text="$t('examples.mouseFollower.cursorText.customMessage')"
                         class="text-primary-600 dark:text-primary-400 font-medium cursor-pointer">
                         {{ $t('examples.mouseFollower.textDemo.hoverText') }}
                     </span>
                     {{ $t('examples.mouseFollower.textDemo.middle') }}
                 </p>
                 <p class="text-gray-700 dark:text-gray-300">
-                    <span data-cursor-text="Sticky cursor" data-cursor-stick
+                    <span :data-cursor-text="$t('examples.mouseFollower.cursorText.stickyCursor')" data-cursor-stick
                         class="text-blue-600 dark:text-blue-400 font-medium cursor-pointer">
                         {{ $t('examples.mouseFollower.textDemo.stickyText') }}
                     </span>
@@ -127,8 +127,8 @@
                     </p>
                 </div>
 
-                <div class="card-tilt theme theme-element p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-center cursor-pointer"
-                    data-cursor="-theme" data-cursor-text="Theme Element">
+                <div class="card-tilt p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-center cursor-pointer"
+                    data-cursor="-theme" :data-cursor-text="$t('examples.mouseFollower.cursorText.themeElement')">
                     <UIcon name="i-heroicons-paint-brush" class="w-6 h-6 mx-auto mb-2 theme-icon" />
                     <p class="text-sm font-medium">{{ $t('examples.mouseFollower.states.theme') }}</p>
                     <p class="text-xs text-purple-100 mt-1">{{ $t('examples.mouseFollower.states.themeDesc') }}</p>
@@ -239,7 +239,7 @@
             </h5>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(5)"
-                    @mouseleave="removeSkewing()" data-cursor-text="Light Skewing">
+                    @mouseleave="removeSkewing()" :data-cursor-text="$t('examples.mouseFollower.cursorText.lightSkewing')">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-right-left" class="w-8 h-8 mx-auto mb-3 text-orange-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.light') }}</h6>
@@ -250,7 +250,7 @@
                 </UCard>
 
                 <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(50)"
-                    @mouseleave="removeSkewing()" data-cursor-text="Strong Skewing">
+                    @mouseleave="removeSkewing()" :data-cursor-text="$t('examples.mouseFollower.cursorText.strongSkewing')">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-up-down" class="w-8 h-8 mx-auto mb-3 text-purple-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.strong') }}</h6>
@@ -261,7 +261,7 @@
                 </UCard>
 
                 <UCard class="card-tilt cursor-pointer text-center" @mouseenter="setSkewing(100)"
-                    @mouseleave="removeSkewing()" data-cursor-text="Extreme Skewing">
+                    @mouseleave="removeSkewing()" :data-cursor-text="$t('examples.mouseFollower.cursorText.extremeSkewing')">
                     <div class="p-4">
                         <UIcon name="i-heroicons-arrows-pointing-out" class="w-8 h-8 mx-auto mb-3 text-red-500" />
                         <h6 class="font-semibold mb-2">{{ $t('examples.mouseFollower.skewing.extreme') }}</h6>

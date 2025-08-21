@@ -6,11 +6,12 @@
     },
     "welcome": {
         "title": "Nuxt 4 Template",
-        "subtitle": "Ein modernes, produktionsbereites Starter-Template mit Nuxt UI",
-        "repository": "Repository ansehen",
-        "productionReady": "Production Ready",
-        "builtWith": "Erstellt mit",
-        "by": "von"
+        "subtitle": "Ein modernes, produktionsreifes Starter-Template mit Nuxt UI",
+        "repository": "Repository anzeigen",
+        "productionReady": "Produktionsreif",
+        "builtWith": "Entwickelt mit",
+        "by": "von",
+        "clickHere": "Hier klicken"
     },
     "features": {
         "nuxt4": {
@@ -345,6 +346,16 @@
                 "slow": "Langsam",
                 "fast": "Schnell",
                 "currentSpeed": "Aktuelle Geschwindigkeit"
+            },
+            "cursorText": {
+                "viewDetails": "Details anzeigen",
+                "exploreProject": "Projekt erkunden",
+                "customMessage": "Benutzerdefinierte Nachricht!",
+                "stickyCursor": "Klebriger Cursor",
+                "themeElement": "Design-Element",
+                "lightSkewing": "Leichte Verzerrung",
+                "strongSkewing": "Starke Verzerrung",
+                "extremeSkewing": "Extreme Verzerrung"
             }
         },
         "inputShowcase": {

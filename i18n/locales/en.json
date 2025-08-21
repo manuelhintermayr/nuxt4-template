@@ -10,7 +10,8 @@
         "repository": "View Repository",
         "productionReady": "Production Ready",
         "builtWith": "Built with",
-        "by": "by"
+        "by": "by",
+        "clickHere": "Click here"
     },
     "features": {
         "nuxt4": {
@@ -345,6 +346,16 @@
                 "slow": "Slow",
                 "fast": "Fast",
                 "currentSpeed": "Current Speed"
+            },
+            "cursorText": {
+                "viewDetails": "View Details",
+                "exploreProject": "Explore Project",
+                "customMessage": "Custom message!",
+                "stickyCursor": "Sticky cursor",
+                "themeElement": "Theme Element",
+                "lightSkewing": "Light Skewing",
+                "strongSkewing": "Strong Skewing",
+                "extremeSkewing": "Extreme Skewing"
             }
         },
         "inputShowcase": {
