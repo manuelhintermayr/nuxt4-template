@@ -107,17 +107,39 @@
                 </UCard>
             </div>
 
-            <!-- Modal Drawer Alternative -->
+            <!-- Drawer -->
             <UCard class="card-tilt">
                 <template #header>
                     <h5 class="font-semibold">{{ t('examples.dataDisplay.drawer.title') }}</h5>
                 </template>
                 <div class="p-4 flex gap-4">
-                    <UButton :label="t('examples.dataDisplay.drawer.bottom')" color="neutral" variant="outline"
-                        @click="showBottomModal = true" />
+                    <!-- Bottom Drawer -->
+                    <UDrawer v-model:open="showBottomDrawer">
+                        <UButton :label="t('examples.dataDisplay.drawer.bottom')" color="neutral" variant="outline" />
+                        <template #content>
+                            <div class="p-6">
+                                <h6 class="font-semibold mb-2">{{ t('examples.dataDisplay.drawer.contentTitle') }}</h6>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    {{ t('examples.dataDisplay.drawer.contentText') }}
+                                </p>
+                            </div>
+                        </template>
+                    </UDrawer>
 
-                    <UButton :label="t('examples.dataDisplay.drawer.right')" color="primary" variant="soft"
-                        @click="showSideModal = true" />
+                    <!-- Right Drawer -->
+                    <UDrawer v-model:open="showSideDrawer" direction="right">
+                        <UButton :label="t('examples.dataDisplay.drawer.right')" color="primary" variant="soft" />
+                        <template #content>
+                            <div class="p-6 min-w-80">
+                                <h6 class="font-semibold mb-4">{{ t('examples.dataDisplay.drawer.sidebarTitle') }}</h6>
+                                <div class="space-y-2">
+                                    <UButton label="Profile" icon="i-lucide-user" color="neutral" variant="ghost" block />
+                                    <UButton label="Settings" icon="i-lucide-settings" color="neutral" variant="ghost" block />
+                                    <UButton label="Logout" icon="i-lucide-log-out" color="error" variant="ghost" block />
+                                </div>
+                            </div>
+                        </template>
+                    </UDrawer>
                 </div>
             </UCard>
 
@@ -150,27 +172,6 @@
                     <UTimeline :items="timelineItems" :default-value="2" class="w-full" />
                 </div>
             </UCard>
-
-            <!-- Modals -->
-            <UModal v-model="showBottomModal">
-                <div class="p-6">
-                    <h6 class="font-semibold mb-2">{{ t('examples.dataDisplay.drawer.contentTitle') }}</h6>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                        {{ t('examples.dataDisplay.drawer.contentText') }}
-                    </p>
-                </div>
-            </UModal>
-
-            <UModal v-model="showSideModal">
-                <div class="p-6 min-w-80">
-                    <h6 class="font-semibold mb-4">{{ t('examples.dataDisplay.drawer.sidebarTitle') }}</h6>
-                    <div class="space-y-2">
-                        <UButton label="Profile" icon="i-lucide-user" color="neutral" variant="ghost" block />
-                        <UButton label="Settings" icon="i-lucide-settings" color="neutral" variant="ghost" block />
-                        <UButton label="Logout" icon="i-lucide-log-out" color="error" variant="ghost" block />
-                    </div>
-                </div>
-            </UModal>
         </div>
     </div>
 </template>
@@ -185,8 +186,8 @@ const dataDisplaySection = ref<HTMLElement>()
 const firstCollapsed = ref(true)
 const secondCollapsed = ref(true)
 const showDropdown = ref(false)
-const showBottomModal = ref(false)
-const showSideModal = ref(false)
+const showBottomDrawer = ref(false)
+const showSideDrawer = ref(false)
 
 // Context Menu items
 const contextMenuItems = computed(() => [
