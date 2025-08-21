@@ -102,6 +102,10 @@ nuxt4-template/
 │   └── locales/               # Translation files
 │       ├── en.json            # English translations
 │       └── de.json            # German translations
+├── scripts/                   # Utility scripts for i18n maintenance and analysis
+│   ├── analyze-i18n-strings.js # Analyze i18n string usage across codebase
+│   ├── cleanup-i18n-strings.js # Remove unused i18n strings automatically
+│   └── README.md              # Documentation for utility scripts
 ├── public/                    # Static assets
 ├── nuxt.config.ts            # Nuxt configuration
 ├── package.json              # Dependencies and scripts
@@ -205,6 +209,13 @@ locales: [
   { code: 'fr', name: 'Français', file: 'fr.json' }
 ]
 ```
+
+### Maintenance Scripts
+The template includes utility scripts for i18n maintenance:
+- **`scripts/analyze-i18n-strings.js`** - Analyze string usage and identify unused translations
+- **`scripts/cleanup-i18n-strings.js`** - Automatically remove unused strings from translation files
+
+See [`scripts/README.md`](scripts/README.md) for detailed usage instructions.
 
 ## 🏭 Production
 
