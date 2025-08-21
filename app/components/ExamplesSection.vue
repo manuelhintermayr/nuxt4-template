@@ -7,8 +7,8 @@
         <div ref="exampleComponents" class="space-y-4">
             <MouseFollowerExamples />
             <FormExamples />
-            <ButtonExamples />
             <FormsAdvancedExample />
+            <ButtonExamples />
             <InputShowcase />
             <LayoutExample />
             <AccordionExample />

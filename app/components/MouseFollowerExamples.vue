@@ -2,6 +2,9 @@
     <div ref="mouseSection" class="space-y-6 gsap-loading">
         <h4 ref="mouseTitle" class="text-lg font-semibold text-gray-900 dark:text-white">{{
             $t('examples.mouseFollower.title') }}</h4>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">
+            {{ $t('examples.mouseFollower.description') }}
+        </p>
 
         <!-- Project Cards Section -->
         <div ref="cardsSection" class="space-y-4">

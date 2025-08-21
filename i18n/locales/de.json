@@ -54,8 +54,11 @@
         },
         "forms": {
             "title": "Formulare",
+            "description": "Formular-Komponenten für Dateneingabe und Benutzerinteraktion",
             "namePlaceholder": "Ihr Name",
-            "messagePlaceholder": "Ihre Nachricht..."
+            "messagePlaceholder": "Ihre Nachricht...",
+            "submit": "Absenden",
+            "basicSection": "Basis Formulare"
         },
         "alert": {
             "title": "Info",
@@ -294,6 +297,7 @@
         },
         "mouseFollower": {
             "title": "Mouse Follower",
+            "description": "Interaktive Cursor-Effekte und Animationen mit GSAP",
             "projectCards": "Projekt-Karten",
             "project1": {
                 "title": "Web-Anwendung",

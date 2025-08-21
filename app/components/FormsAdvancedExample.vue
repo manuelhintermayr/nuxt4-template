@@ -1,8 +1,8 @@
 <template>
     <div ref="formsAdvancedSection" class="space-y-4 gsap-loading">
-        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+        <h5 class="text-md font-medium text-gray-700 dark:text-gray-300">
             {{ t('examples.formsAdvanced.title') }}
-        </h4>
+        </h5>
         <p class="text-gray-600 dark:text-gray-400 text-sm">
             {{ t('examples.formsAdvanced.description') }}
         </p>

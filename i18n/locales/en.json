@@ -54,8 +54,11 @@
         },
         "forms": {
             "title": "Forms",
+            "description": "Form components for data input and user interaction",
             "namePlaceholder": "Your Name",
-            "messagePlaceholder": "Your message..."
+            "messagePlaceholder": "Your message...",
+            "submit": "Submit",
+            "basicSection": "Basic Forms"
         },
         "accordion": {
             "title": "Accordion Components",
@@ -294,6 +297,7 @@
         },
         "mouseFollower": {
             "title": "Mouse Follower",
+            "description": "Interactive cursor effects and animations powered by GSAP",
             "projectCards": "Project Cards",
             "project1": {
                 "title": "Web Application",
