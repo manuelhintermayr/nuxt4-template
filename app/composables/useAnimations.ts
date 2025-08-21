@@ -93,7 +93,7 @@ export const useAnimations = (): UseAnimationsReturn => {
     
     utils.value.fadeInUp(cardsRef.value, {
       scrollTrigger: {
-        trigger: triggerRef?.value || cardsRef.value[0]?.parentElement,
+        trigger: triggerRef?.value || cardsRef.value[0]?.parentElement || undefined,
         start: 'top 80%'
       },
       stagger: 0.15
