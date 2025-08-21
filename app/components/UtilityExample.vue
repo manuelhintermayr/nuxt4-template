@@ -11,17 +11,29 @@
             <!-- Command Palette -->
             <UCard class="card-tilt">
                 <template #header>
-                    <div class="flex justify-between items-center">
-                        <h5 class="font-semibold">{{ t('examples.utility.commandPalette.title') }}</h5>
-                        <UBadge>Ctrl K</UBadge>
-                    </div>
+                    <h5 class="font-semibold">{{ t('examples.utility.commandPalette.title') }}</h5>
                 </template>
                 <div class="p-4">
-                    <UCommandPalette v-model:open="isCommandPaletteOpen" :groups="commandGroups" 
-                        :placeholder="t('examples.utility.commandPalette.placeholder')" class="w-full">
-                        <UButton :label="t('examples.utility.commandPalette.openButton')" color="neutral" variant="outline"
-                            icon="i-lucide-search" block />
-                    </UCommandPalette>
+                    <UCollapsible v-model:open="isCommandPaletteCollapsed" class="border rounded">
+                        <UButton label="Open Command Palette" color="neutral"
+                            variant="ghost" trailing-icon="i-lucide-chevron-down" icon="i-lucide-search" block />
+                        <template #content>
+                            <div class="p-4 bg-gray-50 dark:bg-gray-800">
+                                <p class="text-sm mb-4 text-gray-600 dark:text-gray-400">
+                                    {{ t('examples.utility.commandPalette.placeholder') }}
+                                </p>
+                                <UCommandPalette v-model:open="isCommandPaletteOpen" :groups="commandGroups" 
+                                    :placeholder="t('examples.utility.commandPalette.placeholder')" class="w-full">
+                                    <UButton :label="t('examples.utility.commandPalette.openButton')" color="primary" variant="solid"
+                                        icon="i-lucide-search" block />
+                                </UCommandPalette>
+                                <div class="mt-3 text-xs text-gray-500 dark:text-gray-400 flex items-center justify-between">
+                                    <span>Use keyboard shortcut:</span>
+                                    <UBadge size="sm">Ctrl+K</UBadge>
+                                </div>
+                            </div>
+                        </template>
+                    </UCollapsible>
                 </div>
             </UCard>
         </div>
@@ -36,6 +48,7 @@ const utilitySection = ref<HTMLElement>()
 
 // Command palette state
 const isCommandPaletteOpen = ref(false)
+const isCommandPaletteCollapsed = ref(false)
 
 // Command groups for UCommandPalette
 const commandGroups = computed(() => [
