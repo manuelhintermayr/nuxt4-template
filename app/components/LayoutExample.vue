@@ -88,7 +88,7 @@
                             <span class="text-sm">{{ t('examples.layout.chip.withAvatar') }}</span>
                         </div>
 
-                        <div class="flex gap-2">
+                        <div class="flex gap-8">
                             <UChip :text="'99+'" color="primary" class="[&>span]:text-sm [&>span]:px-2 [&>span]:py-2 [&>span]:min-w-[32px] [&>span]:min-h-[28px]">
                                 <UButton icon="i-lucide-bell" color="neutral" variant="outline" />
                             </UChip>

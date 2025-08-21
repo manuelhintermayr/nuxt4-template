@@ -19,11 +19,11 @@
             </UCard>
 
             <!-- Navigation Menu -->
-            <UCard class="card-tilt">
+            <UCard class="card-tilt overflow-visible">
                 <template #header>
                     <h5 class="font-semibold">{{ t('examples.navigationAdvanced.navigationMenu.title') }}</h5>
                 </template>
-                <div class="p-4">
+                <div class="p-4 pb-20">
                     <UNavigationMenu :items="navigationMenuItems" class="w-full justify-center" />
                 </div>
             </UCard>
