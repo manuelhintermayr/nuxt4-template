@@ -109,7 +109,14 @@
             "title": "Erweiterte Formulare",
             "description": "Komplexe Formularkomponenten mit umfangreicher Funktionalität",
             "calendar": {
-                "title": "Kalender"
+                "title": "Kalender",
+                "rangeTitle": "Datumsbereich",
+                "pickerTitle": "Datums-Auswahl",
+                "rangePickerTitle": "Datumsbereich-Auswahl",
+                "selectDate": "Datum auswählen",
+                "selectRange": "Datumsbereich auswählen",
+                "placeholder": "Datum auswählen",
+                "rangePlaceholder": "Datumsbereich auswählen"
             },
             "checkboxGroup": {
                 "title": "Checkbox-Gruppe",

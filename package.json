@@ -18,6 +18,7 @@
     "lint:check": "npm run check:unused-vars && npm run analyze:i18n"
   },
   "dependencies": {
+    "@internationalized/date": "^3.8.2",
     "@nuxt/ui": "^3.3.2",
     "@nuxtjs/i18n": "^10.0.6",
     "gsap": "^3.13.0",

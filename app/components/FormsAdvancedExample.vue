@@ -8,13 +8,69 @@
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Date Input (if Calendar not available) -->
+            <!-- Calendar -->
             <UCard class="card-tilt">
                 <template #header>
                     <h5 class="font-semibold">{{ t('examples.formsAdvanced.calendar.title') }}</h5>
                 </template>
                 <div class="p-2">
-                    <UInput type="date" v-model="dateValue" />
+                    <UCalendar v-model="selectedDate" size="sm" />
+                </div>
+            </UCard>
+
+            <!-- Calendar Range -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.formsAdvanced.calendar.rangeTitle') }}</h5>
+                </template>
+                <div class="p-2">
+                    <UCalendar v-model="selectedDateRange" range size="sm" />
+                </div>
+            </UCard>
+
+            <!-- DatePicker with Popover -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.formsAdvanced.calendar.pickerTitle') }}</h5>
+                </template>
+                <div class="p-4 space-y-3">
+                    <div>
+                        <label class="text-sm font-medium mb-2 block">{{ t('examples.formsAdvanced.calendar.selectDate')
+                            }}</label>
+                        <UPopover>
+                            <UButton color="neutral" variant="outline" icon="i-heroicons-calendar-days"
+                                class="justify-start">
+                                {{ formattedPickerDate }}
+                            </UButton>
+
+                            <template #content>
+                                <UCalendar v-model="selectedPickerDate" class="p-2" />
+                            </template>
+                        </UPopover>
+                    </div>
+                </div>
+            </UCard>
+
+            <!-- DateRange Picker with Popover -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.formsAdvanced.calendar.rangePickerTitle') }}</h5>
+                </template>
+                <div class="p-4 space-y-3">
+                    <div>
+                        <label class="text-sm font-medium mb-2 block">{{
+                            t('examples.formsAdvanced.calendar.selectRange') }}</label>
+                        <UPopover>
+                            <UButton color="neutral" variant="outline" icon="i-heroicons-calendar-days"
+                                class="justify-start">
+                                {{ formattedRangePickerDate }}
+                            </UButton>
+
+                            <template #content>
+                                <UCalendar v-model="selectedRangePickerDate" range class="p-2" />
+                            </template>
+                        </UPopover>
+                    </div>
                 </div>
             </UCard>
 
@@ -69,7 +125,7 @@
                     <div class="space-y-2">
                         <label class="text-sm font-medium">{{ t('examples.formsAdvanced.slider.volume') }}: {{
                             volumeValue
-                        }}%</label>
+                            }}%</label>
                         <USlider v-model="volumeValue" :min="0" :max="100" />
                     </div>
                     <div class="space-y-2">
@@ -94,7 +150,7 @@
                     </div>
                     <div class="space-y-2">
                         <label class="text-sm font-medium">{{ t('examples.formsAdvanced.progress.indeterminate')
-                        }}</label>
+                            }}</label>
                         <UProgress />
                     </div>
                 </div>
@@ -104,13 +160,23 @@
 </template>
 
 <script setup lang="ts">
+import { DateFormatter, getLocalTimeZone } from '@internationalized/date'
+
 const { t } = useI18n()
+
+// Date formatter for displaying dates in a readable format
+const df = new DateFormatter('en-US', {
+    dateStyle: 'medium'
+})
 
 // Section animation
 const formsAdvancedSection = ref<HTMLElement>()
 
-// Form states
-const dateValue = ref('')
+// Form states - using any for now to avoid complex type issues
+const selectedDate = ref<any>(null)
+const selectedDateRange = ref<any>(null)
+const selectedPickerDate = ref<any>(null)
+const selectedRangePickerDate = ref<any>(null)
 const darkModeEnabled = ref(true)
 const animationsEnabled = ref(false)
 const notificationsEnabled = ref(true)
@@ -129,6 +195,27 @@ const radioOptions = computed(() => [
     { label: t('examples.formsAdvanced.radioGroup.dark'), value: 'dark' },
     { label: t('examples.formsAdvanced.radioGroup.system'), value: 'system' }
 ])
+
+// Formatted picker date
+const formattedPickerDate = computed(() => {
+    if (selectedPickerDate.value && typeof selectedPickerDate.value === 'object' && 'toDate' in selectedPickerDate.value) {
+        return df.format((selectedPickerDate.value as any).toDate(getLocalTimeZone()))
+    }
+    return t('examples.formsAdvanced.calendar.placeholder')
+})
+
+// Formatted range picker date
+const formattedRangePickerDate = computed(() => {
+    if (selectedRangePickerDate.value && typeof selectedRangePickerDate.value === 'object' && 'start' in selectedRangePickerDate.value) {
+        const range = selectedRangePickerDate.value as any
+        if (range.start && range.end) {
+            const startDate = df.format(range.start.toDate(getLocalTimeZone()))
+            const endDate = df.format(range.end.toDate(getLocalTimeZone()))
+            return `${startDate} - ${endDate}`
+        }
+    }
+    return t('examples.formsAdvanced.calendar.rangePlaceholder')
+})
 
 onMounted(() => {
     if (!formsAdvancedSection.value) return

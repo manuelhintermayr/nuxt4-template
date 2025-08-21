@@ -105,7 +105,14 @@
             "title": "Advanced Forms",
             "description": "Complex form components with rich functionality",
             "calendar": {
-                "title": "Calendar"
+                "title": "Calendar",
+                "rangeTitle": "Date Range",
+                "pickerTitle": "Date Picker",
+                "rangePickerTitle": "Date Range Picker",
+                "selectDate": "Select Date",
+                "selectRange": "Select Date Range",
+                "placeholder": "Select a date",
+                "rangePlaceholder": "Select date range"
             },
             "checkboxGroup": {
                 "title": "Checkbox Group",
