@@ -36,12 +36,21 @@
         "title": "Example Components",
         "buttons": {
             "title": "Buttons",
+            "description": "Interactive button components with various styles and states",
             "default": "Default",
             "primary": "Primary",
             "softNeutral": "Soft Neutral",
             "outlineError": "Outline Error",
             "ghost": "Ghost",
-            "link": "Link"
+            "link": "Link",
+            "defaultSection": "Default Buttons",
+            "buttonGroupsSection": "Button Groups",
+            "buttonGroups": {
+                "title": "Button Groups",
+                "horizontal": "Horizontal Group:",
+                "vertical": "Vertical Group:",
+                "input": "Input with Button:"
+            }
         },
         "forms": {
             "title": "Forms",
@@ -277,12 +286,6 @@
                 "home": "Home",
                 "components": "Components",
                 "navigation": "Navigation"
-            },
-            "buttonGroups": {
-                "title": "Button Groups",
-                "horizontal": "Horizontal Group:",
-                "vertical": "Vertical Group:",
-                "input": "Input with Button:"
             }
         },
         "alert": {

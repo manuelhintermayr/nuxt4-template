@@ -36,12 +36,21 @@
         "title": "Beispiel-Komponenten",
         "buttons": {
             "title": "Buttons",
+            "description": "Interaktive Button-Komponenten mit verschiedenen Stilen und Zuständen",
             "default": "Standard",
             "primary": "Primär",
             "softNeutral": "Soft Neutral",
             "outlineError": "Outline Fehler",
             "ghost": "Ghost",
-            "link": "Link"
+            "link": "Link",
+            "defaultSection": "Standard Buttons",
+            "buttonGroupsSection": "Button Gruppen",
+            "buttonGroups": {
+                "title": "Button Gruppen",
+                "horizontal": "Horizontale Gruppe:",
+                "vertical": "Vertikale Gruppe:",
+                "input": "Input mit Button:"
+            }
         },
         "forms": {
             "title": "Formulare",
@@ -281,12 +290,6 @@
                 "home": "Startseite",
                 "components": "Komponenten",
                 "navigation": "Navigation"
-            },
-            "buttonGroups": {
-                "title": "Button-Gruppen",
-                "horizontal": "Horizontale Gruppe:",
-                "vertical": "Vertikale Gruppe:",
-                "input": "Input mit Button:"
             }
         },
         "mouseFollower": {
