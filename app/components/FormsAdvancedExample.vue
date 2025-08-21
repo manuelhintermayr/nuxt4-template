@@ -114,11 +114,6 @@ const dateValue = ref('')
 const darkModeEnabled = ref(true)
 const animationsEnabled = ref(false)
 const notificationsEnabled = ref(true)
-const selectedColor = ref('#00C16A')
-const uploadedFiles = ref([])
-const agreeToTerms = ref(false)
-const newsletter = ref(true)
-const indeterminateValue = ref('indeterminate')
 
 // New form states
 const selectedTheme = ref('system')
@@ -134,12 +129,6 @@ const radioOptions = computed(() => [
     { label: t('examples.formsAdvanced.radioGroup.dark'), value: 'dark' },
     { label: t('examples.formsAdvanced.radioGroup.system'), value: 'system' }
 ])
-
-// File upload handler
-const handleFileUpload = (event: Event) => {
-    const target = event.target as HTMLInputElement
-    uploadedFiles.value = Array.from(target.files || [])
-}
 
 onMounted(() => {
     if (!formsAdvancedSection.value) return
