@@ -101,50 +101,63 @@
                             @click="showModal = true" />
                         <UButton :label="t('examples.navigationAdvanced.overlays.openSlideover')" variant="soft" block
                             @click="showSlideover = true" />
-                        <UButton :label="t('examples.navigationAdvanced.overlays.openPopover')" variant="ghost" block
-                            @click="showPopover = !showPopover" />
+                        
+                        <!-- Popover with trigger button inside -->
+                        <UPopover v-model:open="showPopover">
+                            <UButton :label="t('examples.navigationAdvanced.overlays.openPopover')" variant="ghost" block />
+                            <template #content>
+                                <div class="p-4">
+                                    <h6 class="font-semibold mb-2">{{ t('examples.navigationAdvanced.popover.title') }}</h6>
+                                    <p class="text-sm mb-4">{{ t('examples.navigationAdvanced.popover.content') }}</p>
+                                    <UButton size="sm" @click="showPopover = false">
+                                        {{ t('examples.navigationAdvanced.popover.close') }}
+                                    </UButton>
+                                </div>
+                            </template>
+                        </UPopover>
                     </div>
                 </UCard>
             </div>
         </div>
 
-        <!-- Modals -->
-        <UModal v-model="showModal" :title="t('examples.navigationAdvanced.modal.title')">
-            <div class="p-6">
-                <p class="mb-4">{{ t('examples.navigationAdvanced.modal.content') }}</p>
-                <div class="flex justify-end gap-2">
-                    <UButton variant="outline" @click="showModal = false">
-                        {{ t('examples.navigationAdvanced.modal.cancel') }}
-                    </UButton>
-                    <UButton @click="showModal = false">
-                        {{ t('examples.navigationAdvanced.modal.confirm') }}
-                    </UButton>
+        <!-- Modal -->
+        <UModal v-model:open="showModal">
+            <template #content>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold">{{ t('examples.navigationAdvanced.modal.title') }}</h3>
+                        <UButton icon="i-lucide-x" variant="ghost" size="sm" @click="showModal = false" />
+                    </div>
+                    <p class="mb-6">{{ t('examples.navigationAdvanced.modal.content') }}</p>
+                    <div class="flex justify-end gap-2">
+                        <UButton variant="outline" @click="showModal = false">
+                            {{ t('examples.navigationAdvanced.modal.cancel') }}
+                        </UButton>
+                        <UButton @click="showModal = false">
+                            {{ t('examples.navigationAdvanced.modal.confirm') }}
+                        </UButton>
+                    </div>
                 </div>
-            </div>
+            </template>
         </UModal>
 
-        <USlideover v-model="showSlideover" :title="t('examples.navigationAdvanced.slideover.title')">
-            <div class="p-6">
-                <p class="mb-4">{{ t('examples.navigationAdvanced.slideover.content') }}</p>
-                <div class="space-y-2">
-                    <UButton label="Option 1" variant="ghost" block />
-                    <UButton label="Option 2" variant="ghost" block />
-                    <UButton label="Option 3" variant="ghost" block />
+        <!-- Slideover -->
+        <USlideover v-model:open="showSlideover">
+            <template #content>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold">{{ t('examples.navigationAdvanced.slideover.title') }}</h3>
+                        <UButton icon="i-lucide-x" variant="ghost" size="sm" @click="showSlideover = false" />
+                    </div>
+                    <p class="mb-4">{{ t('examples.navigationAdvanced.slideover.content') }}</p>
+                    <div class="space-y-2">
+                        <UButton label="Option 1" variant="ghost" block />
+                        <UButton label="Option 2" variant="ghost" block />
+                        <UButton label="Option 3" variant="ghost" block />
+                    </div>
                 </div>
-            </div>
+            </template>
         </USlideover>
-
-        <!-- Popover -->
-        <div v-if="showPopover" class="fixed inset-0 z-50 bg-black/20" @click="showPopover = false">
-            <div
-                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h6 class="font-semibold mb-2">{{ t('examples.navigationAdvanced.popover.title') }}</h6>
-                <p class="text-sm mb-4">{{ t('examples.navigationAdvanced.popover.content') }}</p>
-                <UButton size="sm" @click="showPopover = false">
-                    {{ t('examples.navigationAdvanced.popover.close') }}
-                </UButton>
-            </div>
-        </div>
     </div>
 </template>
 
