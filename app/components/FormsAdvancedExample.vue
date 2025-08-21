@@ -155,6 +155,72 @@
                     </div>
                 </div>
             </UCard>
+
+            <!-- ColorPicker -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.formsAdvanced.colorPicker.title') }}</h5>
+                </template>
+                <div class="p-4 space-y-4">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium">{{ t('examples.formsAdvanced.colorPicker.basic') }}</label>
+                        <UColorPicker v-model="selectedColor" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium">{{ t('examples.formsAdvanced.colorPicker.withPopover')
+                        }}</label>
+                        <UPopover>
+                            <UButton color="neutral" variant="outline" class="justify-start gap-2">
+                                <div class="w-4 h-4 rounded border border-gray-300"
+                                    :style="{ backgroundColor: selectedColorPopover }"></div>
+                                {{ selectedColorPopover }}
+                            </UButton>
+                            <template #content>
+                                <UColorPicker v-model="selectedColorPopover" class="p-2" />
+                            </template>
+                        </UPopover>
+                    </div>
+                </div>
+            </UCard>
+
+            <!-- File Upload -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.formsAdvanced.fileUpload.title') }}</h5>
+                </template>
+                <div class="p-2">
+                    <UFileUpload v-model="uploadedFiles" :label="t('examples.formsAdvanced.fileUpload.label')"
+                        :description="t('examples.formsAdvanced.fileUpload.description')" accept="image/*" multiple
+                        class="min-h-32" />
+                </div>
+            </UCard>
+
+            <!-- Kbd (Keyboard shortcuts) -->
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ t('examples.formsAdvanced.kbd.title') }}</h5>
+                </template>
+                <div class="p-4 space-y-4">
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <label class="text-sm font-medium block mb-2">{{ t('examples.formsAdvanced.kbd.color')
+                                }}</label>
+                            <USelect v-model="kbdColor" :items="kbdColorOptions"
+                                :placeholder="t('examples.formsAdvanced.kbd.selectColor')" class="w-full" />
+                        </div>
+                        <div class="flex-1">
+                            <label class="text-sm font-medium block mb-2">{{ t('examples.formsAdvanced.kbd.variant')
+                                }}</label>
+                            <USelect v-model="kbdVariant" :items="kbdVariantOptions"
+                                :placeholder="t('examples.formsAdvanced.kbd.selectVariant')" class="w-full" />
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center py-4">
+                        <UKbd :color="kbdColor" :variant="kbdVariant">K</UKbd>
+                    </div>
+                </div>
+            </UCard>
         </div>
     </div>
 </template>
@@ -177,6 +243,11 @@ const selectedDate = ref<any>(null)
 const selectedDateRange = ref<any>(null)
 const selectedPickerDate = ref<any>(null)
 const selectedRangePickerDate = ref<any>(null)
+const selectedColor = ref('#00C16A')
+const selectedColorPopover = ref('#00BCD4')
+const uploadedFiles = ref<File[]>([])
+const kbdColor = ref<'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error' | 'neutral'>('neutral')
+const kbdVariant = ref<'solid' | 'outline' | 'soft' | 'subtle'>('solid')
 const darkModeEnabled = ref(true)
 const animationsEnabled = ref(false)
 const notificationsEnabled = ref(true)
@@ -188,6 +259,24 @@ const autoSave = ref(false)
 const volumeValue = ref(75)
 const rangeValues = ref([25, 75])
 const progressValue = ref(65)
+
+// Kbd options
+const kbdColorOptions = [
+    { label: 'Primary', value: 'primary' },
+    { label: 'Secondary', value: 'secondary' },
+    { label: 'Success', value: 'success' },
+    { label: 'Info', value: 'info' },
+    { label: 'Warning', value: 'warning' },
+    { label: 'Error', value: 'error' },
+    { label: 'Neutral', value: 'neutral' }
+]
+
+const kbdVariantOptions = [
+    { label: 'Solid', value: 'solid' },
+    { label: 'Outline', value: 'outline' },
+    { label: 'Soft', value: 'soft' },
+    { label: 'Subtle', value: 'subtle' }
+]
 
 // Radio options
 const radioOptions = computed(() => [

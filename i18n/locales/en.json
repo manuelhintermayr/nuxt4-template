@@ -63,7 +63,6 @@
             "description": "Form components for data input and user interaction",
             "namePlaceholder": "Your Name",
             "messagePlaceholder": "Your message...",
-            "submit": "Submit",
             "basicSection": "Basic Forms"
         },
         "accordion": {
@@ -140,6 +139,17 @@
             "progress": {
                 "title": "Progress",
                 "indeterminate": "Indeterminate Progress"
+            },
+            "colorPicker": {
+                "basic": "Basic Color Picker",
+                "withPopover": "Color Picker with Popover"
+            },
+            "kbd": {
+                "title": "Keyboard Shortcuts",
+                "color": "Color",
+                "variant": "Variant",
+                "selectColor": "Select color",
+                "selectVariant": "Select variant"
             }
         },
         "layout": {
