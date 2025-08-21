@@ -20,41 +20,48 @@
 
         <!-- Button Groups Section -->
         <h5 class="text-md font-medium text-gray-700 dark:text-gray-300 mt-6 mb-2">{{ $t('examples.buttons.buttonGroupsSection') }}</h5>
-        <div class="space-y-4 p-2">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Horizontal Button Group -->
-            <div>
-                <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    {{ $t('examples.buttons.buttonGroups.horizontal') }}
-                </p>
-                <UButtonGroup>
-                    <UButton color="neutral" variant="outline" label="Edit" icon="i-heroicons-pencil" />
-                    <UButton color="neutral" variant="outline" label="Share" icon="i-heroicons-share" />
-                    <UButton color="neutral" variant="outline" label="Delete" icon="i-heroicons-trash" />
-                </UButtonGroup>
-            </div>
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ $t('examples.buttons.buttonGroups.horizontal') }}</h5>
+                </template>
+                <div class="p-4">
+                    <UButtonGroup>
+                        <UButton color="neutral" variant="outline" label="Edit" icon="i-heroicons-pencil" />
+                        <UButton color="neutral" variant="outline" label="Share" icon="i-heroicons-share" />
+                        <UButton color="neutral" variant="outline" label="Delete" icon="i-heroicons-trash" />
+                    </UButtonGroup>
+                </div>
+            </UCard>
 
             <!-- Vertical Button Group -->
-            <div>
-                <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    {{ $t('examples.buttons.buttonGroups.vertical') }}
-                </p>
-                <UButtonGroup orientation="vertical">
-                    <UButton color="neutral" variant="outline" label="Profile" icon="i-heroicons-user" />
-                    <UButton color="neutral" variant="outline" label="Settings" icon="i-heroicons-cog-6-tooth" />
-                    <UButton color="neutral" variant="outline" label="Logout" icon="i-heroicons-arrow-left-on-rectangle" />
-                </UButtonGroup>
-            </div>
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ $t('examples.buttons.buttonGroups.vertical') }}</h5>
+                </template>
+                <div class="p-4">
+                    <UButtonGroup orientation="vertical" class="w-fit">
+                        <UButton color="neutral" variant="outline" label="Profile" icon="i-heroicons-user" />
+                        <UButton color="neutral" variant="outline" label="Settings" icon="i-heroicons-cog-6-tooth" />
+                        <UButton color="neutral" variant="outline" label="Logout" icon="i-heroicons-arrow-left-on-rectangle" />
+                    </UButtonGroup>
+                </div>
+            </UCard>
 
             <!-- Input with Button -->
-            <div>
-                <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    {{ $t('examples.buttons.buttonGroups.input') }}
-                </p>
-                <UButtonGroup>
-                    <UInput color="neutral" variant="outline" placeholder="Enter your email" />
-                    <UButton color="primary" variant="solid" label="Subscribe" />
-                </UButtonGroup>
-            </div>
+            <UCard class="card-tilt">
+                <template #header>
+                    <h5 class="font-semibold">{{ $t('examples.buttons.buttonGroups.input') }}</h5>
+                </template>
+                <div class="p-4">
+                    <UButtonGroup>
+                        <UInput color="neutral" variant="outline" placeholder="Enter your email" />
+                        <UButton color="primary" variant="solid" label="Subscribe" />
+                    </UButtonGroup>
+                </div>
+            </UCard>
         </div>
     </div>
 </template>

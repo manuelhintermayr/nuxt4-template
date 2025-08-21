@@ -47,9 +47,9 @@
             "buttonGroupsSection": "Button Groups",
             "buttonGroups": {
                 "title": "Button Groups",
-                "horizontal": "Horizontal Group:",
-                "vertical": "Vertical Group:",
-                "input": "Input with Button:"
+                "horizontal": "Horizontal Group",
+                "vertical": "Vertical Group",
+                "input": "Input with Button"
             }
         },
         "forms": {
