@@ -2,7 +2,7 @@
   <div id="nuxt-template-page" class="relative min-h-screen">
     <LoadingScreen :is-loading="!loadingFinished" />
 
-    <div v-if="loadingFinished" v-show="!isLoading" class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div v-show="!isLoading" class="min-h-screen bg-gray-50 dark:bg-gray-900">
       <AppHeader />
 
       <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">

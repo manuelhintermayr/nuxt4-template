@@ -43,16 +43,16 @@
 <script setup lang="ts">
 // Welcome section component with GSAP hero animation
 
-const heroContainer = ref<HTMLElement>()
+const heroContainer = ref<HTMLElement | null>(null)
 
 onMounted(() => {
     if (!heroContainer.value) return
-
     const { utils } = useAnimations()
 
-    // Hero entrance animation
-    if (utils?.heroEntrance) {
-        utils.heroEntrance(heroContainer.value)
+    if (utils?.heroEntrance && heroContainer.value) {
+        setTimeout(() => {
+            utils.heroEntrance(heroContainer.value as Element)
+        }, 300)
     }
 })
 </script>

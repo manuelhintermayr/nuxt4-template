@@ -1,9 +1,9 @@
 <template>
     <Teleport to="body">
         <Transition name="loading" @enter="onEnter" @leave="onLeave">
-            <div v-if="isVisible"
+            <div v-if="isLoading"
                 class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900 transition-all duration-500"
-                :class="{ 'opacity-100': isVisible, 'opacity-0': !isVisible }">
+                :class="{ 'opacity-100': isLoading, 'opacity-0': !isLoading }">
                 <div class="text-center space-y-8">
                     <!-- Logo/Title -->
                     <div class="space-y-4">
@@ -25,15 +25,17 @@
                         <!-- Loading Text -->
                         <div class="flex items-center justify-center space-x-2">
                             <UIcon name="i-lucide-loader-circle" class="w-5 h-5 animate-spin text-primary-500" />
-                            <span class="text-gray-600 dark:text-gray-400 font-medium">
-                                {{ loadingText }}
-                            </span>
                         </div>
                     </div>
 
-                    <!-- Built with love -->
+                    <!-- Built with love and author link -->
                     <div class="text-xs text-gray-400 dark:text-gray-600">
-                        {{ t('loadingScreen.builtWith') }} ❤️
+                        {{ t('welcome.builtWith') }} ❤️ {{ t('welcome.by') }}
+                        <a href="https://github.com/manuelhintermayr" target="_blank" rel="noopener noreferrer"
+                            class="font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
+                            data-cursor-pointer>
+                            Manuel Hintermayr
+                        </a>
                     </div>
                 </div>
             </div>
@@ -43,56 +45,12 @@
 
 <script setup lang="ts">
 interface Props {
-    isLoading?: boolean
+    isLoading: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
-    isLoading: true
-})
+defineProps<Props>()
 
 const { t } = useI18n()
-
-// Internal visibility state controlled by parent's isLoading prop
-const isVisible = ref(props.isLoading)
-const loadingText = ref('')
-
-const loadingTexts = computed(() => [
-    t('loadingScreen.texts.loading'),
-    t('loadingScreen.texts.preparing'),
-    t('loadingScreen.texts.initializing'),
-    t('loadingScreen.texts.almostReady')
-])
-
-// Watch for prop changes
-watch(() => props.isLoading, (newValue) => {
-    if (!newValue) {
-        // Start hide process when isLoading becomes false
-        hideLoadingScreen()
-    } else {
-        // Show loading screen when isLoading becomes true
-        isVisible.value = true
-        simulateLoading()
-    }
-})
-
-// Simulate loading progress
-const simulateLoading = () => {
-    const steps = [300, 600, 900, 1200] // Faster timing for better UX
-
-    loadingText.value = loadingTexts.value[0] || ''
-
-    steps.forEach((delay, index) => {
-        setTimeout(() => {
-            if (props.isLoading && loadingTexts.value[index + 1]) {
-                loadingText.value = loadingTexts.value[index + 1] || ''
-            }
-        }, delay)
-    })
-}
-
-const hideLoadingScreen = () => {
-    isVisible.value = false
-}
 
 // Animation handlers
 const onEnter = (el: Element) => {
@@ -108,20 +66,6 @@ const onLeave = (el: Element) => {
         }
     }, 500)
 }
-
-// Start loading simulation when component mounts and isLoading is true
-onMounted(() => {
-    if (props.isLoading) {
-        nextTick(() => {
-            simulateLoading()
-        })
-    }
-})
-
-// Expose method to hide loading screen externally
-defineExpose({
-    hide: hideLoadingScreen
-})
 </script>
 
 <style scoped>
