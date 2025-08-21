@@ -8,19 +8,20 @@
         </p>
 
         <div class="space-y-6">
-            <!-- Simple Carousel Alternative -->
+            <!-- Carousel -->
             <UCard class="card-tilt">
                 <template #header>
                     <h5 class="font-semibold">{{ t('examples.dataDisplay.carousel.title') }}</h5>
                 </template>
                 <div class="p-4">
-                    <div class="flex space-x-2 overflow-x-auto">
-                        <div v-for="(item, index) in carouselItems" :key="index"
-                            class="flex-shrink-0 flex items-center justify-center h-48 w-80 rounded-lg text-white text-lg font-semibold"
-                            :style="item.style">
-                            {{ item.label }}
-                        </div>
-                    </div>
+                    <UCarousel :items="carouselItems" arrows dots class="w-full">
+                        <template #default="{ item }">
+                            <div class="flex items-center justify-center h-48 rounded-lg text-white text-lg font-semibold"
+                                :style="item.style">
+                                {{ item.label }}
+                            </div>
+                        </template>
+                    </UCarousel>
                 </div>
             </UCard>
 
