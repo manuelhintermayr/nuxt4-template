@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <UButton :label="currentLocaleName" color="white" variant="ghost" size="sm" icon="i-heroicons-language"
+        <UButton :label="currentLocaleName" color="neutral" variant="ghost" size="sm" icon="i-heroicons-language"
             data-cursor-pointer @click="toggleDropdown" />
 
         <div v-if="isOpen"
