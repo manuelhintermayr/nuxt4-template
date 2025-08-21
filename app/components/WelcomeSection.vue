@@ -41,8 +41,6 @@
 </template>
 
 <script setup lang="ts">
-// Welcome section component with GSAP hero animation
-
 const heroContainer = ref<HTMLElement | null>(null)
 
 onMounted(() => {

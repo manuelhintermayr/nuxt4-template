@@ -314,8 +314,6 @@
 </style>
 
 <script setup lang="ts">
-// Mouse Follower examples demonstrating various cursor states and interactions with GSAP animations
-
 const mouseSection = ref<HTMLElement>()
 const mouseTitle = ref<HTMLElement>()
 const interactiveSection = ref<HTMLElement>()
@@ -356,8 +354,6 @@ const removeSkewing = () => {
         cursor.render(true)
     }
 }
-
-// New functions for additional features
 
 // Advanced states functions
 const addCustomState = () => {
