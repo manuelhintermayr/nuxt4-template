@@ -63,6 +63,7 @@
             "description": "Formular-Komponenten für Dateneingabe und Benutzerinteraktion",
             "namePlaceholder": "Dein Name",
             "messagePlaceholder": "Deine Nachricht...",
+            "submit": "Absenden",
             "basicSection": "Basis Formulare"
         },
         "alert": {

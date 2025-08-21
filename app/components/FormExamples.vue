@@ -18,7 +18,7 @@
 
             <!-- Submit Button -->
             <div class="col-span-2 flex justify-end">
-                <UButton type="submit" color="primary">Absenden</UButton>
+                <UButton type="submit" color="primary">{{ t('examples.forms.submit') }}</UButton>
             </div>
             </form>
         </div>

@@ -63,6 +63,7 @@
             "description": "Form components for data input and user interaction",
             "namePlaceholder": "Your Name",
             "messagePlaceholder": "Your message...",
+            "submit": "Submit",
             "basicSection": "Basic Forms"
         },
         "accordion": {
