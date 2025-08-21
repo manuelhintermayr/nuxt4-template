@@ -46,11 +46,7 @@
         "forms": {
             "title": "Formulare",
             "namePlaceholder": "Ihr Name",
-            "messagePlaceholder": "Ihre Nachricht...",
-            "selectPlaceholder": "Wählen Sie eine Option",
-            "option1": "Option 1",
-            "option2": "Option 2",
-            "option3": "Option 3"
+            "messagePlaceholder": "Ihre Nachricht..."
         },
         "alert": {
             "title": "Info",
@@ -529,7 +525,7 @@
     },
     "loadingScreen": {
         "title": "Nuxt 4 Template",
-        "subtitle": "Lade das Template...",
+        "subtitle": "Template wird geladen...",
         "builtWith": "Erstellt mit",
         "texts": {
             "loading": "Lade Komponenten...",

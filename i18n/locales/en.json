@@ -46,11 +46,7 @@
         "forms": {
             "title": "Forms",
             "namePlaceholder": "Your Name",
-            "messagePlaceholder": "Your message...",
-            "selectPlaceholder": "Choose an option",
-            "option1": "Option 1",
-            "option2": "Option 2",
-            "option3": "Option 3"
+            "messagePlaceholder": "Your message..."
         },
         "accordion": {
             "title": "Accordion Components",
