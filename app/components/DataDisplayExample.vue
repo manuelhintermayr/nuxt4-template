@@ -55,35 +55,17 @@
 
             <!-- Interactive Menus -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Context Menu Alternative -->
+                <!-- Context Menu -->
                 <UCard class="card-tilt">
                     <template #header>
                         <h5 class="font-semibold">{{ t('examples.dataDisplay.contextMenu.title') }}</h5>
                     </template>
                     <div class="p-4">
-                        <div class="flex items-center justify-center rounded-md border border-dashed border-gray-300 dark:border-gray-600 text-sm aspect-video bg-gray-50 dark:bg-gray-800 cursor-pointer"
-                            @contextmenu.prevent="showContextMenu = !showContextMenu" @click="showContextMenu = false">
-                            {{ t('examples.dataDisplay.contextMenu.rightClick') }}
-                        </div>
-                        <div v-if="showContextMenu" class="mt-2 p-2 bg-white dark:bg-gray-800 border rounded shadow">
-                            <div class="space-y-1">
-                                <div
-                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
-                                    <UIcon name="i-lucide-copy" class="w-4 h-4" />
-                                    {{ t('examples.dataDisplay.contextMenu.copy') }}
-                                </div>
-                                <div
-                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
-                                    <UIcon name="i-lucide-scissors" class="w-4 h-4" />
-                                    {{ t('examples.dataDisplay.contextMenu.cut') }}
-                                </div>
-                                <div
-                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
-                                    <UIcon name="i-lucide-clipboard" class="w-4 h-4" />
-                                    {{ t('examples.dataDisplay.contextMenu.paste') }}
-                                </div>
+                        <UContextMenu :items="contextMenuItems">
+                            <div class="flex items-center justify-center rounded-md border border-dashed border-gray-300 dark:border-gray-600 text-sm aspect-video bg-gray-50 dark:bg-gray-800 cursor-pointer">
+                                {{ t('examples.dataDisplay.contextMenu.rightClick') }}
                             </div>
-                        </div>
+                        </UContextMenu>
                     </div>
                 </UCard>
 
@@ -202,10 +184,28 @@ const dataDisplaySection = ref<HTMLElement>()
 // Component states
 const firstCollapsed = ref(true)
 const secondCollapsed = ref(true)
-const showContextMenu = ref(false)
 const showDropdown = ref(false)
 const showBottomModal = ref(false)
 const showSideModal = ref(false)
+
+// Context Menu items
+const contextMenuItems = computed(() => [
+    {
+        label: t('examples.dataDisplay.contextMenu.copy'),
+        icon: 'i-lucide-copy',
+        onSelect: () => console.log('Copy clicked')
+    },
+    {
+        label: t('examples.dataDisplay.contextMenu.cut'),
+        icon: 'i-lucide-scissors',
+        onSelect: () => console.log('Cut clicked')
+    },
+    {
+        label: t('examples.dataDisplay.contextMenu.paste'),
+        icon: 'i-lucide-clipboard',
+        onSelect: () => console.log('Paste clicked')
+    }
+])
 
 // Carousel data
 const carouselItems = [
