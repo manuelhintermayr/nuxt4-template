@@ -74,40 +74,16 @@
                     </div>
                 </UCard>
 
-                <!-- Dropdown Menu Alternative -->
+                <!-- Dropdown Menu -->
                 <UCard class="card-tilt">
                     <template #header>
                         <h5 class="font-semibold">{{ t('examples.dataDisplay.dropdownMenu.title') }}</h5>
                     </template>
-                    <div class="p-4 relative">
-                        <UButton :label="t('examples.dataDisplay.dropdownMenu.trigger')" icon="i-lucide-menu"
-                            color="neutral" variant="outline" @click="showDropdown = !showDropdown" />
-                        <div v-if="showDropdown"
-                            class="absolute top-16 left-4 z-10 p-2 bg-white dark:bg-gray-800 border rounded shadow min-w-40">
-                            <div class="space-y-1">
-                                <div
-                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
-                                    <UIcon name="i-lucide-user" class="w-4 h-4" />
-                                    {{ t('examples.dataDisplay.dropdownMenu.profile') }}
-                                </div>
-                                <div
-                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
-                                    <UIcon name="i-lucide-settings" class="w-4 h-4" />
-                                    {{ t('examples.dataDisplay.dropdownMenu.settings') }}
-                                </div>
-                                <div
-                                    class="flex items-center gap-2 px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
-                                    <UIcon name="i-lucide-credit-card" class="w-4 h-4" />
-                                    {{ t('examples.dataDisplay.dropdownMenu.billing') }}
-                                </div>
-                                <hr class="my-1">
-                                <div
-                                    class="flex items-center gap-2 px-2 py-1 hover:bg-red-100 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 rounded cursor-pointer">
-                                    <UIcon name="i-lucide-log-out" class="w-4 h-4" />
-                                    {{ t('examples.dataDisplay.dropdownMenu.logout') }}
-                                </div>
-                            </div>
-                        </div>
+                    <div class="p-4">
+                        <UDropdownMenu :items="dropdownMenuItems">
+                            <UButton :label="t('examples.dataDisplay.dropdownMenu.trigger')" icon="i-lucide-menu"
+                                color="neutral" variant="outline" />
+                        </UDropdownMenu>
                     </div>
                 </UCard>
             </div>
@@ -190,7 +166,6 @@ const dataDisplaySection = ref<HTMLElement>()
 // Component states
 const firstCollapsed = ref(false)
 const secondCollapsed = ref(false)
-const showDropdown = ref(false)
 const showBottomDrawer = ref(false)
 const showSideDrawer = ref(false)
 
@@ -210,6 +185,34 @@ const contextMenuItems = computed(() => [
         label: t('examples.dataDisplay.contextMenu.paste'),
         icon: 'i-lucide-clipboard',
         onSelect: () => console.log('Paste clicked')
+    }
+])
+
+// Dropdown Menu items
+const dropdownMenuItems = computed(() => [
+    {
+        label: t('examples.dataDisplay.dropdownMenu.profile'),
+        icon: 'i-lucide-user',
+        onSelect: () => console.log('Profile clicked')
+    },
+    {
+        label: t('examples.dataDisplay.dropdownMenu.settings'),
+        icon: 'i-lucide-settings',
+        onSelect: () => console.log('Settings clicked')
+    },
+    {
+        label: t('examples.dataDisplay.dropdownMenu.billing'),
+        icon: 'i-lucide-credit-card',
+        onSelect: () => console.log('Billing clicked')
+    },
+    {
+        type: 'separator'
+    },
+    {
+        label: t('examples.dataDisplay.dropdownMenu.logout'),
+        icon: 'i-lucide-log-out',
+        color: 'error',
+        onSelect: () => console.log('Logout clicked')
     }
 ])
 
