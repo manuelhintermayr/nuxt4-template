@@ -75,7 +75,7 @@
                     </template>
                     <div class="space-y-4">
                         <div class="flex items-center gap-4">
-                            <UChip :text="5">
+                            <UChip :text="5" class="[&>span]:text-sm [&>span]:px-2 [&>span]:py-2 [&>span]:min-w-[28px] [&>span]:min-h-[28px]">
                                 <UButton icon="i-lucide-mail" color="neutral" variant="subtle" />
                             </UChip>
                             <span class="text-sm">{{ t('examples.layout.chip.withButton') }}</span>
@@ -89,10 +89,10 @@
                         </div>
 
                         <div class="flex gap-2">
-                            <UChip :text="'99+'" size="lg" color="primary">
+                            <UChip :text="'99+'" color="primary" class="[&>span]:text-sm [&>span]:px-2 [&>span]:py-2 [&>span]:min-w-[32px] [&>span]:min-h-[28px]">
                                 <UButton icon="i-lucide-bell" color="neutral" variant="outline" />
                             </UChip>
-                            <UChip :text="'New'" color="success">
+                            <UChip :text="'New'" color="success" class="[&>span]:text-sm [&>span]:px-3 [&>span]:py-2 [&>span]:min-w-[36px] [&>span]:min-h-[28px]">
                                 <UButton icon="i-lucide-star" color="neutral" variant="outline" />
                             </UChip>
                         </div>
