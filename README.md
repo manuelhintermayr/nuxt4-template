@@ -21,6 +21,8 @@ A modern, production-ready Nuxt 4 starter template with comprehensive configurat
 - 🎭 **Heroicons** - Beautiful SVG icons from the Heroicons library
 - 🐭 **Mouse Follower** - Smooth mouse cursor effects with GSAP animations
 - 🏗️ **Developer Experience** - Hot module replacement and fast refresh
+- 🔍 **Code Quality Tools** - Automated unused variable detection and i18n management
+- ⚙️ **VS Code Integration** - Pre-configured settings for optimal development experience
 
 ![Preview](public/media/preview.gif)
 
@@ -48,6 +50,11 @@ A modern, production-ready Nuxt 4 starter template with comprehensive configurat
 ### Icons & Assets
 - **[@iconify-json/heroicons](https://iconify.design/)** - Heroicons icon collection
 - **[@nuxt/icon](https://github.com/nuxt/icon)** - Icon component with 200k+ icons
+
+### Development Tools
+- **TypeScript** - Full type safety and IntelliSense
+- **VS Code Integration** - Automatic code cleanup and unused import removal
+- **Utility Scripts** - i18n management and code quality checks
 
 ## 📦 Installation
 
@@ -80,6 +87,23 @@ yarn dev
 bun run dev
 ```
 
+### Additional Development Commands
+
+```bash
+# Code Quality Checks
+npm run check:unused-vars          # Check for unused variables
+npm run check:unused-vars-enhanced # Enhanced unused variable analysis
+npm run lint:check                 # Run all code quality checks
+
+# i18n Management  
+npm run analyze:i18n              # Analyze i18n string usage
+npm run cleanup:i18n              # Remove unused i18n strings
+
+# Production Build
+npm run build                     # Build for production
+npm run preview                   # Preview production build
+```
+
 ## 🏗️ Project Structure
 
 ```
@@ -102,9 +126,11 @@ nuxt4-template/
 │   └── locales/               # Translation files
 │       ├── en.json            # English translations
 │       └── de.json            # German translations
-├── scripts/                   # Utility scripts for i18n maintenance and analysis
+├── scripts/                   # Utility scripts for development and maintenance
 │   ├── analyze-i18n-strings.js # Analyze i18n string usage across codebase
 │   ├── cleanup-i18n-strings.js # Remove unused i18n strings automatically
+│   ├── check-unused-vars.js    # Check for unused variables in all files
+│   ├── check-unused-vars-enhanced.js # Enhanced unused variable analysis
 │   └── README.md              # Documentation for utility scripts
 ├── public/                    # Static assets
 ├── nuxt.config.ts            # Nuxt configuration
@@ -211,9 +237,15 @@ locales: [
 ```
 
 ### Maintenance Scripts
-The template includes utility scripts for i18n maintenance:
+The template includes utility scripts for development and maintenance:
+
+#### i18n Management:
 - **`scripts/analyze-i18n-strings.js`** - Analyze string usage and identify unused translations
 - **`scripts/cleanup-i18n-strings.js`** - Automatically remove unused strings from translation files
+
+#### Code Quality:
+- **`scripts/check-unused-vars.js`** - Check for unused variables across all TypeScript/Vue files
+- **`scripts/check-unused-vars-enhanced.js`** - Enhanced analysis with import checking
 
 See [`scripts/README.md`](scripts/README.md) for detailed usage instructions.
 

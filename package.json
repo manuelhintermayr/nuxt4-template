@@ -10,7 +10,12 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "check:unused-vars": "npx tsc --noEmit --noUnusedLocals --noUnusedParameters",
+    "check:unused-vars-enhanced": "node scripts/check-unused-vars-enhanced.js",
+    "analyze:i18n": "node scripts/analyze-i18n-strings.js",
+    "cleanup:i18n": "node scripts/cleanup-i18n-strings.js",
+    "lint:check": "npm run check:unused-vars && npm run analyze:i18n"
   },
   "dependencies": {
     "@nuxt/ui": "^3.3.2",
