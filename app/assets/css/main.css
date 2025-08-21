@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-@theme static {
+/* Custom Theme Variables */
+:root {
   --font-sans: 'Public Sans', sans-serif;
   --font-default: 'DefaultFont', sans-serif;
 
