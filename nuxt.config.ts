@@ -45,4 +45,9 @@ export default defineNuxtConfig({
     ],
     debug: false
   },
+  runtimeConfig: {
+    public: {
+      mediaBasePath: `${process.env.NUXT_APP_BASE_URL || '/nuxt4-template/'}media/`
+    }
+  }
 })
