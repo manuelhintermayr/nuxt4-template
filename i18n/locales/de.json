@@ -63,7 +63,8 @@
             "description": "Formular-Komponenten für Dateneingabe und Benutzerinteraktion",
             "namePlaceholder": "Dein Name",
             "messagePlaceholder": "Deine Nachricht...",
-            "basicSection": "Basis Formulare"
+            "basicSection": "Basis Formulare",
+            "submit": "Absenden"
         },
         "alert": {
             "title": "Info",
@@ -146,7 +147,13 @@
             },
             "colorPicker": {
                 "basic": "Einfacher Farbwähler",
-                "withPopover": "Farbwähler mit Popover"
+                "withPopover": "Farbwähler mit Popover",
+                "title": "Farbwähler"
+            },
+            "fileUpload": {
+                "title": "Datei-Upload",
+                "label": "Dateien hier ablegen",
+                "description": "SVG, PNG, JPG oder GIF (max. 2MB)"
             },
             "kbd": {
                 "title": "Tastenkürzel",
