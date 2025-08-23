@@ -8,40 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
 
 // Strings to be deleted
-const STRINGS_TO_DELETE = [
-    "languageSwitcher.placeholder",
-    "welcome.developedBy",
-    "examples.buttons.buttonGroups.title",
-    "examples.forms.submit",
-    "examples.formsAdvanced.colorPicker.title",
-    "examples.formsAdvanced.fileUpload.title",
-    "examples.formsAdvanced.fileUpload.label",
-    "examples.formsAdvanced.fileUpload.description",
-    "examples.formsAdvanced.formField.title",
-    "examples.formsAdvanced.formField.emailLabel",
-    "examples.formsAdvanced.formField.emailDescription",
-    "examples.formsAdvanced.formField.passwordLabel",
-    "examples.formsAdvanced.formField.passwordHelp",
-    "examples.formsAdvanced.checkbox.title",
-    "examples.formsAdvanced.checkbox.terms",
-    "examples.formsAdvanced.checkbox.newsletter",
-    "examples.formsAdvanced.checkbox.newsletterDescription",
-    "examples.formsAdvanced.checkbox.indeterminate",
-    "examples.formsAdvanced.radioGroup.themeLabel",
-    "examples.formsAdvanced.radioGroup.auto",
-    "examples.formsAdvanced.switch.notificationsDescription",
-    "examples.formsAdvanced.switch.marketing",
-    "examples.formsAdvanced.switch.marketingDescription",
-    "examples.formsAdvanced.progress.description",
-    "examples.formsAdvanced.progress.upload",
-    "examples.formsAdvanced.progress.download",
-    "examples.formsAdvanced.progress.processing",
-    "examples.dataDisplay.contextMenu.delete",
-    "examples.inputShowcase.inputNumber.stepped",
-    "examples.inputShowcase.pinInput.otpLabel",
-    "examples.inputShowcase.pinInput.maskedLabel",
-    "loadingScreen.builtWith"
-];
+const STRINGS_TO_DELETE = [];
 
 /**
  * Removes a string from a nested object

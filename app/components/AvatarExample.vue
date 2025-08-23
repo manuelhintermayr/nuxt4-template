@@ -14,10 +14,10 @@
                     <h5 class="font-semibold">{{ t('examples.avatar.basic') }}</h5>
                 </template>
                 <div class="flex items-center space-x-4 p-4">
-                    <UAvatar src="/media/avatar_1.jpg" alt="AI Generated Sample Person 1" size="sm" />
-                    <UAvatar src="/media/avatar_2.jpg" alt="AI Generated Sample Person 2" size="md" />
-                    <UAvatar src="/media/avatar_3.jpg" alt="AI Generated Sample Person 3" size="lg" />
-                    <UAvatar src="/media/avatar_1.jpg" alt="AI Generated Sample Person" size="xl" />
+                    <UAvatar :src="mediaBasePath + 'avatar_1.jpg'" alt="AI Generated Sample Person 1" size="sm" />
+                    <UAvatar :src="mediaBasePath + 'avatar_2.jpg'" alt="AI Generated Sample Person 2" size="md" />
+                    <UAvatar :src="mediaBasePath + 'avatar_3.jpg'" alt="AI Generated Sample Person 3" size="lg" />
+                    <UAvatar :src="mediaBasePath + 'avatar_1.jpg'" alt="AI Generated Sample Person" size="xl" />
                 </div>
             </UCard>
 
@@ -28,11 +28,11 @@
                 </template>
                 <div class="p-4">
                     <UAvatarGroup size="md" :max="3">
-                        <UAvatar src="/media/avatar_1.jpg" alt="AI Generated Sample Person 1" />
-                        <UAvatar src="/media/avatar_2.jpg" alt="AI Generated Sample Person 2" />
-                        <UAvatar src="/media/avatar_3.jpg" alt="AI Generated Sample Person 3" />
-                        <UAvatar src="/media/avatar_1.jpg" alt="AI Generated Sample Person" />
-                        <UAvatar src="/media/avatar_2.jpg" alt="AI Generated Sample Person" />
+                        <UAvatar :src="mediaBasePath + 'avatar_1.jpg'" alt="AI Generated Sample Person 1" />
+                        <UAvatar :src="mediaBasePath + 'avatar_2.jpg'" alt="AI Generated Sample Person 2" />
+                        <UAvatar :src="mediaBasePath + 'avatar_3.jpg'" alt="AI Generated Sample Person 3" />
+                        <UAvatar :src="mediaBasePath + 'avatar_1.jpg'" alt="AI Generated Sample Person" />
+                        <UAvatar :src="mediaBasePath + 'avatar_2.jpg'" alt="AI Generated Sample Person" />
                     </UAvatarGroup>
                 </div>
             </UCard>
@@ -53,6 +53,9 @@
 </template>
 
 <script setup lang="ts">
+import { useRuntimeConfig } from '#imports'
+const config = useRuntimeConfig()
+const mediaBasePath = config.public.mediaBasePath
 const { t } = useI18n()
 
 // Section animation

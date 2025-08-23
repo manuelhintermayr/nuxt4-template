@@ -84,7 +84,7 @@
 
                         <div class="flex items-center gap-4">
                             <UChip color="error" position="top-right">
-                                <UAvatar src="/media/avatar_1.jpg" alt="AI Generated Sample Person" />
+                                <UAvatar :src="mediaBasePath + 'avatar_1.jpg'" alt="AI Generated Sample Person" />
                             </UChip>
                             <span class="text-sm">{{ t('examples.layout.chip.withAvatar') }}</span>
                         </div>
@@ -107,6 +107,9 @@
 </template>
 
 <script setup lang="ts">
+import { useRuntimeConfig } from '#imports'
+const config = useRuntimeConfig()
+const mediaBasePath = config.public.mediaBasePath
 const { t } = useI18n()
 
 // Section animation

@@ -63,7 +63,8 @@
             "description": "Form components for data input and user interaction",
             "namePlaceholder": "Your Name",
             "messagePlaceholder": "Your message...",
-            "basicSection": "Basic Forms"
+            "basicSection": "Basic Forms",
+            "submit": "Submit"
         },
         "accordion": {
             "title": "Accordion Components",
@@ -142,7 +143,13 @@
             },
             "colorPicker": {
                 "basic": "Basic Color Picker",
-                "withPopover": "Color Picker with Popover"
+                "withPopover": "Color Picker with Popover",
+                "title": "Color Picker"
+            },
+            "fileUpload": {
+                "title": "File Upload",
+                "label": "Drop your files here",
+                "description": "SVG, PNG, JPG or GIF (max. 2MB)"
             },
             "kbd": {
                 "title": "Keyboard Shortcuts",
